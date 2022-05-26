@@ -22,7 +22,7 @@ pod 'UPsKit'
 
 ## Author
 
-UPs, ljj4904@gmail.com
+UPs, dldbdjq@gmail.com
 
 ## License
 

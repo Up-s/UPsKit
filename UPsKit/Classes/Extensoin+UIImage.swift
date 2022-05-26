@@ -5,4 +5,14 @@
 //  Created by Lee on 2022/05/26.
 //
 
-import Foundation
+import UIKit
+
+extension UIImage {
+  
+  public class func sf(name: String, color: UIColor? = nil) -> UIImage? {
+    let tempImage = UIImage(systemName: name)
+    let tempColor = color ?? UIColor.systemRed
+    let tempColorImage = tempImage?.withTintColor(tempColor, renderingMode: .alwaysOriginal)
+    return tempColorImage
+  }
+}
