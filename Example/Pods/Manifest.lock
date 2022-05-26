@@ -1,0 +1,16 @@
+PODS:
+  - UPsKit (0.1.0)
+
+DEPENDENCIES:
+  - UPsKit (from `../`)
+
+EXTERNAL SOURCES:
+  UPsKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UPsKit: 8ba2534d4301d7dae7e0de6f9905e77b82407940
+
+PODFILE CHECKSUM: 003e538fcb301ff785164cf54afaf35f2a7de214
+
+COCOAPODS: 1.11.2
