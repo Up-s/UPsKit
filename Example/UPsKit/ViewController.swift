@@ -9,16 +9,13 @@
 import UIKit
 import UPsKit
 
-class ViewController: UIViewController {
-  
-  let test = TestUPsKit()
+class ViewController: UPsCalendarViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    test.opnePrint()
-    test.hiPrint()
-//    test.byePrint()
+    self.selectDate = Date()
   }
+  
 }
 

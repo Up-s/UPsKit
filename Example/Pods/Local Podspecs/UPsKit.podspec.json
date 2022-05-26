@@ -1,22 +1,32 @@
 {
   "name": "UPsKit",
   "version": "0.1.0",
-  "summary": "A short description of UPsKit.",
+  "summary": "UPs base Kit",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/UPs/UPsKit",
+  "homepage": "https://github.com/Up-s/UPsKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "UPs": "ljj4904@gmail.com"
+    "UPs": "dldbdjq@gmail.com"
   },
   "source": {
-    "git": "https://github.com/UPs/UPsKit.git",
+    "git": "https://github.com/Up-s/UPsKit.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "13.0"
   },
-  "source_files": "UPsKit/Classes/**/*"
+  "source_files": "UPsKit/Classes/**/*",
+  "swift_versions": "5.0",
+  "dependencies": {
+    "FSCalendar": [
+
+    ],
+    "SnapKit": [
+      "~> 5.0.0"
+    ]
+  },
+  "swift_version": "5.0"
 }

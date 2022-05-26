@@ -1,16 +1,29 @@
 PODS:
-  - UPsKit (0.1.0)
+  - FSCalendar (2.8.4)
+  - SnapKit (5.0.1)
+  - UPsKit (0.1.0):
+    - FSCalendar
+    - SnapKit (~> 5.0.0)
 
 DEPENDENCIES:
+  - FSCalendar
+  - SnapKit (~> 5.0.0)
   - UPsKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FSCalendar
+    - SnapKit
 
 EXTERNAL SOURCES:
   UPsKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UPsKit: 8ba2534d4301d7dae7e0de6f9905e77b82407940
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  UPsKit: 7adde3663b8b2cb49451b72a818324565560f84f
 
-PODFILE CHECKSUM: 003e538fcb301ff785164cf54afaf35f2a7de214
+PODFILE CHECKSUM: 4e442ba41a6c264c1e8b519b1d22b606fd16ae62
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
