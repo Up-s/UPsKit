@@ -28,7 +28,7 @@
 		3CD5FAFC746A76D73C3F501734199DFF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49344616BD614BF6A5C03B0FBD465A5B /* Typealiases.swift */; };
 		3DEDFA52B3A196F6D3E1F0937617628A /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CAA4A8872ACF1FAB44305115FA396 /* ConstraintLayoutGuide+Extensions.swift */; };
 		3E4E56584545A9F057D6A39565EEBE81 /* FSCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0305080E51612C701840B1D796B3FD /* FSCalendar-dummy.m */; };
-		43288A5CE55AF5E81E400B327B43AD1C /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C99BCC47AC0C051447588246FE2014 /* IndicatorViewController.swift */; };
+		43288A5CE55AF5E81E400B327B43AD1C /* UPsIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C99BCC47AC0C051447588246FE2014 /* UPsIndicatorViewController.swift */; };
 		43863B6D6A0E47B6648BB7B469736EDD /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB9F5CED3F1D978F7A0E9CA12149679 /* LayoutConstraint.swift */; };
 		4643DA364A3E80706B89D53043890B4D /* FSCalendarCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 233653BC01E6E93EBA2F775ABBDA2D61 /* FSCalendarCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4683418880504CD2212FE56C4F1E8F80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */; };
@@ -151,7 +151,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00C99BCC47AC0C051447588246FE2014 /* IndicatorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndicatorViewController.swift; path = UPsKit/Classes/IndicatorViewController.swift; sourceTree = "<group>"; };
+		00C99BCC47AC0C051447588246FE2014 /* UPsIndicatorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPsIndicatorViewController.swift; path = UPsKit/Classes/UPsIndicatorViewController.swift; sourceTree = "<group>"; };
 		03CACD2F1BC1A62012733495FD2564D4 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		054184ECB5DED8231356939CEC85BAAE /* Extension+UIFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extension+UIFont.swift"; path = "UPsKit/Classes/Extension+UIFont.swift"; sourceTree = "<group>"; };
 		06CFA2AD5A984187EF5B342EF2152056 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -414,18 +414,18 @@
 		3F120DCBEC0C7547BC9F846F55337719 /* UPsKit */ = {
 			isa = PBXGroup;
 			children = (
+				D3EE2BB406A32A9AB7F7153EC6F917D1 /* UPsBaseViewContronller.swift */,
+				4F37E911283FE49A00C6E4D2 /* UPsCalendarViewController.swift */,
+				00C99BCC47AC0C051447588246FE2014 /* UPsIndicatorViewController.swift */,
 				67EB91F027827CC27D8D870D2EE10040 /* Extension+Int.swift */,
 				51A67B5F44FB909604B32B060A5B517B /* Extension+NSMutableAttributedString.swift */,
 				E2891DAEED5FDF5B8AA61CCFE43F7688 /* Extension+String.swift */,
 				761C0AE51B93EAF0D34136C5DC9E3208 /* Extension+UIColor.swift */,
 				A644F3FDAD63F9B263388ACEC09BAD2B /* Extension+UIEdgeInsets.swift */,
 				054184ECB5DED8231356939CEC85BAAE /* Extension+UIFont.swift */,
+				7A4A6D44EEB11C11C11351BFD3195C82 /* Extensoin+UIImage.swift */,
 				386E02DE7EFA6103D064A4BB5C0094D4 /* Extension+UITextField.swift */,
 				5F9D3865EF40173D37D16A013863EDC3 /* Extension+UIView.swift */,
-				7A4A6D44EEB11C11C11351BFD3195C82 /* Extensoin+UIImage.swift */,
-				00C99BCC47AC0C051447588246FE2014 /* IndicatorViewController.swift */,
-				D3EE2BB406A32A9AB7F7153EC6F917D1 /* UPsBaseViewContronller.swift */,
-				4F37E911283FE49A00C6E4D2 /* UPsCalendarViewController.swift */,
 				40A161A0A3C8B303D4F0416535CD3F0C /* Pod */,
 				11D395B89F595D3D9B04D56E114499A7 /* Support Files */,
 			);
@@ -897,7 +897,7 @@
 				0FEAD2F89ADF464F8AF3029371BDB0E6 /* Extension+UITextField.swift in Sources */,
 				DF1C3B2556E624CD304FDDF865B2FEC1 /* Extension+UIView.swift in Sources */,
 				2B4B64974932CAF38851F4D41664285E /* Extensoin+UIImage.swift in Sources */,
-				43288A5CE55AF5E81E400B327B43AD1C /* IndicatorViewController.swift in Sources */,
+				43288A5CE55AF5E81E400B327B43AD1C /* UPsIndicatorViewController.swift in Sources */,
 				6F6F2C3D2202F8C996DC8ED0A75FCEDE /* UPsBaseViewContronller.swift in Sources */,
 				4F37E912283FE49A00C6E4D2 /* UPsCalendarViewController.swift in Sources */,
 				A6905569EAD2BF5A012968379F774691 /* UPsKit-dummy.m in Sources */,

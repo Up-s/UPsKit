@@ -1,5 +1,5 @@
 //
-//  IndicatorViewController.swift
+//  UPsIndicatorViewController.swift
 //  UPsKit
 //
 //  Created by Lee on 2022/05/26.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class IndicatorViewController: UIViewController {
+final class UPsIndicatorViewController: UIViewController {
   
   private let indicatorView = UIActivityIndicatorView()
   
@@ -24,7 +24,7 @@ final class IndicatorViewController: UIViewController {
 
 // MARK: - UI
 
-extension IndicatorViewController {
+extension UPsIndicatorViewController {
   private func setAttribute() {
     self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     

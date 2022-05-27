@@ -19,14 +19,6 @@ open class UPsBaseViewController: UIViewController {
     let title: String
     let style: UIAlertAction.Style
     let handler: ((UIAlertAction) -> Void)?
-    
-    init(title: String,
-         style: UIAlertAction.Style = .default,
-         handler: ((UIAlertAction) -> Void)? = nil) {
-      self.title = title
-      self.style = style
-      self.handler = handler
-    }
   }
   
   public func alertBase(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [AlertAction]) {
@@ -70,13 +62,13 @@ open class UPsBaseViewController: UIViewController {
   // MARK: - IndicatoerViewController
   
   public func presentIndicatorViewController() {
-    let vcIndicator = IndicatorViewController()
+    let vcIndicator = UPsIndicatorViewController()
     vcIndicator.modalPresentationStyle = .overFullScreen
     self.present(vcIndicator, animated: false)
   }
   
   public func dismissIndicatorViewController() {
-    guard let vcIndicator = self.presentedViewController as? IndicatorViewController else { return }
+    guard let vcIndicator = self.presentedViewController as? UPsIndicatorViewController else { return }
     vcIndicator.dismiss(animated: false)
   }
   
