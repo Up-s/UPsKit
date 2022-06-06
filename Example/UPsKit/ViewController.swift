@@ -9,12 +9,11 @@
 import UIKit
 import UPsKit
 
-class ViewController: UPsCalendarViewController {
+class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.selectDate = Date()
   }
   
 }

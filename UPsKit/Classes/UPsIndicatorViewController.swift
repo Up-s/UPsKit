@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 final class UPsIndicatorViewController: UIViewController {
   
@@ -18,13 +17,11 @@ final class UPsIndicatorViewController: UIViewController {
     self.setAttribute()
     self.setConstraint()
   }
-}
 
 
 
-// MARK: - UI
+  // MARK: - UI
 
-extension UPsIndicatorViewController {
   private func setAttribute() {
     self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     
@@ -36,8 +33,12 @@ extension UPsIndicatorViewController {
   
   private func setConstraint() {
     let guide = self.view.safeAreaLayoutGuide
-    self.indicatorView.snp.makeConstraints { make in
-      make.center.equalTo(guide)
-    }
+    
+    self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      self.indicatorView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+      self.indicatorView.centerYAnchor.constraint(equalTo: guide.centerYAnchor)
+    ])
   }
 }

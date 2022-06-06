@@ -5,10 +5,6 @@ platform :ios, '13.0'
 target 'UPsKit_Example' do
   pod 'UPsKit', :path => '../'
   
-  pod 'FSCalendar'
-  
-  pod 'SnapKit', '~> 5.0.0'
-
   target 'UPsKit_Tests' do
     inherit! :search_paths
 

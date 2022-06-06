@@ -1,15 +1,14 @@
 //
-//  UPsBaseViewContronller.swift
+//  Extension+UIViewController.swift
 //  UPsKit
 //
-//  Created by Lee on 2022/05/26.
+//  Created by YouUp Lee on 2022/06/06.
 //
 
 import UIKit
 
-open class UPsBaseViewController: UIViewController {
-  
-  
+
+extension UIViewController {
   
   
   
@@ -20,7 +19,7 @@ open class UPsBaseViewController: UIViewController {
     let style: UIAlertAction.Style
     let handler: ((UIAlertAction) -> Void)?
   }
-  
+
   public func alertBase(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [AlertAction]) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     for action in actions {
@@ -39,21 +38,22 @@ open class UPsBaseViewController: UIViewController {
     self.present(alert, animated: true)
   }
   
-  public func alertTextField(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, handler: @escaping (String?) -> Void) {
+  public func alertTextField(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, handler: ((String?) -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField {
       $0.keyboardType = keyboardType
       $0.placeholder = placeholder
     }
     
-    let action = UIAlertAction(title: actionTitle, style: .default) { (_) in
+    let action = UIAlertAction(title: actionTitle, style: .default) { _ in
       let text = alert.textFields?[0].text
-      handler(text)
+      handler?(text)
     }
-    let cancel = UIAlertAction(title: "닫기", style: .cancel)
-    
     alert.addAction(action)
+    
+    let cancel = UIAlertAction(title: "닫기", style: .cancel)
     alert.addAction(cancel)
+    
     self.present(alert, animated: true)
   }
   
@@ -102,5 +102,6 @@ open class UPsBaseViewController: UIViewController {
   @objc private func dismissAction(_ sender: UIBarButtonItem) {
     self.dismiss(animated: true)
   }
+  
   
 }
