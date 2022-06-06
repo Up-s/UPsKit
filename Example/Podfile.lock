@@ -1,5 +1,5 @@
 PODS:
-  - UPsKit (0.2.0)
+  - UPsKit (0.2.1)
 
 DEPENDENCIES:
   - UPsKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UPsKit: ae915e880507ea7306b95cf60f96ab7f3c4baf39
+  UPsKit: 09a241ff4edd33bc05b132a6b037bb3399c477dd
 
 PODFILE CHECKSUM: 465e9b78eb2ee41521d7d4697a505959a85e80e5
 
