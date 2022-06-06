@@ -86,7 +86,7 @@
 		BD7D95F0284E1724006D24D6 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIViewController.swift"; path = "UPsKit/Classes/Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		C725BCD555E542852A9952D0217B66CB /* UPsIndicatorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPsIndicatorViewController.swift; path = UPsKit/Classes/UPsIndicatorViewController.swift; sourceTree = "<group>"; };
 		D132FECD0B818633FD7C0A8BF387BE28 /* Extension+UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extension+UITextField.swift"; path = "UPsKit/Classes/Extension+UITextField.swift"; sourceTree = "<group>"; };
-		DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UPsKit; path = UPsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52BDEEF2036BF12F29A418E3BDB6082 /* Pods-UPsKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UPsKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EFE1A81C5856B73407E693109A0858C2 /* UPsKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UPsKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F092101ACA385DFE33C7423C4120A934 /* UPsKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UPsKit-dummy.m"; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			children = (
 				6FF6BE6D2A73CCCDDD46E445815359FA /* Pods-UPsKit_Example */,
 				AFB0F49C56BB189C817E31102B9E92CE /* Pods-UPsKit_Tests */,
-				DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit */,
+				DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			);
 			name = UPsKit;
 			productName = UPsKit;
-			productReference = DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit */;
+			productReference = DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -499,6 +499,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.1;
 				MODULEMAP_FILE = "Target Support Files/UPsKit/UPsKit.modulemap";
 				PRODUCT_MODULE_NAME = UPsKit;
 				PRODUCT_NAME = UPsKit;
@@ -600,6 +601,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.1;
 				MODULEMAP_FILE = "Target Support Files/UPsKit/UPsKit.modulemap";
 				PRODUCT_MODULE_NAME = UPsKit;
 				PRODUCT_NAME = UPsKit;
