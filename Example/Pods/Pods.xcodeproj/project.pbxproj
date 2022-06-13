@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A20B0BAB4C41423C33A28608EB819D1 /* Extensoin+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */; };
 		1F9F69315D51AA4E0A229079AE8A2AB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4FBEE8CE285718C900F4B8B3 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEE8CD285718C900F4B8B3 /* Extension+Date.swift */; };
 		4FC4590E285711B60073A96F /* Snippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4590D285711B60073A96F /* Snippets.swift */; };
 		5EA15380FE6B163E89AA24255D1932FB /* Pods-UPsKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EB290C9AAA1E1F219A462B4F5628BD /* Pods-UPsKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EC22C8C7A9DD347100F933702CA6BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -59,6 +60,7 @@
 		46C6BDDC34B51EF066F144D8EF82B0C0 /* Pods-UPsKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UPsKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4CBFA2590A6088B8928B1BF64183D5B8 /* Pods-UPsKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPsKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		4F6A4E6DB3C295649190527FD67FE3D8 /* UPsKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPsKit-prefix.pch"; sourceTree = "<group>"; };
+		4FBEE8CD285718C900F4B8B3 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+Date.swift"; path = "UPsKit/Classes/Extension+Date.swift"; sourceTree = "<group>"; };
 		4FC4590D285711B60073A96F /* Snippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Snippets.swift; path = UPsKit/Classes/Snippets.swift; sourceTree = "<group>"; };
 		57ACA4BDFAE53819AEBF68B9E3DC05B0 /* Pods-UPsKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPsKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPsIndicatorViewController.swift; path = UPsKit/Classes/UPsIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +203,7 @@
 		B1944B4D2A4ED0B374D429DE8D98A699 /* UPsKit */ = {
 			isa = PBXGroup;
 			children = (
-				4FC4590D285711B60073A96F /* Snippets.swift */,
+				4FBEE8CD285718C900F4B8B3 /* Extension+Date.swift */,
 				DF50D293A9B4EC12E480CE7469607BE8 /* Extension+Int.swift */,
 				F751A4C442FCEED60C400293D00F6ECC /* Extension+NSMutableAttributedString.swift */,
 				1121803FCCE2ECA27BA6ED693B9A5D88 /* Extension+String.swift */,
@@ -212,6 +214,7 @@
 				1915FBBB6DA1FF2073F9AECF362E2995 /* Extension+UIView.swift */,
 				AB14D6060F639102417F57816059538B /* Extension+UIViewController.swift */,
 				D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */,
+				4FC4590D285711B60073A96F /* Snippets.swift */,
 				5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */,
 				48908345B3839EF5BA5CA4FB05D923E6 /* Pod */,
 				8AC8DAD6D8469886F17F0629E3A7C69C /* Support Files */,
@@ -409,6 +412,7 @@
 				69B994DC0D2F22051AB9C80B476DC4F6 /* Extension+UIFont.swift in Sources */,
 				E3BA2A7E26840D2C5440F91B635543A7 /* Extension+UITextField.swift in Sources */,
 				EA32BAFC5117F8484E021B5E8739651B /* Extension+UIView.swift in Sources */,
+				4FBEE8CE285718C900F4B8B3 /* Extension+Date.swift in Sources */,
 				6E562EBCCE39579A2BBCA870506A40CF /* Extension+UIViewController.swift in Sources */,
 				0A20B0BAB4C41423C33A28608EB819D1 /* Extensoin+UIImage.swift in Sources */,
 				9C1C4ACC6BBF6E9F33F52FAA6168EC4B /* UPsIndicatorViewController.swift in Sources */,
