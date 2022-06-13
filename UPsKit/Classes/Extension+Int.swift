@@ -9,13 +9,13 @@ import Foundation
 
 extension Int {
   
-  public enum TimeerStyle {
+  public enum TimerStyle {
     case HMSM
     case MSM
     case SM
   }
   
-  public func inTimer(_ style: TimeerStyle) -> String {
+  public func toTimer(_ style: TimerStyle) -> String {
     switch style {
     case .HMSM:
       let millisec = self % 100
