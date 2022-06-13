@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A20B0BAB4C41423C33A28608EB819D1 /* Extensoin+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */; };
 		1F9F69315D51AA4E0A229079AE8A2AB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4FC4590E285711B60073A96F /* Snippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4590D285711B60073A96F /* Snippets.swift */; };
 		5EA15380FE6B163E89AA24255D1932FB /* Pods-UPsKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EB290C9AAA1E1F219A462B4F5628BD /* Pods-UPsKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EC22C8C7A9DD347100F933702CA6BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		666537326223A92B5592F29BD5C43BCA /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121803FCCE2ECA27BA6ED693B9A5D88 /* Extension+String.swift */; };
@@ -58,6 +59,7 @@
 		46C6BDDC34B51EF066F144D8EF82B0C0 /* Pods-UPsKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UPsKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4CBFA2590A6088B8928B1BF64183D5B8 /* Pods-UPsKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPsKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		4F6A4E6DB3C295649190527FD67FE3D8 /* UPsKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPsKit-prefix.pch"; sourceTree = "<group>"; };
+		4FC4590D285711B60073A96F /* Snippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Snippets.swift; path = UPsKit/Classes/Snippets.swift; sourceTree = "<group>"; };
 		57ACA4BDFAE53819AEBF68B9E3DC05B0 /* Pods-UPsKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPsKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPsIndicatorViewController.swift; path = UPsKit/Classes/UPsIndicatorViewController.swift; sourceTree = "<group>"; };
 		64D4576DAD6092BE05461FFC481498C5 /* UPsKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UPsKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -199,6 +201,7 @@
 		B1944B4D2A4ED0B374D429DE8D98A699 /* UPsKit */ = {
 			isa = PBXGroup;
 			children = (
+				4FC4590D285711B60073A96F /* Snippets.swift */,
 				DF50D293A9B4EC12E480CE7469607BE8 /* Extension+Int.swift */,
 				F751A4C442FCEED60C400293D00F6ECC /* Extension+NSMutableAttributedString.swift */,
 				1121803FCCE2ECA27BA6ED693B9A5D88 /* Extension+String.swift */,
@@ -397,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC4590E285711B60073A96F /* Snippets.swift in Sources */,
 				C995D74B2B5B2081D83F6558A752FE96 /* Extension+Int.swift in Sources */,
 				DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */,
 				666537326223A92B5592F29BD5C43BCA /* Extension+String.swift in Sources */,
