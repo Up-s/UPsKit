@@ -76,19 +76,19 @@ final class <#ViewController#>: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.setAttribute()
-    self.setBind()
+    self.config()
+    self.bind()
   }
   
   
   
   // MARK: - Interface
   
-  private func setAttribute() {
+  private func config() {
     
   }
   
-  private func setBind() {
+  private func bind() {
     
   }
 }
