@@ -290,8 +290,8 @@ final class <#CollectionViewCell#>: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    setAttribute()
-    setConstraint()
+    self.setAttribute()
+    self.setConstraint()
   }
   
   required init?(coder aDecoder: NSCoder) {

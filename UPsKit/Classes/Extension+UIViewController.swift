@@ -7,27 +7,28 @@
 
 import UIKit
 
+public class AlertAction {
+  let title: String
+  let style: UIAlertAction.Style
+  let handler: ((UIAlertAction) -> Void)?
+  
+  public init(title: String, style: UIAlertAction.Style = .default, handler: ((UIAlertAction) -> Void)? = nil) {
+    self.title = title
+    self.style = style
+    self.handler = handler
+  }
+}
 
 extension UIViewController {
   
-  
-  
   // MARK: - AlertController
   
-  public struct AlertAction {
-    let title: String
-    let style: UIAlertAction.Style
-    let handler: ((UIAlertAction) -> Void)?
-  }
-
   public func alertBase(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [AlertAction]) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     for action in actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
       alert.addAction(tempAction)
     }
-    let cancel = UIAlertAction(title: "닫기", style: .cancel)
-    alert.addAction(cancel)
     self.present(alert, animated: true)
   }
   
