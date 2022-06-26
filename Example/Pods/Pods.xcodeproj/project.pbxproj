@@ -25,6 +25,7 @@
 		A750CE13FCCFBC6FD52E9E55A59DB8F8 /* Pods-UPsKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3AEC627CD78C4EB12003C9126BE1ED /* Pods-UPsKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD5D747E28679D9100DEE3F5 /* UPsPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */; };
 		BD5D74802868522600DEE3F5 /* UPsLeftAlignCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */; };
+		BD5D74842868597900DEE3F5 /* Extension+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */; };
 		C995D74B2B5B2081D83F6558A752FE96 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF50D293A9B4EC12E480CE7469607BE8 /* Extension+Int.swift */; };
 		D56EF5C583555820A5141E9562ED5D52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751A4C442FCEED60C400293D00F6ECC /* Extension+NSMutableAttributedString.swift */; };
@@ -91,6 +92,7 @@
 		B891910E9BAF172A6A7D5DDA9957E72C /* Pods-UPsKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPsKit_Tests.modulemap"; sourceTree = "<group>"; };
 		BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsPaddingLabel.swift; path = UPsKit/Classes/UPsPaddingLabel.swift; sourceTree = "<group>"; };
 		BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsLeftAlignCollectionView.swift; path = UPsKit/Classes/UPsLeftAlignCollectionView.swift; sourceTree = "<group>"; };
+		BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIBarButtonItem.swift"; path = "UPsKit/Classes/Extension+UIBarButtonItem.swift"; sourceTree = "<group>"; };
 		CA0F6696FC19A8910F814943AEF69E0D /* Extension+UIEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extension+UIEdgeInsets.swift"; path = "UPsKit/Classes/Extension+UIEdgeInsets.swift"; sourceTree = "<group>"; };
 		D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extensoin+UIImage.swift"; path = "UPsKit/Classes/Extensoin+UIImage.swift"; sourceTree = "<group>"; };
 		DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +218,7 @@
 				79A0BEABF8A203F14E92027CF7060199 /* Extension+UIFont.swift */,
 				0518810852E27923A3F18F13146F864F /* Extension+UITextField.swift */,
 				1915FBBB6DA1FF2073F9AECF362E2995 /* Extension+UIView.swift */,
+				BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */,
 				AB14D6060F639102417F57816059538B /* Extension+UIViewController.swift */,
 				D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */,
 				4FC4590D285711B60073A96F /* Snippets.swift */,
@@ -420,6 +423,7 @@
 				E3BA2A7E26840D2C5440F91B635543A7 /* Extension+UITextField.swift in Sources */,
 				EA32BAFC5117F8484E021B5E8739651B /* Extension+UIView.swift in Sources */,
 				4FBEE8CE285718C900F4B8B3 /* Extension+Date.swift in Sources */,
+				BD5D74842868597900DEE3F5 /* Extension+UIBarButtonItem.swift in Sources */,
 				6E562EBCCE39579A2BBCA870506A40CF /* Extension+UIViewController.swift in Sources */,
 				0A20B0BAB4C41423C33A28608EB819D1 /* Extensoin+UIImage.swift in Sources */,
 				9C1C4ACC6BBF6E9F33F52FAA6168EC4B /* UPsIndicatorViewController.swift in Sources */,
@@ -515,7 +519,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.7;
+				MARKETING_VERSION = 1.0;
 				MODULEMAP_FILE = "Target Support Files/UPsKit/UPsKit.modulemap";
 				PRODUCT_MODULE_NAME = UPsKit;
 				PRODUCT_NAME = UPsKit;
@@ -617,7 +621,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.7;
+				MARKETING_VERSION = 1.0;
 				MODULEMAP_FILE = "Target Support Files/UPsKit/UPsKit.modulemap";
 				PRODUCT_MODULE_NAME = UPsKit;
 				PRODUCT_NAME = UPsKit;
