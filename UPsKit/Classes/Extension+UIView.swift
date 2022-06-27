@@ -21,6 +21,8 @@ extension UIView {
   }
   
   public func shadow() {
+    let shadowPath = UIBezierPath(rect: self.bounds)
+    self.layer.shadowPath = shadowPath.cgPath
     self.layer.shadowRadius = 5.0
     self.layer.shadowOpacity = 0.3
     self.layer.shadowOffset = .zero
