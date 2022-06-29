@@ -77,13 +77,14 @@ extension UIViewController {
   
   // MARK: - NavigationController
   
-  public func addBackBarButton() {
+  public func addBackBarButton(_ selector: Selector? = nil) {
     self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     let backImage = UIImage.sf(name: "chevron.left", color: .black)
+    let action: Selector = selector ?? #selector(self.backAction(_:))
     let backBarButton = UIBarButtonItem(image: backImage,
                                         style: .done,
                                         target: self,
-                                        action: #selector(self.backAction(_:)))
+                                        action: action)
     self.navigationItem.leftBarButtonItem = backBarButton
   }
   
@@ -91,12 +92,13 @@ extension UIViewController {
     self.navigationController?.popViewController(animated: true)
   }
   
-  public func addDismissBarButton() {
+  public func addDismissBarButton(_ selector: Selector? = nil) {
     let dismissIamge = UIImage.sf(name: "chevron.down", color: .black)
+    let action: Selector = selector ?? #selector(self.dismissAction(_:))
     let dismissBarButton = UIBarButtonItem(image: dismissIamge,
                                            style: .done,
                                            target: self,
-                                           action: #selector(self.dismissAction(_:)))
+                                           action: action)
     self.navigationItem.leftBarButtonItem = dismissBarButton
   }
   
