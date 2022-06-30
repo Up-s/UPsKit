@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class UPsShadowView: UIView {
+public class UPsShadowView: UIView {
   
   // MARK: - Property
   
@@ -17,7 +17,7 @@ final class UPsShadowView: UIView {
   
   // MARK: - Override
   
-  override var bounds: CGRect {
+  public override var bounds: CGRect {
     didSet {
       let shadowPath = UIBezierPath(rect: self.bounds)
       self.layer.shadowPath = shadowPath.cgPath

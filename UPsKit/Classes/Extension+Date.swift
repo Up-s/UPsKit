@@ -10,6 +10,7 @@ import Foundation
 extension Date {
   
   public enum Formatter: String {
+    case HHmmss = "HH:mm:ss"
     case yyyyMMdd = "yyyy-MM-dd"
   }
   
@@ -17,12 +18,5 @@ extension Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter.rawValue
     return dateFormatter.string(from: self as Date)
-  }
-  
-  
-  public func add(hour: Int, min: Int, sec: Int) -> Date {
-    let hourDate = Calendar.current.date(byAdding: .hour, value: hour, to: Date())
-    let minDate = Calendar.current.date(byAdding: .minute, value: min, to: hourDate!)
-    return Calendar.current.date(byAdding: .second, value: sec, to: minDate!)!
   }
 }
