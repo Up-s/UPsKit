@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShadowView: UIView {
+final class UPsShadowView: UIView {
   
   // MARK: - Property
   
