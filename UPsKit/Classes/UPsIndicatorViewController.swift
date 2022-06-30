@@ -9,7 +9,13 @@ import UIKit
 
 final class UPsIndicatorViewController: UIViewController {
   
+  // MARK: - Property
+  
   private let indicatorView = UIActivityIndicatorView()
+  
+  
+  
+  // MARK: - Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()

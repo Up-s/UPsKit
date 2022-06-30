@@ -9,6 +9,8 @@ import UIKit
 
 public class UPsLeftAlignCollectionView: UICollectionView {
   
+  // MARK: - Life Cycle
+  
   public init(_ scrollDirection: UICollectionView.ScrollDirection) {
     let layout = CollectionViewLeftAlignFlowLayout()
     layout.scrollDirection = scrollDirection
@@ -20,6 +22,7 @@ public class UPsLeftAlignCollectionView: UICollectionView {
     fatalError("init(coder:) has not been implemented")
   }
 }
+
 
 
 // MARK: - UICollectionViewFlowLayout

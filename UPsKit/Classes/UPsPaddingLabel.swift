@@ -9,9 +9,15 @@ import UIKit
 
 public class UPsPaddingLabel: UILabel {
   
+  // MARK: - Property
+  
   private var padding = UIEdgeInsets.zero
   
-  convenience init(_ padding: UIEdgeInsets) {
+  
+  
+  // MARK: - Life Cycle
+  
+  public convenience init(_ padding: UIEdgeInsets) {
     self.init()
     self.padding = padding
   }
