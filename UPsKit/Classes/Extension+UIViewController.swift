@@ -7,48 +7,29 @@
 
 import UIKit
 
-public class AlertAction {
-  let title: String
-  let style: UIAlertAction.Style
-  let handler: ((UIAlertAction) -> Void)?
-  
-  public init(title: String, style: UIAlertAction.Style = .default, handler: ((UIAlertAction) -> Void)? = nil) {
-    self.title = title
-    self.style = style
-    self.handler = handler
-  }
-}
-
 extension UIViewController {
   
   // MARK: - AlertController
   
-  public func alertBase(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [AlertAction]) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-    for action in actions {
+  public func alertBase(_ model: UPsAlertBaseModel) {
+    let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: model.style)
+    for action in model.actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
       alert.addAction(tempAction)
     }
     self.present(alert, animated: true)
   }
   
-  public func alertCancel(title: String? = nil, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let cancel = UIAlertAction(title: "닫기", style: .cancel, handler: handler)
-    alert.addAction(cancel)
-    self.present(alert, animated: true)
-  }
-  
-  public func alertTextField(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, handler: ((String?) -> Void)? = nil) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+  public func alertTextField(_ model: UPsAlertTextFieldModel) {
+    let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: .alert)
     alert.addTextField {
-      $0.keyboardType = keyboardType
-      $0.placeholder = placeholder
+      $0.keyboardType = model.keyboardType
+      $0.placeholder = model.placeholder
     }
     
-    let action = UIAlertAction(title: actionTitle, style: .default) { _ in
+    let action = UIAlertAction(title: model.actionTitle, style: .default) { _ in
       let text = alert.textFields?[0].text
-      handler?(text)
+      model.handler?(text)
     }
     alert.addAction(action)
     
