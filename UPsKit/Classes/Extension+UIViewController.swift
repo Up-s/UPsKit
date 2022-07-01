@@ -19,16 +19,16 @@ extension UIViewController {
   
   // MARK: - AlertController
   
-  public func alertBase(_ model: UPsAlertBaseModel) {
+  public func alertBase(_ model: UPsAlertBaseModel, completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: model.style)
     for action in model.actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
       alert.addAction(tempAction)
     }
-    self.present(alert, animated: true)
+    self.present(alert, animated: true, completion: completion)
   }
   
-  public func alertTextField(_ model: UPsAlertTextFieldModel) {
+  public func alertTextField(_ model: UPsAlertTextFieldModel, completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: .alert)
     alert.addTextField {
       $0.keyboardType = model.keyboardType
@@ -44,7 +44,7 @@ extension UIViewController {
     let cancel = UIAlertAction(title: "닫기", style: .cancel)
     alert.addAction(cancel)
     
-    self.present(alert, animated: true)
+    self.present(alert, animated: true, completion: completion)
   }
   
   
