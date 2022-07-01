@@ -9,6 +9,14 @@ import UIKit
 
 extension UIViewController {
   
+  // MARK: - ScenCondinator
+  
+  public var sceneViewController: UIViewController {
+      return self.children.last ?? self
+  }
+  
+  
+  
   // MARK: - AlertController
   
   public func alertBase(_ model: UPsAlertBaseModel) {
