@@ -10,7 +10,7 @@ import Foundation
 final class DebugLog {
   
   @discardableResult
-  init(c: String? = nil, f: String? = nil, l: Int? = nil, e: Error? = nil) {
+  public init(c: String? = nil, f: String? = nil, l: Int? = nil, e: Error? = nil) {
     print("\n😱😱😱😱😱 [class: \(c ?? "empty")] [func: \(f ?? "empty")] [line: \(l ?? 0)] [error: \(e?.localizedDescription ?? "empty")]\n")
   }
 }

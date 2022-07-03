@@ -9,19 +9,19 @@ import Foundation
 
 extension DateComponents {
   
-  var getHour: String {
+  public var getHour: String {
     String(format: "%02d", self.hour!)
   }
   
-  var getMin: String {
+  public var getMin: String {
     String(format: "%02d", self.minute!)
   }
   
-  var getSec: String {
+  public var getSec: String {
     String(format: "%02d", self.second!)
   }
   
-  var getNano: String {
+  public var getNano: String {
     String(format: "%02d", (self.nanosecond! / 10000000))
   }
 }
