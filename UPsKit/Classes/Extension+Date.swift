@@ -12,6 +12,7 @@ extension Date {
   public enum Formatter: String {
     
     case HHmmss = "HH:mm:ss"
+    case MdEEEEEHHmm = "M월 d일 (EEEEE) HH:mm"
     case MdEEEEEHHmmss = "M월 d일 (EEEEE) HH:mm:ss"
     case yyyyMMdd = "yyyy-MM-dd"
   }
