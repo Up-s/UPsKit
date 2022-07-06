@@ -7,7 +7,7 @@
 
 public class UPsStackView: UIStackView {
   
-  public init(axis: NSLayoutConstraint.Axis, alignment: UIStackView.Alignment, distribution: UIStackView.Distribution, spacing: CGFloat = 0.0) {
+  public init(axis: NSLayoutConstraint.Axis, spacing: CGFloat = 0.0) {
     super.init(frame: .zero)
     
     self.axis = axis
