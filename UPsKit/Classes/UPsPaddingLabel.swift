@@ -17,10 +17,17 @@ public class UPsPaddingLabel: UILabel {
   
   // MARK: - Life Cycle
   
-  public convenience init(_ padding: UIEdgeInsets) {
+  public convenience init(x: CGFloat, y: CGFloat) {
     self.init()
-    self.padding = padding
+    self.padding = UIEdgeInsets(x: x, y: y)
   }
+  
+  
+  public convenience init(all: CGFloat) {
+    self.init()
+    self.padding = UIEdgeInsets(all: all)
+  }
+  
   
   public override func drawText(in rect: CGRect) {
     super.drawText(in: rect.inset(by: self.padding))
