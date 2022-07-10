@@ -23,8 +23,7 @@ public class UPsPieView: UIView {
   public var duration: CGFloat = 1
   public var percent: CGFloat = 0
   public var labelFont: UIFont = .systemFont(ofSize: 16, weight: .bold)
-  public var labelTextColor: UIColor = .white
-  public var labelBackgroundColor: UIColor = .black
+  public var labelTextColor: UIColor = .black
   
   private var canvasSize: CGFloat {
     let width = self.bounds.size.width
@@ -77,8 +76,8 @@ public class UPsPieView: UIView {
     animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
     animation.delegate = self
     
-    let canvasWidth = self.canvasSize * 0.8
-    let radius = canvasWidth * 3 / 8
+    let canvasWidth = self.canvasSize * 0.7
+    let radius = canvasWidth * 3 / 7
     let path = UIBezierPath(
       arcCenter: self.canvasCenter,
       radius: radius,
@@ -91,7 +90,7 @@ public class UPsPieView: UIView {
     sliceLayer.path = path.cgPath
     sliceLayer.fillColor = nil
     sliceLayer.strokeColor = slice.color.cgColor
-    sliceLayer.lineWidth = canvasWidth * 2 / 8
+    sliceLayer.lineWidth = canvasWidth * 2 / 7
     sliceLayer.strokeEnd = 1
     sliceLayer.add(animation, forKey: animation.keyPath)
     
@@ -101,15 +100,17 @@ public class UPsPieView: UIView {
   private func addLabel(_ slice: UPsSlice) {
     let labelCenter = getLabelCenter(slice)
     
-    let label = UPsPaddingLabel(x: 6.0, y: 0)
-    label.text = slice.title
-    label.textColor = self.labelTextColor
+    let label = UPsPaddingLabel(x: 8.0, y: 4.0)
+    label.backgroundColor = .white
     label.font = self.labelFont
     label.numberOfLines = 0
+    label.text = slice.title
     label.textAlignment = .center
-    label.backgroundColor = self.labelBackgroundColor
+    label.textColor = self.labelTextColor
     label.layer.cornerRadius = 4
     label.layer.masksToBounds = true
+    label.layer.borderColor = slice.color.cgColor
+    label.layer.borderWidth = 4.0
     self.addSubview(label)
     
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +123,7 @@ public class UPsPieView: UIView {
   }
   
   private func getLabelCenter(_ slice: UPsSlice) -> CGPoint {
-    let radius = self.canvasSize * 3 / 8
+    let radius = self.canvasSize * 2.6 / 7
     let labelAngle = self.percentToRadian(((self.percent + slice.percent) - self.percent) / 2 + self.percent)
     let path = UIBezierPath(
       arcCenter: self.canvasCenter,
