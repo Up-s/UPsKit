@@ -19,11 +19,11 @@ public class UPsPieView: UIView {
   // MARK: - Property
   
   public var slices: [UPsSlice]?
-  public var duration: CGFloat = 1
   public var sliceIndex: Int = 0
+  public var duration: CGFloat = 1
   public var percent: CGFloat = 0
-  public var labelTextColor: UIColor = .black
-  public var labelFont: UIFont = .systemFont(ofSize: 12, weight: .bold)
+  public var labelTextColor: UIColor = .white
+  public var labelFont: UIFont = .systemFont(ofSize: 16, weight: .bold)
   
   private var canvasSize: CGFloat {
     let width = self.bounds.size.width
@@ -52,14 +52,14 @@ public class UPsPieView: UIView {
     
     guard self.isLayoutSubviews else { return }
     self.isLayoutSubviews = false
-    self.animateChart()
+    self.createChart()
   }
   
   
   
   // MARK: - Interface
   
-  public func animateChart() {
+  public func createChart() {
     self.setInitialize()
     
     guard let slices = self.slices, !slices.isEmpty else { return }
@@ -68,7 +68,7 @@ public class UPsPieView: UIView {
     self.addLabel(firstSlice)
   }
   
-  public func addSlice(_ slice: UPsSlice) {
+  private func addSlice(_ slice: UPsSlice) {
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     animation.fromValue = 0
     animation.toValue = 1
