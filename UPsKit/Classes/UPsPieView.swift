@@ -12,6 +12,12 @@ public struct UPsSlice {
   let title: String
   let percent: CGFloat
   let color: UIColor
+  
+  public init(title: String, percent: CGFloat, color: UIColor) {
+    self.title = title
+    self.percent = percent
+    self.color = color
+  }
 }
 
 public class UPsPieView: UIView {
