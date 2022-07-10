@@ -24,4 +24,11 @@ extension String {
     let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
     return predicate.evaluate(with: self)
   }
+  
+  public func toDate(_ formatter: Date.Formatter) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = formatter.rawValue
+    dateFormatter.locale = Locale(identifier: "ko_KR")
+    return dateFormatter.date(from: self)
+  }
 }

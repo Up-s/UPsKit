@@ -28,6 +28,7 @@
 		BD1DB51428717D2E0075D3B4 /* Extension+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */; };
 		BD1DB51628717EBD0075D3B4 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51528717EBD0075D3B4 /* DebugLog.swift */; };
 		BD4A2B7A2875DA8300DAFC5D /* UPsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */; };
+		BD52E4FF287AA1CA006A41E9 /* UPsPieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD52E4FE287AA1CA006A41E9 /* UPsPieView.swift */; };
 		BD5D747E28679D9100DEE3F5 /* UPsPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */; };
 		BD5D74802868522600DEE3F5 /* UPsLeftAlignCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */; };
 		BD5D74842868597900DEE3F5 /* Extension+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */; };
@@ -100,6 +101,7 @@
 		BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+DateComponents.swift"; path = "UPsKit/Classes/Extension+DateComponents.swift"; sourceTree = "<group>"; };
 		BD1DB51528717EBD0075D3B4 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugLog.swift; path = UPsKit/Classes/DebugLog.swift; sourceTree = "<group>"; };
 		BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsStackView.swift; path = UPsKit/Classes/UPsStackView.swift; sourceTree = "<group>"; };
+		BD52E4FE287AA1CA006A41E9 /* UPsPieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPsPieView.swift; sourceTree = "<group>"; };
 		BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsPaddingLabel.swift; path = UPsKit/Classes/UPsPaddingLabel.swift; sourceTree = "<group>"; };
 		BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsLeftAlignCollectionView.swift; path = UPsKit/Classes/UPsLeftAlignCollectionView.swift; sourceTree = "<group>"; };
 		BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIBarButtonItem.swift"; path = "UPsKit/Classes/Extension+UIBarButtonItem.swift"; sourceTree = "<group>"; };
@@ -238,8 +240,9 @@
 				5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */,
 				BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */,
 				BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */,
-				BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */,
+				BD52E4FE287AA1CA006A41E9 /* UPsPieView.swift */,
 				BD04A4BE286DF93800545F0D /* UPsShadowView.swift */,
+				BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */,
 				48908345B3839EF5BA5CA4FB05D923E6 /* Pod */,
 				8AC8DAD6D8469886F17F0629E3A7C69C /* Support Files */,
 			);
@@ -434,6 +437,7 @@
 				4FC4590E285711B60073A96F /* Snippets.swift in Sources */,
 				C995D74B2B5B2081D83F6558A752FE96 /* Extension+Int.swift in Sources */,
 				DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */,
+				BD52E4FF287AA1CA006A41E9 /* UPsPieView.swift in Sources */,
 				666537326223A92B5592F29BD5C43BCA /* Extension+String.swift in Sources */,
 				842074C04ACA45A8BE9832398A044B91 /* Extension+UIColor.swift in Sources */,
 				E331681BA5ADE205393D0BD33305551E /* Extension+UIEdgeInsets.swift in Sources */,
