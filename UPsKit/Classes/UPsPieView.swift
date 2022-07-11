@@ -9,9 +9,9 @@ import UIKit
 
 public struct UPsSlice {
   
-  let title: String
-  let percent: CGFloat
-  let color: UIColor
+  public let title: String
+  public let percent: CGFloat
+  public let color: UIColor
   
   public init(title: String, percent: CGFloat, color: UIColor) {
     self.title = title
