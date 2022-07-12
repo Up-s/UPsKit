@@ -15,4 +15,12 @@ extension UIImage {
     let tempColorImage = tempImage?.withTintColor(tempColor, renderingMode: .alwaysOriginal)
     return tempColorImage
   }
+  
+  public class func sf(name: String, color: UIColor? = nil, pointSize: CGFloat, weight: SymbolWeight, scale: SymbolScale) -> UIImage? {
+    let configuration = UIImage.SymbolConfiguration(pointSize: pointSize, weight: weight, scale: scale)
+    let tempImage = UIImage(systemName: name, withConfiguration: configuration)
+    let tempColor = color ?? UIColor.systemRed
+    let tempColorImage = tempImage?.withTintColor(tempColor, renderingMode: .alwaysOriginal)
+    return tempColorImage
+  }
 }
