@@ -24,7 +24,7 @@ public struct UPsSlice {
   public var percent: CGFloat { self.interval / self.allTime }
 }
 
-public class UPsPieView: UIView {
+public class UPsPieChartView: UIView {
   
   // MARK: - Property
   
@@ -174,7 +174,7 @@ public class UPsPieView: UIView {
 
 // MARK: - initialize
 
-extension UPsPieView: CAAnimationDelegate {
+extension UPsPieChartView: CAAnimationDelegate {
   
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     guard flag, let slices = self.slices else { return }
