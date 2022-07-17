@@ -28,7 +28,7 @@ public class UPsPieChartView: UIView {
   
   // MARK: - Property
   
-  public var slices: [UPsSlice]?
+  public let slices: [UPsSlice]
   public var sliceIndex: Int = 0
   public var duration: CGFloat = 1
   public var percent: CGFloat = 0
@@ -47,8 +47,7 @@ public class UPsPieChartView: UIView {
   }
   
   private var percentage: String {
-    guard let slices = self.slices else { return "0%" }
-    let slice = slices[self.sliceIndex]
+    let slice = self.slices[self.sliceIndex]
     return String(round(slice.percent * 1000) / 10)
   }
   
@@ -56,12 +55,16 @@ public class UPsPieChartView: UIView {
   
   // MARK: - Life Cycle
   
-  private var isLayoutSubviews = true
-  public override func layoutSubviews() {
-    super.layoutSubviews()
-    
-    guard self.isLayoutSubviews else { return }
-    self.isLayoutSubviews = false
+  public init(_ slices: [UPsSlice]) {
+    self.slices = slices
+    super.init(frame: .zero)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  public override func draw(_ rect: CGRect) {
     self.createChart()
   }
   
@@ -72,8 +75,8 @@ public class UPsPieChartView: UIView {
   public func createChart() {
     self.setInitialize()
     
-    guard let slices = self.slices, !slices.isEmpty else { return }
-    let firstSlice = slices[0]
+    guard !self.slices.isEmpty else { return }
+    let firstSlice = self.slices[0]
     self.addSlice(firstSlice)
     self.addLabel(firstSlice)
   }
@@ -177,12 +180,12 @@ public class UPsPieChartView: UIView {
 extension UPsPieChartView: CAAnimationDelegate {
   
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    guard flag, let slices = self.slices else { return }
-    self.percent += slices[self.sliceIndex].percent
+    guard flag else { return }
+    self.percent += self.slices[self.sliceIndex].percent
     self.sliceIndex += 1
     
-    guard self.sliceIndex < slices.count else { return }
-    let nextSlice = slices[self.sliceIndex]
+    guard self.sliceIndex < self.slices.count else { return }
+    let nextSlice = self.slices[self.sliceIndex]
     self.addSlice(nextSlice)
     self.addLabel(nextSlice)
   }
