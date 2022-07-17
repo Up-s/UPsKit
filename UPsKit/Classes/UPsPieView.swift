@@ -10,14 +10,18 @@ import UIKit
 public struct UPsSlice {
   
   public let title: String
-  public let percent: CGFloat
+  public let allTime: CGFloat
+  public let interval: CGFloat
   public let color: UIColor
   
-  public init(title: String, percent: CGFloat, color: UIColor) {
+  public init(title: String, allTime: CGFloat, interval: CGFloat, color: UIColor) {
     self.title = title
-    self.percent = percent
+    self.allTime = allTime
+    self.interval = interval
     self.color = color
   }
+  
+  public var percent: CGFloat { self.interval / self.allTime }
 }
 
 public class UPsPieView: UIView {
