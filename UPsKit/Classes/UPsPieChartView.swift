@@ -21,7 +21,10 @@ public struct UPsSlice {
     self.color = color
   }
   
-  public var percent: CGFloat { self.interval / self.allTime }
+  public var percentAll: CGFloat { self.interval / self.allTime }
+  public func percentTop(top: CGFloat) -> CGFloat {
+    self.interval / top
+  }
 }
 
 public class UPsPieChartView: UIView {
@@ -48,7 +51,7 @@ public class UPsPieChartView: UIView {
   
   private var percentage: String {
     let slice = self.slices[self.sliceIndex]
-    return String(round(slice.percent * 1000) / 10)
+    return String(round(slice.percentAll * 1000) / 10)
   }
   
   
@@ -81,7 +84,7 @@ public class UPsPieChartView: UIView {
     self.addLabel(firstSlice)
   }
   
-  public func addSlice(_ slice: UPsSlice) {
+  private func addSlice(_ slice: UPsSlice) {
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     animation.fromValue = 0
     animation.toValue = 1
@@ -95,7 +98,7 @@ public class UPsPieChartView: UIView {
       arcCenter: self.canvasCenter,
       radius: radius,
       startAngle: self.percentToRadian(self.percent),
-      endAngle: self.percentToRadian(self.percent + slice.percent),
+      endAngle: self.percentToRadian(self.percent + slice.percentAll),
       clockwise: true
     )
     
@@ -137,7 +140,7 @@ public class UPsPieChartView: UIView {
   
   private func getLabelCenter(_ slice: UPsSlice) -> CGPoint {
     let radius = self.canvasSize * 2.6 / 7
-    let labelAngle = self.percentToRadian(((self.percent + slice.percent) - self.percent) / 2 + self.percent)
+    let labelAngle = self.percentToRadian(((self.percent + slice.percentAll) - self.percent) / 2 + self.percent)
     let path = UIBezierPath(
       arcCenter: self.canvasCenter,
       radius: radius,
@@ -158,7 +161,7 @@ public class UPsPieChartView: UIView {
   }
   
   private func getDuration(_ slice: UPsSlice) -> CFTimeInterval {
-    return CFTimeInterval(slice.percent / 1.0 * duration)
+    return CFTimeInterval(slice.percentAll / 1.0 * duration)
   }
   
   private func setInitialize() {
@@ -181,7 +184,7 @@ extension UPsPieChartView: CAAnimationDelegate {
   
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     guard flag else { return }
-    self.percent += self.slices[self.sliceIndex].percent
+    self.percent += self.slices[self.sliceIndex].percentAll
     self.sliceIndex += 1
     
     guard self.sliceIndex < self.slices.count else { return }
