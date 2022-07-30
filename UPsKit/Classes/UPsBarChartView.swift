@@ -11,16 +11,12 @@ public class UPsBarChartView: UIView {
   
   // MARK: - Property
   
-  private let contentStackView = UPsStackView(axis: .vertical, spacing: 24.0)
+  private var slices: [UPsSlice] = []
   
-  public var slices: [UPsSlice] = []
-  public var boardStackViews = [UPsStackView]()
-  public var tagLabels = [UILabel]()
-  public var barBaseViews = [UIView]()
-  public var barViews = [UIView]()
-  public var timeLabels = [UILabel]()
-  public var labelFont: UIFont = .systemFont(ofSize: 18, weight: .semibold)
-  public var labelTextColor: UIColor = .black
+  private let contentStackView = UPsStackView(axis: .vertical, spacing: 24.0)
+  private var unitStackViews = [UPsStackView]()
+  private var barBaseViews = [UIView]()
+  private var barWidths = [NSLayoutConstraint]()
   
   public var barDidTap: ((Int?) -> Void)?
   
@@ -48,7 +44,7 @@ public class UPsBarChartView: UIView {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
       [weak self] in
       guard let self = self, !self.slices.isEmpty else { return }
-      self.addLabel()
+      self.addContent()
       self.startAnimation()
     }
   }
@@ -60,7 +56,7 @@ public class UPsBarChartView: UIView {
       }
     }
     
-    self.boardStackViews.forEach {
+    self.unitStackViews.forEach {
       $0.subviews.forEach {
         $0.gestureRecognizers?.removeAll()
         $0.removeFromSuperview()
@@ -71,72 +67,74 @@ public class UPsBarChartView: UIView {
       $0.removeFromSuperview()
     }
     
-    self.boardStackViews.removeAll()
-    self.tagLabels.removeAll()
-    self.barViews.removeAll()
-    self.barViews.removeAll()
-    self.timeLabels.removeAll()
+    self.unitStackViews.removeAll()
+    self.barBaseViews.removeAll()
+    self.barWidths.removeAll()
   }
   
-  private func addLabel() {
+  private func addContent() {
     for (index, slice) in self.slices.enumerated() {
-      let boardStackView = UPsStackView(axis: .horizontal, spacing: 16.0)
-      boardStackView.tag = index
-      boardStackView.backgroundColor = .boardGray
-      boardStackView.layer.cornerRadius = 8.0
+      let unitStackView = UPsStackView(axis: .horizontal, spacing: 16.0)
+      unitStackView.tag = index
+      unitStackView.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
+      unitStackView.layer.cornerRadius = 8.0
+      unitStackView.translatesAutoresizingMaskIntoConstraints = false
       
       let tap = UITapGestureRecognizer()
       tap.numberOfTapsRequired = 1
       tap.addTarget(self, action: #selector(self.sliceDidTap(_:)))
-      boardStackView.addGestureRecognizer(tap)
-      self.boardStackViews.append(boardStackView)
+      unitStackView.addGestureRecognizer(tap)
+      self.unitStackViews.append(unitStackView)
       
       let tagLabel = UILabel()
-      tagLabel.text = "  " + slice.title
-      tagLabel.textColor = self.labelTextColor
+      tagLabel.text = slice.title
+      tagLabel.textColor = .black
       tagLabel.adjustsFontSizeToFitWidth = true
-      tagLabel.font = self.labelFont
+      tagLabel.font = .systemFont(ofSize: 18, weight: .semibold)
       tagLabel.textAlignment = .right
-      self.tagLabels.append(tagLabel)
-      boardStackView.addArrangedSubview(tagLabel)
-      let multi: CGFloat = AppManager.isPhone ? 0.34 : 0.22
-      tagLabel.snp.makeConstraints { make in
-        make.width.equalToSuperview().multipliedBy(multi)
-      }
+      tagLabel.translatesAutoresizingMaskIntoConstraints = false
+      unitStackView.addArrangedSubview(tagLabel)
+      let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
+      let multi: CGFloat = isPhone ? 0.3 : 0.22
+      NSLayoutConstraint.activate([
+        tagLabel.widthAnchor.constraint(equalTo: unitStackView.widthAnchor, multiplier: multi)
+      ])
       
       let barBaseView = UIView()
-      boardStackView.addArrangedSubview(barBaseView)
+      unitStackView.addArrangedSubview(barBaseView)
       self.barBaseViews.append(barBaseView)
       
       let barView = UIView()
       barView.backgroundColor = slice.color
       barView.layer.cornerRadius = 4.0
       barView.layer.masksToBounds = true
+      barView.translatesAutoresizingMaskIntoConstraints = false
       barBaseView.addSubview(barView)
-      self.barViews.append(barView)
-      barView.snp.makeConstraints { make in
-        make.centerY.equalToSuperview()
-        make.leading.equalToSuperview()
-        make.width.equalTo(0.0)
-        make.height.equalTo(8.0)
-      }
+      NSLayoutConstraint.activate([
+        barView.centerYAnchor.constraint(equalTo: barBaseView.centerYAnchor),
+        barView.leadingAnchor.constraint(equalTo: barBaseView.leadingAnchor),
+        barView.heightAnchor.constraint(equalToConstant: 8.0)
+      ])
+      let barWidth = barView.widthAnchor.constraint(equalToConstant: 0.0)
+      barWidth.isActive = true
+      self.barWidths.append(barWidth)
       
       let timeLabel = UILabel()
       let itme = Int(slice.interval).toTimer(.HM) + "h"
       timeLabel.text = itme
       timeLabel.textColor = slice.color
       timeLabel.font = .systemFont(ofSize: 16, weight: .regular)
+      timeLabel.translatesAutoresizingMaskIntoConstraints = false
       barBaseView.addSubview(timeLabel)
-      self.timeLabels.append(timeLabel)
-      timeLabel.snp.makeConstraints { make in
-        make.centerY.equalToSuperview()
-        make.leading.equalTo(barView.snp.trailing).offset(8.0)
-      }
+      NSLayoutConstraint.activate([
+        timeLabel.centerYAnchor.constraint(equalTo: barBaseView.centerYAnchor),
+        timeLabel.leadingAnchor.constraint(equalTo: barView.trailingAnchor, constant: 8.0)
+      ])
       
-      self.contentStackView.addArrangedSubview(boardStackView)
-      boardStackView.snp.makeConstraints { make in
-        make.height.equalTo(40.0)
-      }
+      self.contentStackView.addArrangedSubview(unitStackView)
+      NSLayoutConstraint.activate([
+        unitStackView.heightAnchor.constraint(equalToConstant: 40.0)
+      ])
       self.layoutIfNeeded()
     }
   }
@@ -149,7 +147,7 @@ public class UPsBarChartView: UIView {
       let width = slice.percentTop(top: self.slices[0].interval) * barBaseView.bounds.width * 0.6
       
       let duration: Double = 2
-      let delay: Double = 0.05 * Double(index)
+      let delay: Double = 0.08 * Double(index)
       
 //      let barPath = UIBezierPath()
 //      barPath.move(to: CGPoint(x: 0, y: linePointY))
@@ -172,15 +170,13 @@ public class UPsBarChartView: UIView {
 ////      barAnimation.beginTime = delay
 //      barLayer.add(barAnimation, forKey: "lineAnimation")
       
-      let barView = self.barViews[index]
+      let barWidth = self.barWidths[index]
       UIView.animate(
         withDuration: duration,
         delay: delay,
         options: [.curveEaseInOut],
         animations: { [weak self] in
-          barView.snp.updateConstraints { make in
-            make.width.equalTo(width)
-          }
+          barWidth.constant = width
           self?.layoutIfNeeded()
         })
     }
@@ -191,10 +187,13 @@ public class UPsBarChartView: UIView {
   }
   
   private func setConstraint() {
+    self.contentStackView.translatesAutoresizingMaskIntoConstraints = false
     self.addSubview(self.contentStackView)
-    
-    self.contentStackView.snp.makeConstraints { make in
-      make.edges.equalToSuperview().inset(24.0)
-    }
+    NSLayoutConstraint.activate([
+      self.contentStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 24.0),
+      self.contentStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24.0),
+      self.contentStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24.0),
+      self.contentStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -24.0)
+    ])
   }
 }

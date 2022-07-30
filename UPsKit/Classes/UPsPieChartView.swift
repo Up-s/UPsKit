@@ -11,12 +11,9 @@ public class UPsPieChartView: UIView {
   
   // MARK: - Property
   
-  public var slices: [UPsSlice] = []
-  public var sliceIndex: Int = 0
-  public var duration: CGFloat = 1
-  public var percent: CGFloat = 0
-  public var labelFont: UIFont = .systemFont(ofSize: 16, weight: .bold)
-  public var labelTextColor: UIColor = .black
+  private var slices: [UPsSlice] = []
+  private var sliceIndex: Int = 0
+  private var percent: CGFloat = 0
   
   private var canvasSize: CGFloat {
     let width = self.bounds.size.width
@@ -96,7 +93,6 @@ public class UPsPieChartView: UIView {
     sliceLayer.lineWidth = canvasWidth * 2 / 7
     sliceLayer.strokeEnd = 1
     sliceLayer.add(animation, forKey: animation.keyPath)
-    
     self.layer.addSublayer(sliceLayer)
   }
   
@@ -105,11 +101,11 @@ public class UPsPieChartView: UIView {
     
     let label = UPsPaddingLabel(x: 8.0, y: 4.0)
     label.backgroundColor = .white
-    label.font = self.labelFont
+    label.font = .systemFont(ofSize: 16, weight: .bold)
     label.numberOfLines = 0
     label.text = slice.title
     label.textAlignment = .center
-    label.textColor = self.labelTextColor
+    label.textColor = .black
     label.layer.cornerRadius = 4
     label.layer.masksToBounds = true
     label.layer.borderColor = slice.color.cgColor
@@ -148,7 +144,7 @@ public class UPsPieChartView: UIView {
   }
   
   private func getDuration(_ slice: UPsSlice) -> CFTimeInterval {
-    return CFTimeInterval(slice.percentAll / 1.0 * duration)
+    return CFTimeInterval(slice.percentAll / 1.0 * 1)
   }
 }
 

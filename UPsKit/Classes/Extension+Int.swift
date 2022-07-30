@@ -10,6 +10,7 @@ import Foundation
 extension Int {
   
   public enum TimerStyle {
+    case HM
     case HMSM
     case MSM
     case SM
@@ -17,6 +18,11 @@ extension Int {
   
   public func toTimer(_ style: TimerStyle) -> String {
     switch style {
+    case .HM:
+      let min = ((self / 100) / 60) % 60
+      let hour = (((self / 100) / 60) / 60) % 60
+      return String(format: "%d.%02d", hour, min)
+      
     case .HMSM:
       let millisec = self % 100
       let sec = (self / 100) % 60
