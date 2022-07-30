@@ -32,6 +32,8 @@
 		BD5D747E28679D9100DEE3F5 /* UPsPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */; };
 		BD5D74802868522600DEE3F5 /* UPsLeftAlignCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */; };
 		BD5D74842868597900DEE3F5 /* Extension+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */; };
+		BD6EBC0C289568D100244CBF /* UPsSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6EBC0B289568D100244CBF /* UPsSlice.swift */; };
+		BD6EBC0E2895697700244CBF /* UPsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6EBC0D2895697700244CBF /* UPsBarChartView.swift */; };
 		C995D74B2B5B2081D83F6558A752FE96 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF50D293A9B4EC12E480CE7469607BE8 /* Extension+Int.swift */; };
 		D56EF5C583555820A5141E9562ED5D52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751A4C442FCEED60C400293D00F6ECC /* Extension+NSMutableAttributedString.swift */; };
@@ -105,6 +107,8 @@
 		BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsPaddingLabel.swift; path = UPsKit/Classes/UPsPaddingLabel.swift; sourceTree = "<group>"; };
 		BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsLeftAlignCollectionView.swift; path = UPsKit/Classes/UPsLeftAlignCollectionView.swift; sourceTree = "<group>"; };
 		BD5D74832868597900DEE3F5 /* Extension+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIBarButtonItem.swift"; path = "UPsKit/Classes/Extension+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		BD6EBC0B289568D100244CBF /* UPsSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPsSlice.swift; sourceTree = "<group>"; };
+		BD6EBC0D2895697700244CBF /* UPsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPsBarChartView.swift; sourceTree = "<group>"; };
 		CA0F6696FC19A8910F814943AEF69E0D /* Extension+UIEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extension+UIEdgeInsets.swift"; path = "UPsKit/Classes/Extension+UIEdgeInsets.swift"; sourceTree = "<group>"; };
 		D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extensoin+UIImage.swift"; path = "UPsKit/Classes/Extensoin+UIImage.swift"; sourceTree = "<group>"; };
 		DB8A5D6A04C4685D67AC971B4984E195 /* UPsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +244,9 @@
 				5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */,
 				BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */,
 				BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */,
+				BD6EBC0D2895697700244CBF /* UPsBarChartView.swift */,
 				BD52E4FE287AA1CA006A41E9 /* UPsPieChartView.swift */,
+				BD6EBC0B289568D100244CBF /* UPsSlice.swift */,
 				BD04A4BE286DF93800545F0D /* UPsShadowView.swift */,
 				BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */,
 				48908345B3839EF5BA5CA4FB05D923E6 /* Pod */,
@@ -439,6 +445,7 @@
 				DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */,
 				BD52E4FF287AA1CA006A41E9 /* UPsPieChartView.swift in Sources */,
 				666537326223A92B5592F29BD5C43BCA /* Extension+String.swift in Sources */,
+				BD6EBC0C289568D100244CBF /* UPsSlice.swift in Sources */,
 				842074C04ACA45A8BE9832398A044B91 /* Extension+UIColor.swift in Sources */,
 				E331681BA5ADE205393D0BD33305551E /* Extension+UIEdgeInsets.swift in Sources */,
 				69B994DC0D2F22051AB9C80B476DC4F6 /* Extension+UIFont.swift in Sources */,
@@ -451,6 +458,7 @@
 				6E562EBCCE39579A2BBCA870506A40CF /* Extension+UIViewController.swift in Sources */,
 				0A20B0BAB4C41423C33A28608EB819D1 /* Extensoin+UIImage.swift in Sources */,
 				9C1C4ACC6BBF6E9F33F52FAA6168EC4B /* UPsIndicatorViewController.swift in Sources */,
+				BD6EBC0E2895697700244CBF /* UPsBarChartView.swift in Sources */,
 				A31DDB821CED8F2FFE28D45392BD2A24 /* UPsKit-dummy.m in Sources */,
 				BD5D747E28679D9100DEE3F5 /* UPsPaddingLabel.swift in Sources */,
 			);

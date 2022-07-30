@@ -5,7 +5,7 @@
 //  Created by YouUp Lee on 2022/07/06.
 //
 
-public class UPsStackView: UIStackView {
+open class UPsStackView: UIStackView {
   
   public init(axis: NSLayoutConstraint.Axis, spacing: CGFloat = 0.0) {
     super.init(frame: .zero)
@@ -32,7 +32,7 @@ public class UPsStackView: UIStackView {
     self.spacing = spacing
   }
   
-  required init(coder aDecoder: NSCoder) {
+  required public init(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }

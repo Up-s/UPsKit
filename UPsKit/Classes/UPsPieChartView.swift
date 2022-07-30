@@ -7,31 +7,11 @@
 
 import UIKit
 
-public struct UPsSlice {
-  
-  public let title: String
-  public let allTime: CGFloat
-  public let interval: CGFloat
-  public let color: UIColor
-  
-  public init(title: String, allTime: CGFloat, interval: CGFloat, color: UIColor) {
-    self.title = title
-    self.allTime = allTime
-    self.interval = interval
-    self.color = color
-  }
-  
-  public var percentAll: CGFloat { self.interval / self.allTime }
-  public func percentTop(top: CGFloat) -> CGFloat {
-    self.interval / top
-  }
-}
-
 public class UPsPieChartView: UIView {
   
   // MARK: - Property
   
-  public let slices: [UPsSlice]
+  public var slices: [UPsSlice] = []
   public var sliceIndex: Int = 0
   public var duration: CGFloat = 1
   public var percent: CGFloat = 0
@@ -58,8 +38,7 @@ public class UPsPieChartView: UIView {
   
   // MARK: - Life Cycle
   
-  public init(_ slices: [UPsSlice]) {
-    self.slices = slices
+  public init() {
     super.init(frame: .zero)
   }
   
@@ -67,21 +46,29 @@ public class UPsPieChartView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public override func draw(_ rect: CGRect) {
-    self.createChart()
-  }
-  
   
   
   // MARK: - Interface
   
-  public func createChart() {
-    self.setInitialize()
+  public func drawChart(_ slices: [UPsSlice]) {
+    self.resetContent()
+    self.slices = slices
     
-    guard !self.slices.isEmpty else { return }
-    let firstSlice = self.slices[0]
-    self.addSlice(firstSlice)
-    self.addLabel(firstSlice)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+      guard let self = self, !self.slices.isEmpty else { return }
+      let firstSlice = self.slices[0]
+      self.addSlice(firstSlice)
+      self.addLabel(firstSlice)
+    }
+  }
+  
+  private func resetContent() {
+    self.sliceIndex = 0
+    self.percent = 0
+    self.layer.sublayers = nil
+    self.subviews
+      .filter { $0 is UILabel }
+      .forEach { $0.removeFromSuperview() }
   }
   
   private func addSlice(_ slice: UPsSlice) {
@@ -162,17 +149,6 @@ public class UPsPieChartView: UIView {
   
   private func getDuration(_ slice: UPsSlice) -> CFTimeInterval {
     return CFTimeInterval(slice.percentAll / 1.0 * duration)
-  }
-  
-  private func setInitialize() {
-    self.sliceIndex = 0
-    self.percent = 0
-    
-    self.layer.sublayers = nil
-    
-    self.subviews
-      .filter { $0 is UILabel }
-      .forEach { $0.removeFromSuperview() }
   }
 }
 
