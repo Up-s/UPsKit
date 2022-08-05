@@ -25,6 +25,7 @@
 		A750CE13FCCFBC6FD52E9E55A59DB8F8 /* Pods-UPsKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3AEC627CD78C4EB12003C9126BE1ED /* Pods-UPsKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD04A4BF286DF93800545F0D /* UPsShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A4BE286DF93800545F0D /* UPsShadowView.swift */; };
 		BD04A4C3286F551200545F0D /* UPsAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A4C2286F551200545F0D /* UPsAlertModel.swift */; };
+		BD11DAC7289CFF0600B39D51 /* UPsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD11DAC6289CFF0600B39D51 /* UPsTextView.swift */; };
 		BD1DB51428717D2E0075D3B4 /* Extension+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */; };
 		BD1DB51628717EBD0075D3B4 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51528717EBD0075D3B4 /* DebugLog.swift */; };
 		BD4A2B7A2875DA8300DAFC5D /* UPsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */; };
@@ -100,6 +101,7 @@
 		B891910E9BAF172A6A7D5DDA9957E72C /* Pods-UPsKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPsKit_Tests.modulemap"; sourceTree = "<group>"; };
 		BD04A4BE286DF93800545F0D /* UPsShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsShadowView.swift; path = UPsKit/Classes/UPsShadowView.swift; sourceTree = "<group>"; };
 		BD04A4C2286F551200545F0D /* UPsAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsAlertModel.swift; path = UPsKit/Classes/UPsAlertModel.swift; sourceTree = "<group>"; };
+		BD11DAC6289CFF0600B39D51 /* UPsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsTextView.swift; path = UPsKit/Classes/UPsTextView.swift; sourceTree = "<group>"; };
 		BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+DateComponents.swift"; path = "UPsKit/Classes/Extension+DateComponents.swift"; sourceTree = "<group>"; };
 		BD1DB51528717EBD0075D3B4 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugLog.swift; path = UPsKit/Classes/DebugLog.swift; sourceTree = "<group>"; };
 		BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsStackView.swift; path = UPsKit/Classes/UPsStackView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				BD6EBC0B289568D100244CBF /* UPsSlice.swift */,
 				BD04A4BE286DF93800545F0D /* UPsShadowView.swift */,
 				BD4A2B792875DA8300DAFC5D /* UPsStackView.swift */,
+				BD11DAC6289CFF0600B39D51 /* UPsTextView.swift */,
 				48908345B3839EF5BA5CA4FB05D923E6 /* Pod */,
 				8AC8DAD6D8469886F17F0629E3A7C69C /* Support Files */,
 			);
@@ -452,6 +455,7 @@
 				E3BA2A7E26840D2C5440F91B635543A7 /* Extension+UITextField.swift in Sources */,
 				EA32BAFC5117F8484E021B5E8739651B /* Extension+UIView.swift in Sources */,
 				4FBEE8CE285718C900F4B8B3 /* Extension+Date.swift in Sources */,
+				BD11DAC7289CFF0600B39D51 /* UPsTextView.swift in Sources */,
 				BD4A2B7A2875DA8300DAFC5D /* UPsStackView.swift in Sources */,
 				BD1DB51428717D2E0075D3B4 /* Extension+DateComponents.swift in Sources */,
 				BD5D74842868597900DEE3F5 /* Extension+UIBarButtonItem.swift in Sources */,
