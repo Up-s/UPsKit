@@ -14,6 +14,7 @@ public class UPsPieChartView: UIView {
   private var slices: [UPsSlice] = []
   private var sliceIndex: Int = 0
   private var percent: CGFloat = 0
+  private var labels: [UILabel] = []
   
   private var canvasSize: CGFloat {
     let width = self.bounds.size.width
@@ -62,10 +63,9 @@ public class UPsPieChartView: UIView {
   private func resetContent() {
     self.sliceIndex = 0
     self.percent = 0
-    self.layer.sublayers = nil
-    self.subviews
-      .filter { $0 is UILabel }
+    self.labels
       .forEach { $0.removeFromSuperview() }
+    self.layer.sublayers = nil
   }
   
   private func addSlice(_ slice: UPsSlice) {
@@ -110,6 +110,7 @@ public class UPsPieChartView: UIView {
     label.layer.masksToBounds = true
     label.layer.borderColor = slice.color.cgColor
     label.layer.borderWidth = 4.0
+    self.labels.append(label)
     self.addSubview(label)
     
     label.translatesAutoresizingMaskIntoConstraints = false
