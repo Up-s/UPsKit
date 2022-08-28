@@ -19,25 +19,26 @@ extension UIViewController {
   
   // MARK: - AlertController
   
-  public func alertBase(_ model: UPsAlertBaseModel, completion: (() -> Void)? = nil) {
-    let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: model.style)
-    for action in model.actions {
+  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertAction], completion: (() -> Void)? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+    for action in actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
       alert.addAction(tempAction)
+      
     }
     self.present(alert, animated: true, completion: completion)
   }
   
-  public func alertTextField(_ model: UPsAlertTextFieldModel, completion: (() -> Void)? = nil) {
-    let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: .alert)
+  public func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField {
-      $0.keyboardType = model.keyboardType
-      $0.placeholder = model.placeholder
+      $0.keyboardType = keyboardType
+      $0.placeholder = placeholder
     }
     
-    let action = UIAlertAction(title: model.actionTitle, style: .default) { _ in
+    let action = UIAlertAction(title: actionTitle, style: .default) { _ in
       let text = alert.textFields?[0].text
-      model.handler?(text)
+      handler?(text)
     }
     alert.addAction(action)
     
