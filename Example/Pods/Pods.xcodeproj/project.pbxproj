@@ -24,7 +24,7 @@
 		A31DDB821CED8F2FFE28D45392BD2A24 /* UPsKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05538079CCB17C457E776B00280B07F2 /* UPsKit-dummy.m */; };
 		A750CE13FCCFBC6FD52E9E55A59DB8F8 /* Pods-UPsKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3AEC627CD78C4EB12003C9126BE1ED /* Pods-UPsKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD04A4BF286DF93800545F0D /* UPsShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A4BE286DF93800545F0D /* UPsShadowView.swift */; };
-		BD04A4C3286F551200545F0D /* UPsAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A4C2286F551200545F0D /* UPsAlertModel.swift */; };
+		BD04A4C3286F551200545F0D /* UPsAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04A4C2286F551200545F0D /* UPsAlertAction.swift */; };
 		BD11DAC7289CFF0600B39D51 /* UPsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD11DAC6289CFF0600B39D51 /* UPsTextView.swift */; };
 		BD1DB51428717D2E0075D3B4 /* Extension+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */; };
 		BD1DB51628717EBD0075D3B4 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DB51528717EBD0075D3B4 /* DebugLog.swift */; };
@@ -100,7 +100,7 @@
 		B6A33E8791BE923773700FB12B363531 /* UPsKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UPsKit.modulemap; sourceTree = "<group>"; };
 		B891910E9BAF172A6A7D5DDA9957E72C /* Pods-UPsKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPsKit_Tests.modulemap"; sourceTree = "<group>"; };
 		BD04A4BE286DF93800545F0D /* UPsShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsShadowView.swift; path = UPsKit/Classes/UPsShadowView.swift; sourceTree = "<group>"; };
-		BD04A4C2286F551200545F0D /* UPsAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsAlertModel.swift; path = UPsKit/Classes/UPsAlertModel.swift; sourceTree = "<group>"; };
+		BD04A4C2286F551200545F0D /* UPsAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsAlertAction.swift; path = UPsKit/Classes/UPsAlertAction.swift; sourceTree = "<group>"; };
 		BD11DAC6289CFF0600B39D51 /* UPsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsTextView.swift; path = UPsKit/Classes/UPsTextView.swift; sourceTree = "<group>"; };
 		BD1DB51328717D2E0075D3B4 /* Extension+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+DateComponents.swift"; path = "UPsKit/Classes/Extension+DateComponents.swift"; sourceTree = "<group>"; };
 		BD1DB51528717EBD0075D3B4 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugLog.swift; path = UPsKit/Classes/DebugLog.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 				D9BE5688A8BCCAD1F74FDE84A0562D17 /* Extensoin+UIImage.swift */,
 				BD1DB51528717EBD0075D3B4 /* DebugLog.swift */,
 				4FC4590D285711B60073A96F /* Snippets.swift */,
-				BD04A4C2286F551200545F0D /* UPsAlertModel.swift */,
+				BD04A4C2286F551200545F0D /* UPsAlertAction.swift */,
 				5BFBCD80FDEC8C9D07F8B104439A986A /* UPsIndicatorViewController.swift */,
 				BD5D747F2868522600DEE3F5 /* UPsLeftAlignCollectionView.swift */,
 				BD5D747D28679D9100DEE3F5 /* UPsPaddingLabel.swift */,
@@ -442,7 +442,7 @@
 				BD5D74802868522600DEE3F5 /* UPsLeftAlignCollectionView.swift in Sources */,
 				BD04A4BF286DF93800545F0D /* UPsShadowView.swift in Sources */,
 				BD1DB51628717EBD0075D3B4 /* DebugLog.swift in Sources */,
-				BD04A4C3286F551200545F0D /* UPsAlertModel.swift in Sources */,
+				BD04A4C3286F551200545F0D /* UPsAlertAction.swift in Sources */,
 				4FC4590E285711B60073A96F /* Snippets.swift in Sources */,
 				C995D74B2B5B2081D83F6558A752FE96 /* Extension+Int.swift in Sources */,
 				DF698C40C9544621ED07BF06A73A7EBF /* Extension+NSMutableAttributedString.swift in Sources */,
