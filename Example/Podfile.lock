@@ -1,16 +1,24 @@
 PODS:
-  - UPsKit (0.2.1)
+  - SnapKit (5.0.1)
+  - UPsKit (0.11.3):
+    - SnapKit (~> 5.0.0)
 
 DEPENDENCIES:
+  - SnapKit (~> 5.0.0)
   - UPsKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
 
 EXTERNAL SOURCES:
   UPsKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UPsKit: 09a241ff4edd33bc05b132a6b037bb3399c477dd
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  UPsKit: 73e3d60a83d6f9d628aecb7ef19a1e563ae41690
 
-PODFILE CHECKSUM: 465e9b78eb2ee41521d7d4697a505959a85e80e5
+PODFILE CHECKSUM: 4a876b7b90871475820e1abdc9f764bfbbfedd8e
 
 COCOAPODS: 1.11.3

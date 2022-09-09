@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 final class UPsIndicatorViewController: UIViewController {
   
   // MARK: - Property
@@ -40,11 +42,9 @@ final class UPsIndicatorViewController: UIViewController {
   private func setConstraint() {
     let guide = self.view.safeAreaLayoutGuide
     
-    self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+    self.indicatorView.snp.makeConstraints { make in
+      make.center.equalTo(guide)
+    }
     
-    NSLayoutConstraint.activate([
-      self.indicatorView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-      self.indicatorView.centerYAnchor.constraint(equalTo: guide.centerYAnchor)
-    ])
   }
 }
