@@ -17,6 +17,51 @@ extension UIViewController {
   
   
   
+  // MARK: - Toast
+  
+  public func showToast(_ title: String) {
+    let tempToastLabel = UPsPaddingLabel(x: 24, y: 16)
+    tempToastLabel.text = title
+    tempToastLabel.font = .boldSystemFont(ofSize: 16)
+    tempToastLabel.alpha = 0
+    tempToastLabel.numberOfLines = 0
+    tempToastLabel.textAlignment = .center
+    tempToastLabel.textColor = .white
+    tempToastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+    tempToastLabel.layer.cornerRadius = 4
+    tempToastLabel.layer.masksToBounds = true
+    self.view.addSubview(tempToastLabel)
+
+    let guide = self.view.safeAreaLayoutGuide
+    tempToastLabel.translatesAutoresizingMaskIntoConstraints = false
+    tempToastLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
+    tempToastLabel.widthAnchor.constraint(lessThanOrEqualTo: guide.widthAnchor, multiplier: 1, constant: -48).isActive = true
+    let topConstraint = tempToastLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 4)
+    topConstraint.isActive = true
+
+    let duration: Double = 0.5
+    let delay: Double = 2
+    DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.1) { [weak self] in
+        UIView.animate(withDuration: duration) {
+            topConstraint.constant += 12
+            tempToastLabel.alpha = 1
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    DispatchQueue.main.asyncAfter(wallDeadline: .now() + Double(duration + delay)) { [weak self] in
+        UIView.animate(withDuration: duration, animations: {
+            topConstraint.constant -= 12
+            tempToastLabel.alpha = 0
+            self?.view.layoutIfNeeded()
+        }) { _ in
+            tempToastLabel.removeFromSuperview()
+        }
+    }
+  }
+  
+  
+  
   // MARK: - AlertController
   
   public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertAction], completion: (() -> Void)? = nil) {
@@ -29,7 +74,7 @@ extension UIViewController {
     self.present(alert, animated: true, completion: completion)
   }
   
-  public func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
+  public func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, cancel: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField {
       $0.keyboardType = keyboardType
@@ -42,7 +87,7 @@ extension UIViewController {
     }
     alert.addAction(action)
     
-    let cancel = UIAlertAction(title: "닫기", style: .cancel)
+    let cancel = UIAlertAction(title: cancel, style: .cancel)
     alert.addAction(cancel)
     
     self.present(alert, animated: true, completion: completion)

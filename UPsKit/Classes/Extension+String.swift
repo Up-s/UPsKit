@@ -25,10 +25,34 @@ extension String {
     return predicate.evaluate(with: self)
   }
   
-  public func toDate(_ formatter: Date.Formatter) -> Date? {
+  public func toDate(_ formatter: UPsFormatter.Date) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter.rawValue
     dateFormatter.locale = Locale(identifier: "ko_KR")
     return dateFormatter.date(from: self)
+  }
+  
+  public var removeComma: Int? {
+    let removeString = self.replacingOccurrences(of: ",", with: "")
+    return Int(removeString)
+  }
+  
+  public var removeHyphen: String {
+    let removeString = self.replacingOccurrences(of: "-", with: "")
+    return removeString
+  }
+  
+  
+  public func numberPattern(pattern: UPsFormatter.Pattern) -> String {
+    let replacmentCharacter: Character = "#"
+    var pureNumber = self.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
+    for index in 0 ..< pattern.rawValue.count {
+      guard index < pureNumber.count else { return pureNumber }
+      let stringIndex = String.Index(utf16Offset: index, in: pattern.rawValue)
+      let patternCharacter = pattern.rawValue[stringIndex]
+      guard patternCharacter != replacmentCharacter else { continue }
+      pureNumber.insert(patternCharacter, at: stringIndex)
+    }
+    return pureNumber
   }
 }

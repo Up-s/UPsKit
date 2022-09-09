@@ -9,15 +9,7 @@ import Foundation
 
 extension Date {
   
-  public enum Formatter: String {
-    
-    case HHmmss = "HH:mm:ss"
-    case MdEEEEEHHmm = "M월 d일 (EEEEE) HH:mm"
-    case MdEEEEEHHmmss = "M월 d일 (EEEEE) HH:mm:ss"
-    case yyyyMMdd = "yyyy-MM-dd"
-  }
-  
-  public func toString(_ formatter: Formatter) -> String {
+  public func toString(_ formatter: UPsFormatter.Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter.rawValue
     dateFormatter.locale = Locale(identifier: "ko_KR")

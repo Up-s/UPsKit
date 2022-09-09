@@ -10,6 +10,8 @@
  
 import UIKit
 
+import SnapKit
+
 final class <#Nanem#>View: BaseView {
   
   // MARK: - Property
@@ -57,6 +59,9 @@ final class <#Nanem#>View: BaseView {
 /*
  
 import UIKit
+
+import RxCocoa
+import RxSwift
 
 final class <#Name#>ViewController: BaseViewController {
   
@@ -149,6 +154,8 @@ final class <#Name#>ViewModel: BaseViewModel {
 
 import UIKit
 
+import SnapKit
+
 final class <#Name#>TableViewCell: UITableViewCell {
   
   static let identifier = "<#TableViewCell#>"
@@ -202,6 +209,8 @@ final class <#Name#>TableViewCell: UITableViewCell {
 /*
 
 import UIKit
+
+import SnapKit
 
 final class <#Name#>CollectionViewCell: UICollectionViewCell {
     
@@ -329,4 +338,14 @@ print(" <#class#> | \(#function), \(code), \(msg)")
 
 print("\n---------------------- [ \(#function) ] ----------------------")
  
+*/
+
+
+
+
+
+/*
+
+print("\n-----------------------------------")
+
 */

@@ -18,4 +18,8 @@ public struct UPsAlertAction {
     self.style = style
     self.handler = handler
   }
+  
+  public static func cancel(_ title: String = "닫기") -> UPsAlertAction {
+    UPsAlertAction(title: title)
+  }
 }
