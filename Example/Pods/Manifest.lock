@@ -1,14 +1,45 @@
 PODS:
+  - Alamofire (5.6.2)
+  - FSCalendar (2.8.4)
+  - Kingfisher (6.3.1)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.0.1)
-  - UPsKit (0.11.3):
+  - UPsKit (0.11.4):
+    - FSCalendar
+    - Kingfisher (~> 6.0)
+    - Moya/RxSwift (~> 15.0)
+    - RxCocoa (~> 6.5.0)
+    - RxSwift (~> 6.5.0)
     - SnapKit (~> 5.0.0)
 
 DEPENDENCIES:
+  - FSCalendar
+  - Kingfisher (~> 6.0)
+  - Moya/RxSwift (~> 15.0)
+  - RxCocoa (~> 6.5.0)
+  - RxSwift (~> 6.5.0)
   - SnapKit (~> 5.0.0)
   - UPsKit (from `../`)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - FSCalendar
+    - Kingfisher
+    - Moya
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -16,9 +47,16 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  UPsKit: 73e3d60a83d6f9d628aecb7ef19a1e563ae41690
+  UPsKit: e46cb63fd26b16667263e3c29e4edfea0007ee3c
 
-PODFILE CHECKSUM: 4a876b7b90871475820e1abdc9f764bfbbfedd8e
+PODFILE CHECKSUM: 162e94448063b08c48de25f7559d644715c86328
 
 COCOAPODS: 1.11.3
