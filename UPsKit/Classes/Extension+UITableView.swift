@@ -44,7 +44,7 @@ extension UITableView {
 
 extension Reactive where Base: UITableView {
   
-  var reload: Binder<Void> {
+  public var reload: Binder<Void> {
     return Binder(self.base) { tableView, _ in
       tableView.reloadData()
     }

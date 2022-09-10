@@ -28,7 +28,7 @@ extension UICollectionView {
 
 extension Reactive where Base: UICollectionView {
   
-  var reload: Binder<Void> {
+  public var reload: Binder<Void> {
     return Binder(self.base) { collectionView, _ in
       collectionView.reloadData()
     }

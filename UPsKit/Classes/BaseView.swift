@@ -12,6 +12,8 @@ open class BaseView: UIView {
   public var bottomViewConstraint: NSLayoutConstraint?
   public var bottomViewConstant: CGFloat?
   
+  
+  
   public init() {
     super.init(frame: .zero)
     self.backgroundColor = .white
@@ -19,6 +21,10 @@ open class BaseView: UIView {
   
   public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  deinit {
+      print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")
   }
 }
 

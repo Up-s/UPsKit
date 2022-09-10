@@ -151,36 +151,36 @@ extension UIViewController {
 
 extension Reactive where Base: UIViewController {
   
-  var viewWillApper: Observable<Void> {
+  public var viewWillApper: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillAppear(_:)))
       .map { _ in }
   }
   
-  var viewWillDisappear: Observable<Void> {
+  public var viewWillDisappear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillDisappear(_:)))
       .map { _ in }
   }
   
-  var viewDidAppear: Observable<Void> {
+  public var viewDidAppear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewDidAppear(_:)))
       .map { _ in }
   }
   
-  var viewDidDisappear: Observable<Void> {
+  public var viewDidDisappear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
       .map { _ in }
   }
   
-  var viewWillTransition: Observable<Void> {
+  public var viewWillTransition: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillTransition(to:with:)))
       .map { _ in }
   }
   
-  var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
+  public var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
     return RxUIAdaptivePresentationControllerDelegateProxy.proxy(for: self.base)
   }
   
-  var presentationControllerDidDismiss: Observable<UIPresentationController?> {
+  public var presentationControllerDidDismiss: Observable<UIPresentationController?> {
     return delegate
       .methodInvoked(#selector(UIAdaptivePresentationControllerDelegate.presentationControllerDidDismiss(_:)))
       .map { arr -> UIPresentationController? in
