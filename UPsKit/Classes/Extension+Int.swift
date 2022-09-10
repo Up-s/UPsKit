@@ -7,6 +7,8 @@
 
 import Foundation
 
+import RxSwift
+
 extension Int {
   
   public func toTimer(_ formatter: UPsFormatter.Timer) -> String {
@@ -52,6 +54,51 @@ extension Int {
     case false:
       let min = self % 60
       return String(format: "%d분", min)
+    }
+  }
+}
+
+
+
+// MARK: - ObservableType
+
+extension ObservableType where Element == Int {
+  
+  func fullTimer() -> Observable<String> {
+    return map { timer in
+      let millisec = timer % 100
+      let sec = (timer / 100) % 60
+      let min = ((timer / 100) / 60) % 60
+      let hour = (((timer / 100) / 60) / 60) % 60
+      return String(format: "%d: %02d : %02d . %02d", hour, min, sec, millisec)
+    }
+  }
+  
+  func hour() -> Observable<String> {
+    return map { timer in
+      let hour = (((timer / 100) / 60) / 60) % 60
+      return String(format: "%02d", hour)
+    }
+  }
+  
+  func min() -> Observable<String> {
+    return map { timer in
+      let min = ((timer / 100) / 60) % 60
+      return String(format: "%02d", min)
+    }
+  }
+  
+  func sec() -> Observable<String> {
+    return map { timer in
+      let sec = (timer / 100) % 60
+      return String(format: "%02d", sec)
+    }
+  }
+  
+  func millisec() -> Observable<String> {
+    return map { timer in
+      let millisec = timer % 100
+      return String(format: "%02d", millisec)
     }
   }
 }

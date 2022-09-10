@@ -7,6 +7,9 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 extension UIViewController {
   
   // MARK: - ScenCondinator
@@ -140,6 +143,65 @@ extension UIViewController {
   @objc private func dismissAction(_ sender: UIBarButtonItem) {
     self.dismiss(animated: true)
   }
+}
+
+
+
+// MARK: - Reactive
+
+extension Reactive where Base: UIViewController {
   
+  var viewWillApper: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewWillAppear(_:)))
+      .map { _ in }
+  }
   
+  var viewWillDisappear: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewWillDisappear(_:)))
+      .map { _ in }
+  }
+  
+  var viewDidAppear: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewDidAppear(_:)))
+      .map { _ in }
+  }
+  
+  var viewDidDisappear: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
+      .map { _ in }
+  }
+  
+  var viewWillTransition: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewWillTransition(to:with:)))
+      .map { _ in }
+  }
+  
+  var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
+    return RxUIAdaptivePresentationControllerDelegateProxy.proxy(for: self.base)
+  }
+  
+  var presentationControllerDidDismiss: Observable<UIPresentationController?> {
+    return delegate
+      .methodInvoked(#selector(UIAdaptivePresentationControllerDelegate.presentationControllerDidDismiss(_:)))
+      .map { arr -> UIPresentationController? in
+        return (arr.first as? UIPresentationController)
+      }
+  }
+}
+
+public class RxUIAdaptivePresentationControllerDelegateProxy: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate>, DelegateProxyType, UIAdaptivePresentationControllerDelegate {
+  
+  public static func registerKnownImplementations() {
+    self.register { viewController -> RxUIAdaptivePresentationControllerDelegateProxy in
+      RxUIAdaptivePresentationControllerDelegateProxy(parentObject: viewController, delegateProxy: self)
+    }
+  }
+  
+  public static func currentDelegate(for object: UIViewController) -> UIAdaptivePresentationControllerDelegate? {
+    return object.navigationController?.presentationController?.delegate
+  }
+  
+  public static func setCurrentDelegate(_ delegate: UIAdaptivePresentationControllerDelegate?, to object: UIViewController) {
+    object.navigationController?.presentationController?.delegate = delegate
+  }
 }
