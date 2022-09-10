@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-public class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
   
   public let disposeBag = DisposeBag()
   

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BaseView: UIView {
+open class BaseView: UIView {
   
   public var bottomViewConstraint: NSLayoutConstraint?
   public var bottomViewConstant: CGFloat?
@@ -17,7 +17,7 @@ public class BaseView: UIView {
     self.backgroundColor = .white
   }
   
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }

@@ -10,21 +10,19 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-public class BaseViewModel: NSObject {
+open class BaseViewModel: NSObject {
   
   public struct Base {
-    let backDidTap = PublishRelay<Void>()
-    let dismissDidTap = PublishRelay<Void>()
-    let adaptiveDismiss = PublishRelay<UIPresentationController?>()
-    let networkError = PublishRelay<Error>()
+    public let backDidTap = PublishRelay<Void>()
+    public let dismissDidTap = PublishRelay<Void>()
+    public let adaptiveDismiss = PublishRelay<UIPresentationController?>()
+    public let networkError = PublishRelay<Error>()
   }
   
   public let base = Base()
   
-  
   public let coordinator: SceneCoordinator
   public let disposeBag: DisposeBag
-  
   
   
   
@@ -62,7 +60,8 @@ public class BaseViewModel: NSObject {
     
     self.base.networkError
       .bind { [weak self] error in
-        self?.coordinator.showToast(error.localizedDescription)
+        self?.coordinator.toast(error.localizedDescription)
+        self?.debugLog(#function, #line, error)
       }
       .disposed(by: self.disposeBag)
   }

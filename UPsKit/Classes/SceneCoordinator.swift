@@ -32,9 +32,9 @@ public class SceneCoordinator {
   // MARK: - Transition
   
   @discardableResult
-  public func transition(scene: Scene, style: SceneTransitionStyle, animated: Bool = true) -> Completable {
+  public func transition(scene: SceneProtocol, style: SceneTransitionStyle, animated: Bool = true) -> Completable {
     let subject = PublishSubject<Never>()
-    let target = scene.viewController
+    let target = scene.target
     
     switch style {
     case .root:
@@ -84,15 +84,15 @@ public class SceneCoordinator {
   
   // MARK: - Toast
   
-  public func showToast(_ title: String) {
-    self.currentVC.showToast(title)
+  public func toast(_ title: String) {
+    self.currentVC.toast(title)
   }
   
   
   
   // MARK: - Alert
   
-  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertAction], completion: (() -> Void)? = nil) {
+  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertActionProtocol], completion: (() -> Void)? = nil) {
     self.currentVC.alert(title: title, message: message, style: style, actions: actions, completion: completion)
   }
   

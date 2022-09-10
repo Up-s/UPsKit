@@ -19,7 +19,7 @@ extension UIViewController {
   
   // MARK: - Toast
   
-  public func showToast(_ title: String) {
+  public func toast(_ title: String) {
     let tempToastLabel = UPsPaddingLabel(x: 24, y: 16)
     tempToastLabel.text = title
     tempToastLabel.font = .boldSystemFont(ofSize: 16)
@@ -64,7 +64,7 @@ extension UIViewController {
   
   // MARK: - AlertController
   
-  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertAction], completion: (() -> Void)? = nil) {
+  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertActionProtocol], completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     for action in actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
