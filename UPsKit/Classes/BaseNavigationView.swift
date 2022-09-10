@@ -11,31 +11,41 @@ import SnapKit
 import RxCocoa
 import RxSwift
 
-public class BaseNavigationView: UIStackView {
+public class BaseNavigationView: UIView {
   
-  public struct Metick {
-    static let height: CGFloat = 44.0
-    static let buttonWidth: CGFloat = 56.0
+  public struct Metric {
+    static let height: CGFloat = 48.0
+    static let buttonWidth: CGFloat = 48.0
+    static let spacing: CGFloat = 12.0
   }
   
   public enum InStyle {
+    case none
     case back
     case dismiss
-    case main
+  }
+  
+  public enum Direction {
+    case left
+    case right
   }
   
   // MARK: - Property
   
+  private let contentStackView = UPsStackView(axis: .horizontal)
+  private let leftStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
+  private let rightStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
+  
   public let leftButton = UIButton()
   public let navTitleLabel = UILabel()
-  public let rightButton = UIButton()
   
   private let inStyle: InStyle
   
   
+  
   // MARK: - Life Cycle
   
-  public init(_ inStyle: InStyle) {
+  public init(_ inStyle: InStyle = .none) {
     self.inStyle = inStyle
     
     super.init(frame: .zero)
@@ -48,10 +58,36 @@ public class BaseNavigationView: UIStackView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  
+  
   // MARK: - Interface
   
   public func updateStyle(_ style: InStyle) {
     
+  }
+  
+  public func addImageButton(_ button: UIButton, _ direction: Direction) {
+    switch direction {
+    case .left:
+      self.leftStackView.addArrangedSubview(button)
+      
+    case .right:
+      self.rightStackView.addArrangedSubview(button)
+    }
+    
+    button.snp.makeConstraints { make in
+      make.width.greaterThanOrEqualTo(Metric.buttonWidth)
+    }
+  }
+  
+  public func addTextButton(_ button: UIButton, _ direction: Direction) {
+    switch direction {
+    case .left:
+      self.leftStackView.addArrangedSubview(button)
+      
+    case .right:
+      self.rightStackView.addArrangedSubview(button)
+    }
   }
   
   
@@ -59,49 +95,48 @@ public class BaseNavigationView: UIStackView {
   // MARK: - UI
   
   private func setAttribute() {
-    self.axis = .horizontal
-    self.alignment = .fill
-    self.distribution = .fill
-    self.spacing = 0
     self.backgroundColor = .clear
     
     self.navTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
     self.navTitleLabel.textColor = .black
     
     switch self.inStyle {
+    case .none:
+      break
+      
     case .back:
       let chevronLeft = UIImage(systemName: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
       self.leftButton.tintColor = .black
+      self.leftStackView.addArrangedSubview(self.leftButton)
       
     case .dismiss:
       let chevronDown = UIImage(systemName: "chevron.down")
       self.leftButton.setImage(chevronDown, for: .normal)
       self.leftButton.tintColor = .black
-      
-    case .main:
-      let gearshape = UIImage(systemName: "gearshape")
-      self.leftButton.setImage(gearshape, for: .normal)
-      self.leftButton.tintColor = .black
-      
-      let plus = UIImage(systemName: "plus")
-      self.rightButton.setImage(plus, for: .normal)
-      self.rightButton.tintColor = .black
+      self.leftStackView.addArrangedSubview(self.leftButton)
     }
     
-    [self.leftButton, self.navTitleLabel, self.rightButton]
-      .forEach(self.addArrangedSubview(_:))
+    
+    
+    self.addSubview(self.contentStackView)
+
+    [self.leftStackView, self.navTitleLabel, self.rightStackView]
+      .forEach(self.contentStackView.addArrangedSubview(_:))
   }
   
   private func setConstraint() {
     self.snp.makeConstraints { make in
-      make.height.equalTo(Metick.height)
+      make.height.equalTo(Metric.height)
     }
     
-    [self.leftButton, self.rightButton].forEach {
-      $0.snp.makeConstraints { make in
-        make.width.equalTo(Metick.buttonWidth)
-      }
+    self.contentStackView.snp.makeConstraints { make in
+      make.top.bottom.equalToSuperview()
+      make.leading.trailing.equalToSuperview().inset(8.0)
+    }
+
+    self.leftButton.snp.makeConstraints { make in
+      make.width.equalTo(Metric.buttonWidth)
     }
   }
 }

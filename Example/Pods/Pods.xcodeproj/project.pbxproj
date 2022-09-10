@@ -406,6 +406,7 @@
 		BC1A04CE0A9851F3C003ECD156BE95AC /* FSCalendarStickyHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D58F738CB5AB562B6A9D66F695F2F971 /* FSCalendarStickyHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD2547829D9102721D47FC9DF6B2CEBB /* Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488C3E7F7605BE88699E5764889EEDD /* Completable.swift */; };
 		BD333CDBCF5D2FD55920336FC271DF33 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230712F8CC4CD787261AC5FF40A276CC /* ConstraintItem.swift */; };
+		BD993E4328CD09AE00CAF1EC /* Extension+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD993E4228CD09AE00CAF1EC /* Extension+Optional.swift */; };
 		BDE998D328CB5BF8002B40B3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE998D228CB5BF8002B40B3 /* BaseViewController.swift */; };
 		BDE998D528CB5C00002B40B3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE998D428CB5C00002B40B3 /* BaseViewModel.swift */; };
 		BDE998D928CB952A002B40B3 /* NavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE998D828CB952A002B40B3 /* NavigationProtocol.swift */; };
@@ -1125,6 +1126,7 @@
 		BC5162E56A6718F1D161658AC78DB699 /* ElementAt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementAt.swift; path = RxSwift/Observables/ElementAt.swift; sourceTree = "<group>"; };
 		BD10B259B33555FF9B31C0C90F4FBC13 /* Cancelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancelable.swift; path = RxSwift/Cancelable.swift; sourceTree = "<group>"; };
 		BD2A8A6EDDC9DAE08786F81F25C57738 /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationProxy.m; path = FSCalendar/FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
+		BD993E4228CD09AE00CAF1EC /* Extension+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Optional.swift"; sourceTree = "<group>"; };
 		BDE998D228CB5BF8002B40B3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = UPsKit/Classes/BaseViewController.swift; sourceTree = "<group>"; };
 		BDE998D428CB5C00002B40B3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = UPsKit/Classes/BaseViewModel.swift; sourceTree = "<group>"; };
 		BDE998D828CB952A002B40B3 /* NavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationProtocol.swift; path = UPsKit/Classes/NavigationProtocol.swift; sourceTree = "<group>"; };
@@ -1406,6 +1408,7 @@
 				A21EFB06D49BA752D62F5AD5467E3E3D /* Extension+Int.swift */,
 				1493C05FD03677E068DAE975771D187C /* Extension+NSMutableAttributedString.swift */,
 				BDE998EE28CB9D07002B40B3 /* Extension+NSObject.swift */,
+				BD993E4228CD09AE00CAF1EC /* Extension+Optional.swift */,
 				8F7DFB9A3CEC1D78B64AFDAEE3D8F642 /* Extension+String.swift */,
 				2C9FC583F1CEFC8DED38CD7A776572EF /* Extension+UIBarButtonItem.swift */,
 				BDE998EA28CB99BA002B40B3 /* Extension+UICollectionView.swift */,
@@ -2984,6 +2987,7 @@
 				BDE998D328CB5BF8002B40B3 /* BaseViewController.swift in Sources */,
 				4086EC6DAF647C3DAB65B7CD0A28B186 /* Extension+String.swift in Sources */,
 				B1E20616F4D11BC5E1EE589DCF1687A1 /* Extension+UIBarButtonItem.swift in Sources */,
+				BD993E4328CD09AE00CAF1EC /* Extension+Optional.swift in Sources */,
 				BDE998EF28CB9D07002B40B3 /* Extension+NSObject.swift in Sources */,
 				BDE998D928CB952A002B40B3 /* NavigationProtocol.swift in Sources */,
 				BDE998DD28CB96B3002B40B3 /* BaseNavigationView.swift in Sources */,
