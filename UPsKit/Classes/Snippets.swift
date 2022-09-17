@@ -92,7 +92,7 @@ final class <#Name#>ViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.config()
+    self.configure()
     self.bindViewModel()
   }
   
@@ -100,7 +100,7 @@ final class <#Name#>ViewController: BaseViewController {
   
   // MARK: - Interface
   
-  private func config() {
+  private func configure() {
     
   }
   
