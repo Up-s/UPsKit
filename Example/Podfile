@@ -5,9 +5,6 @@ platform :ios, '13.0'
 target 'UPsKit_Example' do
   pod 'UPsKit', :path => '../'
   
-  pod 'FSCalendar'
-  pod 'Kingfisher', '~> 6.0'
-  pod 'Moya/RxSwift', '~> 15.0'
   pod 'RxCocoa', '~> 6.5.0'
   pod 'RxSwift', '~> 6.5.0'
   pod 'SnapKit', '~> 5.0.0'

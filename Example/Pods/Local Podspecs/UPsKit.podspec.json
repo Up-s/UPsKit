@@ -1,6 +1,6 @@
 {
   "name": "UPsKit",
-  "version": "0.11.4",
+  "version": "2.4.2",
   "summary": "UPsKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Up-s/UPsKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Up-s/UPsKit.git",
-    "tag": "0.11.4"
+    "tag": "2.4.2"
   },
   "platforms": {
     "ios": "13.0"
@@ -21,15 +21,6 @@
   "source_files": "UPsKit/Classes/**/*",
   "swift_versions": "5.0",
   "dependencies": {
-    "FSCalendar": [
-
-    ],
-    "Kingfisher": [
-      "~> 6.0"
-    ],
-    "Moya/RxSwift": [
-      "~> 15.0"
-    ],
     "RxCocoa": [
       "~> 6.5.0"
     ],
