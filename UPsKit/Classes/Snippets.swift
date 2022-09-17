@@ -11,6 +11,7 @@
 import UIKit
 
 import SnapKit
+import UPsKit
 
 final class <#Nanem#>View: BaseView {
   
@@ -62,6 +63,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import UPsKit
 
 final class <#Name#>ViewController: BaseViewController {
   
@@ -118,6 +120,7 @@ final class <#Name#>ViewController: BaseViewController {
 
 import RxCocoa
 import RxSwift
+import UPsKit
 
 final class <#Name#>ViewModel: BaseViewModel {
   
@@ -155,11 +158,10 @@ final class <#Name#>ViewModel: BaseViewModel {
 import UIKit
 
 import SnapKit
+import UPsKit
 
-final class <#Name#>TableViewCell: UITableViewCell {
-  
-  static let identifier = "<#TableViewCell#>"
-  
+final class <#Name#>TableViewCell: UITableViewCell, CellIdentifiable {
+
   // MARK: - Property
   
   
@@ -211,10 +213,9 @@ final class <#Name#>TableViewCell: UITableViewCell {
 import UIKit
 
 import SnapKit
+import UPsKit
 
-final class <#Name#>CollectionViewCell: UICollectionViewCell {
-    
-  static let identifier = "<#CollectionViewCell#>"
+final class <#Name#>CollectionViewCell: UICollectionViewCell, CellIdentifiable {
   
   // MARK: - Property
   
@@ -262,7 +263,7 @@ final class <#Name#>CollectionViewCell: UICollectionViewCell {
 
 /*
  
- // MARK: -
+// MARK: -
  
 */
 
@@ -315,18 +316,8 @@ final class Singleton {
 
 
 /*
- 
-print("\n---------------------- [ \(<#code#>) ] ----------------------")
 
-*/
-
-
-
-
-
-/*
-
-print(" <#class#> | \(#function), \(code), \(msg)")
+self.debugLog(#function, #line, error)
  
 */
 
