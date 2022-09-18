@@ -141,7 +141,7 @@ final class <#Name#>ViewModel: BaseViewModel {
   
   // MARK: - Interface
   
-  override init() {
+  init() {
     super.init()
     
   }
