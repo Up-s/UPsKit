@@ -86,7 +86,7 @@ final class <#Name#>ViewController: BaseViewController {
   }
  
   override func loadView() {
-    self.view = rootView
+    self.view = self.rootView
   }
   
   override func viewDidLoad() {
