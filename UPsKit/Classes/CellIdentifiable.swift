@@ -11,7 +11,7 @@ public protocol CellIdentifiable {
   static var identifier: String { get }
 }
 
-extension CellIdentifiable {
+public extension CellIdentifiable {
   static var identifier: String {
     return String(describing: self)
   }
