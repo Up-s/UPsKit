@@ -6,7 +6,7 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapKit (5.0.1)
-  - UPsKit (2.4.2):
+  - UPsKit (2.5.5):
     - RxCocoa (~> 6.5.0)
     - RxSwift (~> 6.5.0)
     - SnapKit (~> 5.0.0)
@@ -33,8 +33,8 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  UPsKit: 10e929ae8835d3fa7dcc5bf7b64d357bb8d14e06
+  UPsKit: 181daac464b8f91f04c8658e846eb604ba883b94
 
-PODFILE CHECKSUM: 5c7ea1bb90aa04cb39d6974337d4a6b0642b91ae
+PODFILE CHECKSUM: dfeb2f6bc8ce8aa87998344374a9b826cb75bc32
 
 COCOAPODS: 1.11.3

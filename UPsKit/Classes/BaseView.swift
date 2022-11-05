@@ -9,14 +9,13 @@ import UIKit
 
 open class BaseView: UIView {
   
-  public var bottomViewConstraint: NSLayoutConstraint?
-  public var bottomViewConstant: CGFloat?
+  public var targetViewConstraint: NSLayoutConstraint?
+  public var targetViewConstant: CGFloat?
   
   
   
   public init() {
     super.init(frame: .zero)
-    self.backgroundColor = .white
   }
   
   public required init?(coder: NSCoder) {
@@ -47,10 +46,10 @@ extension BaseView {
     let height: CGFloat
     switch notification.name {
     case UIResponder.keyboardWillShowNotification:
-      height = -keyboardFrame.cgRectValue.height + self.safeAreaInsets.bottom + (self.bottomViewConstant ?? 0)
+      height = -keyboardFrame.cgRectValue.height + self.safeAreaInsets.bottom + (self.targetViewConstant ?? 0)
       
     case UIResponder.keyboardWillHideNotification:
-      height = self.bottomViewConstant ?? 0
+      height = self.targetViewConstant ?? 0
       
     default:
       return
@@ -58,7 +57,7 @@ extension BaseView {
     
     UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curve), animations: { [weak self] in
       guard let self = self else { return }
-      self.bottomViewConstraint?.constant = height
+      self.targetViewConstraint?.constant = height
       self.layoutIfNeeded()
     })
   }
