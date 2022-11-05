@@ -76,7 +76,7 @@ final class <#Name#>ViewController: BaseViewController {
   
   // MARK: - Life Cycle
  
-  init(_ viewModel: <#Name#>ViewMoel) {
+  init(_ viewModel: <#Name#>ViewModel) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
