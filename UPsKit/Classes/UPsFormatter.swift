@@ -15,6 +15,7 @@ public enum UPsFormatter {
     case MdEEEEEHHmmss = "M월 d일 (EEEEE) HH:mm:ss"
     case yyyy_MM_dd = "yyyy-MM-dd"
     case yyyyMMdd
+    case yyyyMM
     case yyyy
     case MM
   }
