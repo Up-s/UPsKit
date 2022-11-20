@@ -7,29 +7,31 @@
 
 open class UPsStackView: UIStackView {
   
-  public init(axis: NSLayoutConstraint.Axis, spacing: CGFloat = 0.0) {
+  public init(
+    axis: NSLayoutConstraint.Axis,
+    alignment: UIStackView.Alignment? = nil,
+    distribution: UIStackView.Distribution? = nil,
+    spacing: CGFloat = 0.0,
+    margin: UIEdgeInsets? = nil
+  ) {
     super.init(frame: .zero)
     
     self.axis = axis
-    self.alignment = .fill
-    self.distribution = .fill
-    self.spacing = spacing
-  }
-  
-  public init(axis: NSLayoutConstraint.Axis, alignment: UIStackView.Alignment? = nil, distribution: UIStackView.Distribution? = nil, spacing: CGFloat = 0.0) {
-    super.init(frame: .zero)
     
-    self.axis = axis
-    
-    if let temp = alignment {
-      self.alignment = temp
+    if let alignment = alignment {
+      self.alignment = alignment
     }
     
-    if let temp = distribution {
-      self.distribution = temp
+    if let distribution = distribution {
+      self.distribution = distribution
     }
     
     self.spacing = spacing
+    
+    if let margin = margin {
+      self.isLayoutMarginsRelativeArrangement = true
+      self.layoutMargins = margin
+    }
   }
   
   required public init(coder aDecoder: NSCoder) {
