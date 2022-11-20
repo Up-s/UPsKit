@@ -11,6 +11,31 @@ import RxSwift
 
 extension Int {
   
+  public func toTime() -> String {
+    var millisec = self * 1000
+    
+    let day = millisec / (24 * 3600 * 1000)
+    millisec -= day * (24 * 3600 * 1000)
+    let hour = millisec / (3600 * 1000)
+    millisec -= hour * (3600 * 1000)
+    let min = millisec / (60 * 1000)
+    millisec -= min * (60 * 1000)
+    let sec = millisec / 1000
+    
+    if day > 0 {
+      return String(format:"%d일 %d시 %d분 %d초", day, hour, min, sec)
+      
+    } else if hour > 0 {
+      return String(format:"%d시 %d분 %d초", hour, min, sec)
+      
+    } else if min > 0 {
+      return String(format:"%d분 %d초", min, sec)
+      
+    } else {
+      return String(format:"%d초", sec)
+    }
+  }
+  
   public func toTimer(_ formatter: UPsFormatter.Timer) -> String {
     switch formatter {
     case .HM:
