@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UPsKit'
-  s.version          = '2.5.13'
+  s.version          = '2.5.14'
   s.summary          = 'UPsKit'
 
 # This description is used to generate tags and improve search results.

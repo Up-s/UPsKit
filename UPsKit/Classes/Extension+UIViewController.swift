@@ -171,6 +171,11 @@ extension Reactive where Base: UIViewController {
       .map { _ in }
   }
   
+  public var viewDidLayoutSubviews: Observable<Void> {
+    return self.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
+      .map { _ in }
+  }
+  
   public var viewWillTransition: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillTransition(to:with:)))
       .map { _ in }
@@ -188,6 +193,10 @@ extension Reactive where Base: UIViewController {
       }
   }
 }
+
+
+
+// MARK: - DelegateProxy
 
 public class RxUIAdaptivePresentationControllerDelegateProxy: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate>, DelegateProxyType, UIAdaptivePresentationControllerDelegate {
   
