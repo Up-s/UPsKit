@@ -33,4 +33,18 @@ extension Reactive where Base: UICollectionView {
       collectionView.reloadData()
     }
   }
+  
+  public var performBatchUpdates: Observable<Void> {
+    return Observable<Void>.create { observer in
+      
+      self.base.performBatchUpdates {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+          observer.onNext(())
+          observer.onCompleted()
+        }
+      }
+      
+      return Disposables.create()
+    }
+  }
 }
