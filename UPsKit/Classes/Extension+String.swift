@@ -7,43 +7,43 @@
 
 import Foundation
 
-extension String {
+public extension String {
   
-  public var localized: String {
+  var localized: String {
     NSLocalizedString(self, tableName: "Localizable", value: self, comment: "")
   }
   
-  public func isValidateEmail() -> Bool {
+  var isValidEmail: Bool {
     let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
     let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     return predicate.evaluate(with: self)
   }
   
-  public func isValidatePassword() -> Bool {
+  var isValidPassword: Bool {
     let passwordRegEx = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,16}$"
     let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
     return predicate.evaluate(with: self)
   }
   
-  public func toDate(_ formatter: UPsFormatter.Date) -> Date? {
+  func toDate(_ formatter: UPsFormatter.Date) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter.rawValue
     dateFormatter.locale = Locale(identifier: "ko_KR")
     return dateFormatter.date(from: self)
   }
   
-  public var removeComma: Int? {
+  var removeComma: Int? {
     let removeString = self.replacingOccurrences(of: ",", with: "")
     return Int(removeString)
   }
   
-  public var removeHyphen: String {
+  var removeHyphen: String {
     let removeString = self.replacingOccurrences(of: "-", with: "")
     return removeString
   }
   
   
-  public func numberPattern(pattern: UPsFormatter.Pattern) -> String {
+  func numberPattern(pattern: UPsFormatter.Pattern) -> String {
     let replacmentCharacter: Character = "#"
     var pureNumber = self.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
     for index in 0 ..< pattern.rawValue.count {
