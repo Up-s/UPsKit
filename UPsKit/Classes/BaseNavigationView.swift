@@ -25,11 +25,6 @@ public class BaseNavigationView: UIView {
     case dismiss
   }
   
-  public enum Direction {
-    case left
-    case right
-  }
-  
   // MARK: - Property
   
   private let contentStackView = UPsStackView(axis: .horizontal)
@@ -62,32 +57,12 @@ public class BaseNavigationView: UIView {
   
   // MARK: - Interface
   
-  public func updateStyle(_ style: InStyle) {
-    
+  public func addNavigationLeftStackView(_ addView: UIView) {
+    self.leftStackView.addArrangedSubview(addView)
   }
   
-  public func addImageButton(_ button: UIButton, _ direction: Direction) {
-    switch direction {
-    case .left:
-      self.leftStackView.addArrangedSubview(button)
-      
-    case .right:
-      self.rightStackView.addArrangedSubview(button)
-    }
-    
-    button.snp.makeConstraints { make in
-      make.width.greaterThanOrEqualTo(Metric.buttonWidth)
-    }
-  }
-  
-  public func addTextButton(_ button: UIButton, _ direction: Direction) {
-    switch direction {
-    case .left:
-      self.leftStackView.addArrangedSubview(button)
-      
-    case .right:
-      self.rightStackView.addArrangedSubview(button)
-    }
+  public func addNavigationRightStackView(_ addView: UIView) {
+    self.rightStackView.addArrangedSubview(addView)
   }
   
   
