@@ -295,6 +295,7 @@
 		BBD437FE6BFF63452E6B7E08DFAB4DD9 /* UIBarButtonItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B9A50E4C8C566D66242BB4401759B /* UIBarButtonItem+Rx.swift */; };
 		BBE602FDBC092660FB9DE514F3518999 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E71402DD13EC5F6A3C4C498F107E4F /* Switch.swift */; };
 		BD1A323E29460ABB006EAEA0 /* UPsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A323D29460ABB006EAEA0 /* UPsColor.swift */; };
+		BD1A3243294631FD006EAEA0 /* UPsFooterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A3242294631FD006EAEA0 /* UPsFooterScrollView.swift */; };
 		BD333CDBCF5D2FD55920336FC271DF33 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79332B3F9E6723D4532BE5A2621C63B2 /* ConstraintItem.swift */; };
 		BD5271F2FB911EF1945E4BDD6176C4D0 /* Zip+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFCF56A82F6C58C95B3B12660A6124F /* Zip+arity.swift */; };
 		BDA5E68E5E7C097E467C2531D12F71EF /* Infallible+CombineLatest+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A450847A6F07685BCC787C99D5341 /* Infallible+CombineLatest+arity.swift */; };
@@ -783,6 +784,7 @@
 		BC1CD29469282CF79D1039C3B6B4D153 /* VirtualTimeConverterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTimeConverterType.swift; path = RxSwift/Schedulers/VirtualTimeConverterType.swift; sourceTree = "<group>"; };
 		BC432FD48A5932251F1CAFBC4BF74894 /* RxCocoa */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1A323D29460ABB006EAEA0 /* UPsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsColor.swift; path = UPsKit/Classes/UPsColor.swift; sourceTree = "<group>"; };
+		BD1A3242294631FD006EAEA0 /* UPsFooterScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsFooterScrollView.swift; path = UPsKit/Classes/UPsFooterScrollView.swift; sourceTree = "<group>"; };
 		BD45AB88A11E955AFD30AB38D2918A3E /* TakeWithPredicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeWithPredicate.swift; path = RxSwift/Observables/TakeWithPredicate.swift; sourceTree = "<group>"; };
 		BE5CCA2636D0EE23707C1CCEA9CA756F /* _RXKVOObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXKVOObserver.m; path = RxCocoa/Runtime/_RXKVOObserver.m; sourceTree = "<group>"; };
 		BF15B44A6AD871F45C5F20CDD79987E9 /* NSSlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSSlider+Rx.swift"; path = "RxCocoa/macOS/NSSlider+Rx.swift"; sourceTree = "<group>"; };
@@ -1211,6 +1213,7 @@
 				862B534AAF25CE86D2E437BF03993485 /* UPsAlertAction.swift */,
 				FA2D943CC955E191F004362816E7B30B /* UPsBarChartView.swift */,
 				BD1A323D29460ABB006EAEA0 /* UPsColor.swift */,
+				BD1A3242294631FD006EAEA0 /* UPsFooterScrollView.swift */,
 				EBD5A70ED0EBBA8349EE7E9B1269B2DF /* UPsFormatter.swift */,
 				AC422F858C6816A6FFBF1413D73B90C3 /* UPsIndicatorViewController.swift */,
 				161B3EC484E6CE5D2330CD7F9099CD98 /* UPsLeftAlignCollectionView.swift */,
@@ -2179,6 +2182,7 @@
 				88D9C0DD540C367A6654CB59D2F16660 /* BaseViewModel.swift in Sources */,
 				7B956CD5B8F2E7AC8481A9DEABE2336B /* CellIdentifiable.swift in Sources */,
 				26773345333CF69DA646010A96C4B163 /* Extension+Date.swift in Sources */,
+				BD1A3243294631FD006EAEA0 /* UPsFooterScrollView.swift in Sources */,
 				8E76E854690FDFC9E5FADB489A5B5FF1 /* Extension+DateComponents.swift in Sources */,
 				473C3D684F3A878092841EF8F0DC92FB /* Extension+Int.swift in Sources */,
 				1C8652FBEE3CB4284D7DA15DDDC32C6D /* Extension+NSMutableAttributedString.swift in Sources */,
