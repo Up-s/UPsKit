@@ -24,20 +24,35 @@ open class BaseView: UIView {
   }
   
   deinit {
-      print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")
+    print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")
   }
 }
 
 
 
-extension BaseView {
+public extension BaseView {
   
-  public func addKeyboardNoti() {
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotiAction(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotiAction(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+  func addKeyboardNotification() {
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(self.keyboardNotificationAction(_:)),
+      name: UIResponder.keyboardWillShowNotification,
+      object: nil
+    )
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(self.keyboardNotificationAction(_:)),
+      name: UIResponder.keyboardWillHideNotification,
+      object: nil
+    )
   }
   
-  @objc private func keyboardNotiAction(_ notification: Notification) {
+  func removeKeyboardNotification() {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
+  @objc private func keyboardNotificationAction(_ notification: Notification) {
     guard
       let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
       let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt,
@@ -56,10 +71,15 @@ extension BaseView {
       return
     }
     
-    UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curve), animations: { [weak self] in
-      guard let self = self else { return }
-      self.targetViewConstraint?.constant = height
-      self.layoutIfNeeded()
-    })
+    UIView.animate(
+      withDuration: duration,
+      delay: 0,
+      options: UIView.AnimationOptions(rawValue: curve),
+      animations: { [weak self] in
+        guard let self = self else { return }
+        self.targetViewConstraint?.constant = height
+        self.layoutIfNeeded()
+      }
+    )
   }
 }
