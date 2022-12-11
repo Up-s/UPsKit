@@ -159,6 +159,7 @@ final class <#Name#>ViewModel: BaseViewModel {
 import UIKit
 
 import SnapKit
+import Then
 import UPsKit
 
 final class <#Name#>TableViewCell: UITableViewCell, CellIdentifiable {
@@ -214,6 +215,7 @@ final class <#Name#>TableViewCell: UITableViewCell, CellIdentifiable {
 import UIKit
 
 import SnapKit
+import Then
 import UPsKit
 
 final class <#Name#>CollectionViewCell: UICollectionViewCell, CellIdentifiable {
