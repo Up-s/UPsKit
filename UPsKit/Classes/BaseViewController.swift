@@ -24,7 +24,7 @@ open class BaseViewController: UIViewController {
   
   // MARK: - Interface
   
-  func setKeyboardNotification() {
+  public func setKeyboardNotification() {
       self.rx.viewDidAppear
           .compactMap { [weak self] _ -> BaseView? in
               return self?.view as? BaseView
