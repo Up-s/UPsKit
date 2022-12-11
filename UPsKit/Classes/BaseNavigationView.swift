@@ -73,7 +73,7 @@ public class BaseNavigationView: UIView {
     self.backgroundColor = .clear
     
     self.navTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-    self.navTitleLabel.textColor = .black
+    self.navTitleLabel.textColor = .gray900
     
     switch self.inStyle {
     case .none:
@@ -82,13 +82,13 @@ public class BaseNavigationView: UIView {
     case .back:
       let chevronLeft = UIImage(systemName: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
-      self.leftButton.tintColor = .black
+      self.leftButton.tintColor = .gray900
       self.leftStackView.addArrangedSubview(self.leftButton)
       
     case .dismiss:
       let chevronDown = UIImage(systemName: "chevron.down")
       self.leftButton.setImage(chevronDown, for: .normal)
-      self.leftButton.tintColor = .black
+      self.leftButton.tintColor = .gray900
       self.leftStackView.addArrangedSubview(self.leftButton)
     }
     
