@@ -35,7 +35,7 @@ public class UPsShadowView: UIView {
     self.layer.shadowRadius = 5.0
     self.layer.shadowOpacity = 0.3
     self.layer.shadowOffset = .zero
-    self.layer.shadowColor = UIColor.darkGray.cgColor
+    self.layer.shadowColor = UIColor.gray500.cgColor
     self.layer.masksToBounds = false
   }
 }
