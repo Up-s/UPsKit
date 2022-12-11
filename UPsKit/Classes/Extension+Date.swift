@@ -7,16 +7,16 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
   
-  public func toString(_ formatter: UPsFormatter.Date) -> String {
+  func toString(_ formatter: UPsFormatter.Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter.rawValue
     dateFormatter.locale = Locale(identifier: "ko_KR")
     return dateFormatter.string(from: self as Date)
   }
   
-  public func toString(_ formatter: String) -> String {
+  func toString(_ formatter: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = formatter
     dateFormatter.locale = Locale(identifier: "ko_KR")
@@ -25,63 +25,63 @@ extension Date {
   
   
   
-  public func yearInt() -> Int {
+  func yearInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.year], from: self)
     return components.year!
   }
   
-  public func monthInt() -> Int {
+  func monthInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.month], from: self)
     return components.month!
   }
   
-  public func weekdayInt() -> Int {
+  func weekdayInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.weekday], from: self)
     return components.weekday!
   }
   
-  public func weekdayOrdinalInt() -> Int {
+  func weekdayOrdinalInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.weekdayOrdinal], from: self)
     return components.weekdayOrdinal!
   }
   
-  public func dayInt() -> Int {
+  func dayInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.day], from: self)
     return components.day!
   }
   
-  public func hourInt() -> Int {
+  func hourInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.hour], from: self)
     return components.hour!
   }
   
-  public func minuteInt() -> Int {
+  func minuteInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.minute], from: self)
     return components.minute!
   }
   
-  public func secondInt() -> Int {
+  func secondInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.second], from: self)
     return components.second!
   }
   
-  public func nanosecondInt() -> Int {
+  func nanosecondInt() -> Int {
     var calendar = Calendar(identifier: .gregorian)
     calendar.locale = Locale(identifier: "ko_KR")
     let components = calendar.dateComponents([.nanosecond], from: self)

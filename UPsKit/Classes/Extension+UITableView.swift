@@ -9,29 +9,29 @@ import UIKit
 
 import RxSwift
 
-extension UITableView {
+public extension UITableView {
   
-  public func register<T: UITableViewCell>(cellType: T.Type) where T: CellIdentifiable {
+  func register<T: UITableViewCell>(cellType: T.Type) where T: CellIdentifiable {
     register(cellType.self, forCellReuseIdentifier: cellType.identifier)
   }
   
-  public func registerHeaderFooter<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: CellIdentifiable {
+  func registerHeaderFooter<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: CellIdentifiable {
     register(viewType.self, forHeaderFooterViewReuseIdentifier: viewType.identifier)
   }
   
-  public func dequeueReusableCell<T: UITableViewCell>(withCellType type: T.Type = T.self) -> T where T: CellIdentifiable {
+  func dequeueReusableCell<T: UITableViewCell>(withCellType type: T.Type = T.self) -> T where T: CellIdentifiable {
     guard let cell = dequeueReusableCell(withIdentifier: type.identifier) as? T
     else { fatalError("Couldn't dequeue a UITableViewCell with identifier: \(type.identifier)") }
     return cell
   }
   
-  public func dequeueResuableCell<T: UITableViewCell>(withCellType type: T.Type = T.self, forIndexPath indexPath: IndexPath) -> T where T: CellIdentifiable {
+  func dequeueResuableCell<T: UITableViewCell>(withCellType type: T.Type = T.self, forIndexPath indexPath: IndexPath) -> T where T: CellIdentifiable {
     guard let cell = dequeueReusableCell(withIdentifier: type.identifier, for: indexPath) as? T
     else { fatalError("Couldn't dequeue a UITableViewCell with identifier: \(type.identifier)") }
     return cell
   }
   
-  public func dequeueResuableHeaderFooterView<T: UITableViewHeaderFooterView>(withViewType type: T.Type) -> T where T: CellIdentifiable {
+  func dequeueResuableHeaderFooterView<T: UITableViewHeaderFooterView>(withViewType type: T.Type) -> T where T: CellIdentifiable {
     guard let headerFooterView = self.dequeueReusableHeaderFooterView(withIdentifier: type.identifier) as? T
     else { fatalError("Couldn't dequeue a UITableViewHeaderFooterView with identifier: \(type.identifier)") }
     return headerFooterView

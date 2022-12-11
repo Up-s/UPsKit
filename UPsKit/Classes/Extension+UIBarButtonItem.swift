@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UIBarButtonItem {
+public extension UIBarButtonItem {
   
-  public convenience init(title: String, style: UIBarButtonItem.Style = .plain) {
+  convenience init(title: String, style: UIBarButtonItem.Style = .plain) {
     self.init(title: title, style: style, target: nil, action: nil)
   }
 }

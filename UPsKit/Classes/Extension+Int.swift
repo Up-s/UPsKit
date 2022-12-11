@@ -9,9 +9,9 @@ import Foundation
 
 import RxSwift
 
-extension Int {
+public extension Int {
   
-  public func toTime() -> String {
+  func toTime() -> String {
     var millisec = self * 1000
     
     let day = millisec / (24 * 3600 * 1000)
@@ -36,7 +36,7 @@ extension Int {
     }
   }
   
-  public func toTimer(_ formatter: UPsFormatter.Timer) -> String {
+  func toTimer(_ formatter: UPsFormatter.Timer) -> String {
     switch formatter {
     case .HM:
       let min = ((self / 100) / 60) % 60
@@ -63,13 +63,13 @@ extension Int {
     }
   }
   
-  public var toWon: String {
+  var toWon: String {
     let numberFormatter = NumberFormatter()
     numberFormatter.numberStyle = .decimal
     return numberFormatter.string(from: self as NSNumber) ?? "0"
   }
   
-  public var toHour: String {
+  var toHour: String {
     switch self > 60 {
     case true:
       let hour = self / 60

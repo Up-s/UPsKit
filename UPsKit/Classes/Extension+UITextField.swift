@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UITextField {
+public extension UITextField {
   
-  public func setPadding(_ amount: CGFloat = 16) {
+  func setPadding(_ amount: CGFloat = 16) {
     let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
     self.leftView = leftPaddingView
     self.leftViewMode = .always
@@ -19,13 +19,13 @@ extension UITextField {
     self.rightViewMode = .always
   }
   
-  public func setLeftPadding(_ amount: CGFloat = 16) {
+  func setLeftPadding(_ amount: CGFloat = 16) {
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
     self.leftView = paddingView
     self.leftViewMode = .always
   }
   
-  public func setRightPadding(_ amount: CGFloat = 16) {
+  func setRightPadding(_ amount: CGFloat = 16) {
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
     self.rightView = paddingView
     self.rightViewMode = .always

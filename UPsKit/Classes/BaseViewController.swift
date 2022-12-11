@@ -14,7 +14,24 @@ open class BaseViewController: UIViewController {
   
   public let disposeBag = DisposeBag()
   
+  public let endEditing = PublishRelay<Void>()
   
+  
+  
+  public init() {
+    super.init(nibName: nil, bundle: nil)
+    
+    
+    self.endEditing
+        .bind { [weak self] in
+            self?.view.endEditing(true)
+        }
+        .disposed(by: self.disposeBag)
+  }
+  
+  required public init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   deinit {
       print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")

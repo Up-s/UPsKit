@@ -7,21 +7,21 @@
 
 import Foundation
 
-extension DateComponents {
+public extension DateComponents {
   
-  public var getHour: String {
+  var getHour: String {
     String(format: "%02d", self.hour!)
   }
   
-  public var getMin: String {
+  var getMin: String {
     String(format: "%02d", self.minute!)
   }
   
-  public var getSec: String {
+  var getSec: String {
     String(format: "%02d", self.second!)
   }
   
-  public var getNano: String {
+  var getNano: String {
     String(format: "%02d", (self.nanosecond! / 10000000))
   }
 }

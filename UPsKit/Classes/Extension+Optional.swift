@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension Optional where Wrapped == String {
+public extension Optional where Wrapped == String {
   
-  public func isEmpty() -> Bool {
+  func isEmpty() -> Bool {
     guard let text = self else { return true }
     return text.isEmpty
   }

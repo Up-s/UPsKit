@@ -7,14 +7,11 @@
 
 import UIKit
 
-import RxCocoa
-import RxSwift
-
-extension UIViewController {
+public extension UIViewController {
   
   // MARK: - ScenCondinator
   
-  public var sceneViewController: UIViewController {
+  var sceneViewController: UIViewController {
       return self.children.last ?? self
   }
   
@@ -22,7 +19,7 @@ extension UIViewController {
   
   // MARK: - Toast
   
-  public func toast(_ title: String) {
+  func toast(_ title: String) {
     let tempToastLabel = UPsPaddingLabel(x: 24, y: 16)
     tempToastLabel.text = title
     tempToastLabel.font = .boldSystemFont(ofSize: 16)
@@ -67,7 +64,7 @@ extension UIViewController {
   
   // MARK: - AlertController
   
-  public func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertActionProtocol], completion: (() -> Void)? = nil) {
+  func alert(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UPsAlertActionProtocol], completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     for action in actions {
       let tempAction = UIAlertAction(title: action.title, style: action.style, handler: action.handler)
@@ -77,7 +74,7 @@ extension UIViewController {
     self.present(alert, animated: true, completion: completion)
   }
   
-  public func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, cancel: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
+  func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, cancel: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField {
       $0.keyboardType = keyboardType
@@ -100,13 +97,13 @@ extension UIViewController {
   
   // MARK: - IndicatoerViewController
   
-  public func presentIndicatorViewController() {
+  func presentIndicatorViewController() {
     let vcIndicator = UPsIndicatorViewController()
     vcIndicator.modalPresentationStyle = .overFullScreen
     self.present(vcIndicator, animated: false)
   }
   
-  public func dismissIndicatorViewController() {
+  func dismissIndicatorViewController() {
     guard let vcIndicator = self.presentedViewController as? UPsIndicatorViewController else { return }
     vcIndicator.dismiss(animated: false)
   }
@@ -115,7 +112,7 @@ extension UIViewController {
   
   // MARK: - NavigationController
   
-  public func addBackBarButton(_ selector: Selector? = nil) {
+  func addBackBarButton(_ selector: Selector? = nil) {
     self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     let backImage = UIImage.sf(name: "chevron.left", color: .black)
     let action: Selector = selector ?? #selector(self.backAction(_:))
@@ -130,7 +127,7 @@ extension UIViewController {
     self.navigationController?.popViewController(animated: true)
   }
   
-  public func addDismissBarButton(_ selector: Selector? = nil) {
+  func addDismissBarButton(_ selector: Selector? = nil) {
     let dismissIamge = UIImage.sf(name: "chevron.down", color: .black)
     let action: Selector = selector ?? #selector(self.dismissAction(_:))
     let dismissBarButton = UIBarButtonItem(image: dismissIamge,
@@ -142,75 +139,5 @@ extension UIViewController {
   
   @objc private func dismissAction(_ sender: UIBarButtonItem) {
     self.dismiss(animated: true)
-  }
-}
-
-
-
-// MARK: - Reactive
-
-extension Reactive where Base: UIViewController {
-  
-  public var viewWillApper: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewWillAppear(_:)))
-      .map { _ in }
-  }
-  
-  public var viewWillDisappear: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewWillDisappear(_:)))
-      .map { _ in }
-  }
-  
-  public var viewDidAppear: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewDidAppear(_:)))
-      .map { _ in }
-  }
-  
-  public var viewDidDisappear: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
-      .map { _ in }
-  }
-  
-  public var viewDidLayoutSubviews: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
-      .map { _ in }
-  }
-  
-  public var viewWillTransition: Observable<Void> {
-    return self.methodInvoked(#selector(UIViewController.viewWillTransition(to:with:)))
-      .map { _ in }
-  }
-  
-  public var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
-    return RxUIAdaptivePresentationControllerDelegateProxy.proxy(for: self.base)
-  }
-  
-  public var presentationControllerDidDismiss: Observable<UIPresentationController?> {
-    return delegate
-      .methodInvoked(#selector(UIAdaptivePresentationControllerDelegate.presentationControllerDidDismiss(_:)))
-      .map { arr -> UIPresentationController? in
-        return (arr.first as? UIPresentationController)
-      }
-  }
-}
-
-
-
-// MARK: - DelegateProxy
-
-public class RxUIAdaptivePresentationControllerDelegateProxy: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate>, DelegateProxyType, UIAdaptivePresentationControllerDelegate {
-  
-  public static func registerKnownImplementations() {
-    self.register { viewController -> RxUIAdaptivePresentationControllerDelegateProxy in
-      RxUIAdaptivePresentationControllerDelegateProxy(parentObject: viewController, delegateProxy: self)
-    }
-  }
-  
-  public static func currentDelegate(for object: UIViewController) -> UIAdaptivePresentationControllerDelegate? {
-    return object.navigationController?.presentationController?.delegate
-  }
-  
-  public static func setCurrentDelegate(_ delegate: UIAdaptivePresentationControllerDelegate?, to object: UIViewController) {
-    object.navigationController?.presentationController?.delegate = delegate
   }
 }

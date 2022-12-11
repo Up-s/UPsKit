@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
   
-  public var parentViewController: UIViewController? {
+  var parentViewController: UIViewController? {
     var responder: UIResponder? = self
     while let nextResponder = responder?.next {
       responder = nextResponder
@@ -20,7 +20,7 @@ extension UIView {
     return nil
   }
   
-  public func shadow() {
+  func shadow() {
     let shadowPath = UIBezierPath(rect: self.bounds)
     self.layer.shadowPath = shadowPath.cgPath
     self.layer.shadowRadius = 5.0

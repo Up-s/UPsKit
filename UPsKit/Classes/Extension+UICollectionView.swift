@@ -7,44 +7,15 @@
 
 import UIKit
 
-import RxSwift
-
-extension UICollectionView {
+public extension UICollectionView {
   
-  public func register<C: UICollectionViewCell>(cellType: C.Type) where C: CellIdentifiable {
+  func register<C: UICollectionViewCell>(cellType: C.Type) where C: CellIdentifiable {
     register(cellType.self, forCellWithReuseIdentifier: cellType.identifier)
   }
   
-  public func dequeueReusableCell<C: UICollectionViewCell>(withCellType type: C.Type = C.self, forIndexPath indexPath: IndexPath) -> C where C: CellIdentifiable {
+  func dequeueReusableCell<C: UICollectionViewCell>(withCellType type: C.Type = C.self, forIndexPath indexPath: IndexPath) -> C where C: CellIdentifiable {
     guard let cell = dequeueReusableCell(withReuseIdentifier: type.identifier, for: indexPath) as? C
     else { fatalError("Couldn't dequeue a UICollectionViewCell with identifier: \(type.identifier)") }
     return cell
-  }
-}
-
-
-
-// MARK: - Reactive
-
-extension Reactive where Base: UICollectionView {
-  
-  public var reload: Binder<Void> {
-    return Binder(self.base) { collectionView, _ in
-      collectionView.reloadData()
-    }
-  }
-  
-  public var performBatchUpdates: Observable<Void> {
-    return Observable<Void>.create { observer in
-      
-      self.base.performBatchUpdates {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-          observer.onNext(())
-          observer.onCompleted()
-        }
-      }
-      
-      return Disposables.create()
-    }
   }
 }

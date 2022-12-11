@@ -14,9 +14,9 @@ public protocol NavigationProtocol {
   var naviView: BaseNavigationView { get }
 }
 
-extension NavigationProtocol where Self: UIView {
+public extension NavigationProtocol where Self: UIView {
   
-  public func setNavigation() {
+  func setNavigation() {
     let safeBackgroundView = UIView()
     safeBackgroundView.backgroundColor = self.naviView.backgroundColor
     
