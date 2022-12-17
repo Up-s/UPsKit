@@ -297,6 +297,7 @@
 		BD080878294D828700E4A09E /* Reactive+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080876294D828700E4A09E /* Reactive+UICollectionView.swift */; };
 		BD080879294D828700E4A09E /* Reactive+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD080877294D828700E4A09E /* Reactive+UITableView.swift */; };
 		BD08087B294D93ED00E4A09E /* UPsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08087A294D93ED00E4A09E /* UPsCollectionView.swift */; };
+		BD08087D294DAC5000E4A09E /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08087C294DAC5000E4A09E /* Extension+UIButton.swift */; };
 		BD1A323E29460ABB006EAEA0 /* UPsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A323D29460ABB006EAEA0 /* UPsColor.swift */; };
 		BD1A3243294631FD006EAEA0 /* UPsFooterScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A3242294631FD006EAEA0 /* UPsFooterScrollView.swift */; };
 		BD1A324729463EEE006EAEA0 /* Reactive+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A324629463EEE006EAEA0 /* Reactive+UITextField.swift */; };
@@ -791,6 +792,7 @@
 		BD080876294D828700E4A09E /* Reactive+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reactive+UICollectionView.swift"; path = "UPsKit/Classes/Reactive+UICollectionView.swift"; sourceTree = "<group>"; };
 		BD080877294D828700E4A09E /* Reactive+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reactive+UITableView.swift"; path = "UPsKit/Classes/Reactive+UITableView.swift"; sourceTree = "<group>"; };
 		BD08087A294D93ED00E4A09E /* UPsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsCollectionView.swift; path = UPsKit/Classes/UPsCollectionView.swift; sourceTree = "<group>"; };
+		BD08087C294DAC5000E4A09E /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+UIButton.swift"; path = "UPsKit/Classes/Extension+UIButton.swift"; sourceTree = "<group>"; };
 		BD1A323D29460ABB006EAEA0 /* UPsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsColor.swift; path = UPsKit/Classes/UPsColor.swift; sourceTree = "<group>"; };
 		BD1A3242294631FD006EAEA0 /* UPsFooterScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPsFooterScrollView.swift; path = UPsKit/Classes/UPsFooterScrollView.swift; sourceTree = "<group>"; };
 		BD1A324629463EEE006EAEA0 /* Reactive+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Reactive+UITextField.swift"; path = "UPsKit/Classes/Reactive+UITextField.swift"; sourceTree = "<group>"; };
@@ -1206,6 +1208,7 @@
 				5DB0D27874FA7E54F89EA2245FD35DAA /* Extension+Optional.swift */,
 				2F7FE8A2C4627FC5DEFE40B4B7C63466 /* Extension+String.swift */,
 				3C263F485661455A03E0E29042718BD0 /* Extension+UIBarButtonItem.swift */,
+				BD08087C294DAC5000E4A09E /* Extension+UIButton.swift */,
 				372F4BF38B0B66FD9F4F107FF1836F17 /* Extension+UICollectionView.swift */,
 				523A130466220B027DB18C5136742697 /* Extension+UIColor.swift */,
 				69C33D9E56BD9DC505E8DBA15D15854D /* Extension+UIEdgeInsets.swift */,
@@ -2220,6 +2223,7 @@
 				059A502D46347EC34D7B248ACA03A3AA /* NavigationProtocol.swift in Sources */,
 				A9DA0DA25B5D2127603CFB797C1D3F6C /* SceneCoordinator.swift in Sources */,
 				BD1A323E29460ABB006EAEA0 /* UPsColor.swift in Sources */,
+				BD08087D294DAC5000E4A09E /* Extension+UIButton.swift in Sources */,
 				6E33D3597F7427DE9A6C21C90C855E68 /* SceneProtocol.swift in Sources */,
 				34BBEA6AEABF7F77971537C878FB7165 /* SceneTransitionStyle.swift in Sources */,
 				3EEF759514E327557177233D86B4C2CD /* Snippets.swift in Sources */,
