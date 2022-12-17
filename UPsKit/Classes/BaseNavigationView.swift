@@ -13,15 +13,9 @@ import SnapKit
 
 public class BaseNavigationView: UIView {
   
-  public struct Metric {
-    static let height: CGFloat = 48.0
-    static let buttonWidth: CGFloat = 48.0
-    static let spacing: CGFloat = 12.0
-  }
-  
   public enum InStyle {
     case none
-    case back
+    case pop
     case dismiss
   }
   
@@ -79,7 +73,7 @@ public class BaseNavigationView: UIView {
     case .none:
       break
       
-    case .back:
+    case .pop:
       let chevronLeft = UIImage(systemName: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
       self.leftButton.tintColor = .gray900
@@ -113,5 +107,11 @@ public class BaseNavigationView: UIView {
     self.leftButton.snp.makeConstraints { make in
       make.width.equalTo(Metric.buttonWidth)
     }
+  }
+  
+  public struct Metric {
+    static let height: CGFloat = 54.0
+    static let buttonWidth: CGFloat = 48.0
+    static let spacing: CGFloat = 12.0
   }
 }
