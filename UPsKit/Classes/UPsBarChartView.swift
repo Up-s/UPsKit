@@ -88,7 +88,7 @@ public class UPsBarChartView: UIView {
       
       let tagLabel = UILabel()
       tagLabel.text = slice.title
-      tagLabel.textColor = .black
+      tagLabel.textColor = .gray900
       tagLabel.adjustsFontSizeToFitWidth = true
       tagLabel.font = .systemFont(ofSize: 18, weight: .semibold)
       tagLabel.textAlignment = .right
