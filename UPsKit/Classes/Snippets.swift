@@ -79,7 +79,7 @@ final class <#Name#>ViewController: BaseViewController {
  
   init(_ viewModel: <#Name#>ViewModel) {
     self.viewModel = viewModel
-    super.init(nibName: nil, bundle: nil)
+    super.init()
   }
  
   required init?(coder: NSCoder) {
