@@ -7,8 +7,6 @@
 
 import UIKit
 
-import RxSwift
-
 public extension UITableView {
   
   func register<T: UITableViewCell>(cellType: T.Type) where T: CellIdentifiable {
@@ -35,18 +33,5 @@ public extension UITableView {
     guard let headerFooterView = self.dequeueReusableHeaderFooterView(withIdentifier: type.identifier) as? T
     else { fatalError("Couldn't dequeue a UITableViewHeaderFooterView with identifier: \(type.identifier)") }
     return headerFooterView
-  }
-}
-
-
-
-// MARK: - Reactive
-
-extension Reactive where Base: UITableView {
-  
-  public var reload: Binder<Void> {
-    return Binder(self.base) { tableView, _ in
-      tableView.reloadData()
-    }
   }
 }

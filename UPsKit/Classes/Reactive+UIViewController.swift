@@ -10,43 +10,43 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-extension Reactive where Base: UIViewController {
+public extension Reactive where Base: UIViewController {
   
-  public var viewWillApper: Observable<Void> {
+  var viewWillApper: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillAppear(_:)))
       .map { _ in }
   }
   
-  public var viewWillDisappear: Observable<Void> {
+  var viewWillDisappear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillDisappear(_:)))
       .map { _ in }
   }
   
-  public var viewDidAppear: Observable<Void> {
+  var viewDidAppear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewDidAppear(_:)))
       .map { _ in }
   }
   
-  public var viewDidDisappear: Observable<Void> {
+  var viewDidDisappear: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
       .map { _ in }
   }
   
-  public var viewDidLayoutSubviews: Observable<Void> {
+  var viewDidLayoutSubviews: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
       .map { _ in }
   }
   
-  public var viewWillTransition: Observable<Void> {
+  var viewWillTransition: Observable<Void> {
     return self.methodInvoked(#selector(UIViewController.viewWillTransition(to:with:)))
       .map { _ in }
   }
   
-  public var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
+  var delegate: DelegateProxy<UIViewController, UIAdaptivePresentationControllerDelegate> {
     return RxUIAdaptivePresentationControllerDelegateProxy.proxy(for: self.base)
   }
   
-  public var presentationControllerDidDismiss: Observable<UIPresentationController?> {
+  var presentationControllerDidDismiss: Observable<UIPresentationController?> {
     return delegate
       .methodInvoked(#selector(UIAdaptivePresentationControllerDelegate.presentationControllerDidDismiss(_:)))
       .map { arr -> UIPresentationController? in
