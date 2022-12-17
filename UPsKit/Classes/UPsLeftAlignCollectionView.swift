@@ -16,6 +16,8 @@ public class UPsLeftAlignCollectionView: UICollectionView {
     layout.scrollDirection = scrollDirection
     layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     super.init(frame: .zero, collectionViewLayout: layout)
+    
+    self.backgroundColor = .back
   }
   
   required init?(coder: NSCoder) {
