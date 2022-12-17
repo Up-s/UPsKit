@@ -109,7 +109,7 @@ public class UPsPieChartView: UIView {
     label.layer.cornerRadius = 4
     label.layer.masksToBounds = true
     label.layer.borderColor = slice.color.cgColor
-    label.layer.borderWidth = 4.0
+    label.layer.borderWidth = 2.0
     self.labels.append(label)
     self.addSubview(label)
     
