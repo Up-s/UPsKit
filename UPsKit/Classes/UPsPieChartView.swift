@@ -100,12 +100,12 @@ public class UPsPieChartView: UIView {
     let labelCenter = getLabelCenter(slice)
     
     let label = UPsPaddingLabel(x: 8.0, y: 4.0)
-    label.backgroundColor = .white
+    label.backgroundColor = .board
     label.font = .systemFont(ofSize: 16, weight: .bold)
     label.numberOfLines = 0
     label.text = slice.title
     label.textAlignment = .center
-    label.textColor = .black
+    label.textColor = .gray900
     label.layer.cornerRadius = 4
     label.layer.masksToBounds = true
     label.layer.borderColor = slice.color.cgColor
