@@ -45,6 +45,5 @@ final class UPsIndicatorViewController: UIViewController {
     self.indicatorView.snp.makeConstraints { make in
       make.center.equalTo(guide)
     }
-    
   }
 }
