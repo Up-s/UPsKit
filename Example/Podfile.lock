@@ -7,7 +7,7 @@ PODS:
   - RxSwift (6.5.0)
   - SnapKit (5.0.1)
   - Then (3.0.0)
-  - UPsKit (3.3.2):
+  - UPsKit (3.3.6):
     - RxCocoa (~> 6.5.0)
     - RxSwift (~> 6.5.0)
     - SnapKit (~> 5.0.0)
@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  UPsKit: 43904573b10af73b48d711a14c71262b7f99eb4e
+  UPsKit: 9a5027540adaf2b601acf0bbb699ecb33fab440c
 
 PODFILE CHECKSUM: 43885b5b7bf9ecd649eab6fca7f7e149255e6a89
 
