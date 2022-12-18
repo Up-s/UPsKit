@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UPsKit'
-  s.version          = '3.3.4'
+  s.version          = '3.3.5'
   s.summary          = 'UPsKit'
 
 # This description is used to generate tags and improve search results.
@@ -33,6 +33,11 @@ TODO: Add long description of the pod here.
   s.source_files = 'UPsKit/Classes/**/*'
   
   s.swift_versions = '5.0'
+  
+  s.pod_target_xcconfig = {
+      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   
   # s.resource_bundles = {
   #   'UPsKit' => ['UPsKit/Assets/*.png']
