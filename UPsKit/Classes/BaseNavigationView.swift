@@ -77,7 +77,7 @@ public class BaseNavigationView: UIView {
     case .none:
       self.navTitleLabel.textAlignment = .center
       
-    case .back:
+    case .pop:
       self.contentStackView.addArrangedSubview(self.leftStackView)
       let chevronLeft = UIImage(systemName: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
