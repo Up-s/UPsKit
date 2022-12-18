@@ -13,6 +13,12 @@ public extension String {
     NSLocalizedString(self, tableName: "Localizable", value: self, comment: "")
   }
   
+  var isNickName: Bool {
+    let nickNameRegEx = "[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]{2,20}$"
+    let predicate = NSPredicate(format:"SELF MATCHES %@", nickNameRegEx)
+    return predicate.evaluate(with: self)
+  }
+  
   var isValidEmail: Bool {
     let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
     let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -20,7 +26,7 @@ public extension String {
   }
   
   var isValidPassword: Bool {
-    let passwordRegEx = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8}$"
+    let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}$"
     let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
     return predicate.evaluate(with: self)
   }

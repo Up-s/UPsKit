@@ -56,6 +56,10 @@ public class BaseNavigationView: UIView {
   }
   
   public func addNavigationRightStackView(_ addView: UIView) {
+    if self.rightStackView.superview == nil {
+      self.contentStackView.addArrangedSubview(self.rightStackView)
+    }
+    
     self.rightStackView.addArrangedSubview(addView)
   }
   
@@ -71,15 +75,17 @@ public class BaseNavigationView: UIView {
     
     switch self.inStyle {
     case .none:
-      break
+      self.navTitleLabel.textAlignment = .center
       
-    case .pop:
+    case .back:
+      self.contentStackView.addArrangedSubview(self.leftStackView)
       let chevronLeft = UIImage(systemName: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
       self.leftButton.tintColor = .gray900
       self.leftStackView.addArrangedSubview(self.leftButton)
       
     case .dismiss:
+      self.contentStackView.addArrangedSubview(self.leftStackView)
       let chevronDown = UIImage(systemName: "chevron.down")
       self.leftButton.setImage(chevronDown, for: .normal)
       self.leftButton.tintColor = .gray900
@@ -89,9 +95,8 @@ public class BaseNavigationView: UIView {
     
     
     self.addSubview(self.contentStackView)
-
-    [self.leftStackView, self.navTitleLabel, self.rightStackView]
-      .forEach(self.contentStackView.addArrangedSubview(_:))
+    
+    self.contentStackView.addArrangedSubview(self.navTitleLabel)
   }
   
   private func setConstraint() {
