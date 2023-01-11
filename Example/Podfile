@@ -6,6 +6,8 @@ target 'UPsKit_Example' do
   
   pod 'UPsKit', :path => '../'
   
+  pod 'CodableFirebase'
+  
   pod 'RxCocoa', '~> 6.5.0'
   pod 'RxSwift', '~> 6.5.0'
   pod 'SnapKit', '~> 5.0.0'
