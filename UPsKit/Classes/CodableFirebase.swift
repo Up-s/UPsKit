@@ -8,6 +8,7 @@
 import Foundation
 
 import CodableFirebase
+import Firebase
 
 public extension DocumentReference: DocumentReferenceType {}
 public extension GeoPoint: GeoPointType {}
