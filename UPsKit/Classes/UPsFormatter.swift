@@ -33,5 +33,6 @@ public enum UPsFormatter {
   public enum Pattern: String {
     case phone = "###-####-####"
     case business = "###-##-#####"
+    case hourMin = "##:##"
   }
 }
