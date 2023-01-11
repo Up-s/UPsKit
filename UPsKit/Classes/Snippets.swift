@@ -265,19 +265,23 @@ final class <#Name#>CollectionViewCell: UICollectionViewCell, CellIdentifiable {
 
 
 /*
- 
-// MARK: -
- 
-*/
 
+import CodableFirebase
+import Firebase
+import RxCocoa
+import RxSwift
 
-
-
-
-/*
- 
-@objc private func <#name#>(_ sender: UIButton) {
-  
+final class <#Name#>Provider {
+   
+  class func <#name#>() -> Observable<<#Type#>> {
+    Observable<<#Type#>>.create { observer -> Disposable in
+       
+      Firestore
+        .firestore()
+       
+      return Disposables.create()
+    }
+  }
 }
 
 */
@@ -295,6 +299,28 @@ final class <#Name#>Provider {
   class func <#function#>(completion: @escaping (Result<String, Error>) -> Void) {
     Firestore.firestore()
   }
+}
+
+*/
+
+
+
+
+
+/*
+ 
+// MARK: -
+ 
+*/
+
+
+
+
+
+/*
+ 
+@objc private func <#name#>(_ sender: UIButton) {
+  
 }
 
 */

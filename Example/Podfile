@@ -6,11 +6,12 @@ target 'UPsKit_Example' do
   
   pod 'UPsKit', :path => '../'
   
+  pod 'CodableFirebase'
+  
   pod 'RxCocoa', '~> 6.5.0'
   pod 'RxSwift', '~> 6.5.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then', '~> 3.0.0'
-  
   
   target 'UPsKit_Tests' do
     inherit! :search_paths
