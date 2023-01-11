@@ -1,6 +1,6 @@
 {
   "name": "UPsKit",
-  "version": "3.5.1",
+  "version": "3.6.0",
   "summary": "UPsKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Up-s/UPsKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Up-s/UPsKit.git",
-    "tag": "3.5.1"
+    "tag": "3.6.0"
   },
   "platforms": {
     "ios": "13.0"
@@ -27,9 +27,6 @@
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
   },
   "dependencies": {
-    "CodableFirebase": [
-
-    ],
     "RxCocoa": [
       "~> 6.5.0"
     ],
