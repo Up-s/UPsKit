@@ -26,7 +26,7 @@ public class BaseNavigationView: UIView {
   private let rightStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
   
   public let leftButton = UIButton()
-  public let navTitleLabel = UILabel()
+  public let titleLabel = UILabel()
   
   private let inStyle: InStyle
   
@@ -76,8 +76,8 @@ public class BaseNavigationView: UIView {
   private func setAttribute() {
     self.backgroundColor = .clear
     
-    self.navTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-    self.navTitleLabel.textColor = .gray900
+    self.titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+    self.titleLabel.textColor = .gray900
     
     switch self.inStyle {
     case .none(let padding):
@@ -104,7 +104,7 @@ public class BaseNavigationView: UIView {
     
     self.addSubview(self.contentStackView)
     
-    self.contentStackView.addArrangedSubview(self.navTitleLabel)
+    self.contentStackView.addArrangedSubview(self.titleLabel)
   }
   
   private func setConstraint() {
