@@ -11,16 +11,16 @@ import SnapKit
 
 public protocol NavigationProtocol {
   
-  var naviView: BaseNavigationView { get }
+  var navigationView: BaseNavigationView { get }
 }
 
 public extension NavigationProtocol where Self: UIView {
   
   func setNavigation() {
     let safeBackgroundView = UIView()
-    safeBackgroundView.backgroundColor = self.naviView.backgroundColor
+    safeBackgroundView.backgroundColor = self.navigationView.backgroundColor
     
-    [safeBackgroundView, self.naviView]
+    [safeBackgroundView, self.navigationView]
       .forEach(self.addSubview(_:))
     
     let guide = self.safeAreaLayoutGuide
@@ -28,10 +28,10 @@ public extension NavigationProtocol where Self: UIView {
     safeBackgroundView.snp.makeConstraints { make in
       make.top.equalToSuperview()
       make.leading.trailing.equalTo(guide)
-      make.bottom.equalTo(self.naviView.snp.top)
+      make.bottom.equalTo(self.navigationView.snp.top)
     }
     
-    self.naviView.snp.makeConstraints { make in
+    self.navigationView.snp.makeConstraints { make in
       make.top.leading.trailing.equalTo(guide)
     }
   }

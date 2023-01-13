@@ -21,12 +21,12 @@ public class BaseNavigationView: UIView {
   
   // MARK: - Property
   
-  private let contentStackView = UPsStackView(axis: .horizontal)
+  private let contentStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
   private let leftStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
   private let rightStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
   
   public let leftButton = UIButton()
-  public let navTitleLabel = UILabel()
+  public let titleLabel = UILabel()
   
   private let inStyle: InStyle
   
@@ -60,6 +60,12 @@ public class BaseNavigationView: UIView {
       self.contentStackView.addArrangedSubview(self.rightStackView)
     }
     
+    if addView is UIButton {
+      addView.snp.makeConstraints { make in
+        make.width.equalTo(Metric.buttonWidth)
+      }
+    }
+    
     self.rightStackView.addArrangedSubview(addView)
   }
   
@@ -70,25 +76,23 @@ public class BaseNavigationView: UIView {
   private func setAttribute() {
     self.backgroundColor = .clear
     
-    self.navTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-    self.navTitleLabel.textColor = .gray900
+    self.titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+    self.titleLabel.textColor = .gray900
     
     switch self.inStyle {
     case .none:
-      self.navTitleLabel.textAlignment = .center
+      break
       
     case .pop:
       self.contentStackView.addArrangedSubview(self.leftStackView)
-      let chevronLeft = UIImage(systemName: "chevron.left")
+      let chevronLeft = UIImage.sfConfiguration(name: "chevron.left")
       self.leftButton.setImage(chevronLeft, for: .normal)
-      self.leftButton.tintColor = .gray900
       self.leftStackView.addArrangedSubview(self.leftButton)
       
     case .dismiss:
       self.contentStackView.addArrangedSubview(self.leftStackView)
-      let chevronDown = UIImage(systemName: "chevron.down")
+      let chevronDown = UIImage.sfConfiguration(name: "chevron.down")
       self.leftButton.setImage(chevronDown, for: .normal)
-      self.leftButton.tintColor = .gray900
       self.leftStackView.addArrangedSubview(self.leftButton)
     }
     
@@ -96,7 +100,7 @@ public class BaseNavigationView: UIView {
     
     self.addSubview(self.contentStackView)
     
-    self.contentStackView.addArrangedSubview(self.navTitleLabel)
+    self.contentStackView.addArrangedSubview(self.titleLabel)
   }
   
   private func setConstraint() {
@@ -106,9 +110,9 @@ public class BaseNavigationView: UIView {
     
     self.contentStackView.snp.makeConstraints { make in
       make.top.bottom.equalToSuperview()
-      make.leading.trailing.equalToSuperview().inset(8.0)
+      make.leading.trailing.equalToSuperview().inset(18.0)
     }
-
+    
     self.leftButton.snp.makeConstraints { make in
       make.width.equalTo(Metric.buttonWidth)
     }
@@ -116,7 +120,7 @@ public class BaseNavigationView: UIView {
   
   public struct Metric {
     static let height: CGFloat = 54.0
-    static let buttonWidth: CGFloat = 48.0
-    static let spacing: CGFloat = 12.0
+    static let buttonWidth: CGFloat = 32.0
+    static let spacing: CGFloat = 18.0
   }
 }
