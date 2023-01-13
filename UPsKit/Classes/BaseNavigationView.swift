@@ -14,7 +14,7 @@ import SnapKit
 public class BaseNavigationView: UIView {
   
   public enum InStyle {
-    case none
+    case none(CGFloat?)
     case pop
     case dismiss
   }
@@ -26,7 +26,7 @@ public class BaseNavigationView: UIView {
   private let rightStackView = UPsStackView(axis: .horizontal, spacing: Metric.spacing)
   
   public let leftButton = UIButton()
-  public let titleLabel = UILabel()
+  public let navTitleLabel = UILabel()
   
   private let inStyle: InStyle
   
@@ -34,7 +34,7 @@ public class BaseNavigationView: UIView {
   
   // MARK: - Life Cycle
   
-  public init(_ inStyle: InStyle = .none) {
+  public init(_ inStyle: InStyle) {
     self.inStyle = inStyle
     
     super.init(frame: .zero)
@@ -76,12 +76,18 @@ public class BaseNavigationView: UIView {
   private func setAttribute() {
     self.backgroundColor = .clear
     
-    self.titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-    self.titleLabel.textColor = .gray900
+    self.navTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+    self.navTitleLabel.textColor = .gray900
     
     switch self.inStyle {
-    case .none:
-      break
+    case .none(let padding):
+      guard let padding = padding else { break }
+      self.contentStackView.addArrangedSubview(self.leftStackView)
+      let emptyView = UIView()
+      self.leftStackView.addArrangedSubview(emptyView)
+      emptyView.snp.makeConstraints { make in
+        make.width.equalTo(padding)
+      }
       
     case .pop:
       self.contentStackView.addArrangedSubview(self.leftStackView)
@@ -96,11 +102,9 @@ public class BaseNavigationView: UIView {
       self.leftStackView.addArrangedSubview(self.leftButton)
     }
     
-    
-    
     self.addSubview(self.contentStackView)
     
-    self.contentStackView.addArrangedSubview(self.titleLabel)
+    self.contentStackView.addArrangedSubview(self.navTitleLabel)
   }
   
   private func setConstraint() {
