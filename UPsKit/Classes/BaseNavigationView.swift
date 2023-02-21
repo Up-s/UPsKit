@@ -14,7 +14,7 @@ import SnapKit
 public class BaseNavigationView: UIView {
   
   public enum InStyle {
-    case none(CGFloat?)
+    case none
     case pop
     case dismiss
   }
@@ -80,14 +80,8 @@ public class BaseNavigationView: UIView {
     self.titleLabel.textColor = .gray900
     
     switch self.inStyle {
-    case .none(let padding):
-      guard let padding = padding else { break }
-      self.contentStackView.addArrangedSubview(self.leftStackView)
-      let emptyView = UIView()
-      self.leftStackView.addArrangedSubview(emptyView)
-      emptyView.snp.makeConstraints { make in
-        make.width.equalTo(padding)
-      }
+    case .none:
+      self.titleLabel.textAlignment = .left
       
     case .pop:
       self.contentStackView.addArrangedSubview(self.leftStackView)
