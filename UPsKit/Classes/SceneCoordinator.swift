@@ -9,6 +9,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import SnapKit
 
 public class SceneCoordinator {
   
@@ -98,6 +99,30 @@ public class SceneCoordinator {
   
   public func alertTextField(title: String? = nil, message: String? = nil, keyboardType: UIKeyboardType = .default, placeholder: String? = nil, actionTitle: String, cancel: String, handler: ((String?) -> Void)? = nil, completion: (() -> Void)? = nil) {
     self.currentVC.alertTextField(title: title, message: message, keyboardType: keyboardType, placeholder: placeholder, actionTitle: actionTitle, cancel: cancel, handler: handler, completion: completion)
+  }
+  
+  
+  
+  // MARK: - Indicator
+  
+  private var indicatorView: UIView?
+  
+  func showIndicatorView() {
+    if let _ = self.indicatorView {
+      self.hiddenIndicatorView()
+    }
+    
+    let vIndicator = IndicatorView()
+    self.indicatorView = vIndicator
+    self.currentVC.view.addSubview(vIndicator)
+    vIndicator.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+  }
+  
+  func hiddenIndicatorView() {
+    self.indicatorView?.removeFromSuperview()
+    self.indicatorView = nil
   }
   
   
