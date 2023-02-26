@@ -1,6 +1,6 @@
 {
   "name": "UPsKit",
-  "version": "3.6.0",
+  "version": "3.9.2",
   "summary": "UPsKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Up-s/UPsKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Up-s/UPsKit.git",
-    "tag": "3.6.0"
+    "tag": "3.9.2"
   },
   "platforms": {
     "ios": "13.0"

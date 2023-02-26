@@ -6,10 +6,10 @@ target 'UPsKit_Example' do
   
   pod 'UPsKit', :path => '../'
   
-  pod 'RxCocoa', '~> 6.5.0'
-  pod 'RxSwift', '~> 6.5.0'
-  pod 'SnapKit', '~> 5.0.0'
-  pod 'Then', '~> 3.0.0'
+  pod 'RxCocoa', '~> 6'
+  pod 'RxSwift', '~> 6'
+  pod 'SnapKit', '~> 5'
+  pod 'Then', '~> 3'
   
   target 'UPsKit_Tests' do
     inherit! :search_paths
