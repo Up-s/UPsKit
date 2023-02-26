@@ -17,7 +17,7 @@ public class UPsLeftAlignCollectionView: UICollectionView {
     layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     super.init(frame: .zero, collectionViewLayout: layout)
     
-    self.backgroundColor = .back
+    self.backgroundColor = .clear
   }
   
   required init?(coder: NSCoder) {

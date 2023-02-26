@@ -76,7 +76,7 @@ public class UPsBarChartView: UIView {
     for (index, slice) in self.slices.enumerated() {
       let unitStackView = UPsStackView(axis: .horizontal, spacing: 16.0)
       unitStackView.tag = index
-      unitStackView.backgroundColor = .board
+      unitStackView.backgroundColor = .gray200
       unitStackView.layer.cornerRadius = 8.0
       unitStackView.translatesAutoresizingMaskIntoConstraints = false
       

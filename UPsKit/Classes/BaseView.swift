@@ -16,7 +16,7 @@ open class BaseView: UIView {
   
   public init() {
     super.init(frame: .zero)
-    self.backgroundColor = .back
+    self.backgroundColor = .dark
   }
   
   public required init?(coder: NSCoder) {

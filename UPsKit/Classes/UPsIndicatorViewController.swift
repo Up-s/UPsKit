@@ -31,11 +31,11 @@ final class UPsIndicatorViewController: UIViewController {
   // MARK: - UI
 
   private func setAttribute() {
-    self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    self.view.backgroundColor = .gray900.withAlphaComponent(0.4)
     
     self.indicatorView.startAnimating()
     self.indicatorView.style = UIActivityIndicatorView.Style.large
-    self.indicatorView.color = .white
+    self.indicatorView.color = .gray100
     self.view.addSubview(self.indicatorView)
   }
   

@@ -15,7 +15,7 @@ public class UPsCollectionView: UICollectionView {
     self.flowLayout.scrollDirection = scrollDirection
     super.init(frame: .zero, collectionViewLayout: flowLayout)
     
-    self.backgroundColor = .back
+    self.backgroundColor = .clear
   }
   
   required init?(coder aDecoder: NSCoder) {

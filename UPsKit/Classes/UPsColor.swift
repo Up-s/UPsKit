@@ -17,28 +17,6 @@ public extension UIColor {
   
   
   
-  // MARK: - Background
-  
-  static var back: UIColor {
-    let light = UIColor("F0F2F5") // gray200
-    let dark = UIColor("252629") // gray900
-    return UIColor(light: light, dark: dark)
-  }
-  
-  static var board: UIColor {
-    let light = UIColor("FFFFFF") // white
-    let dark = UIColor("3F4045") // gray800
-    return UIColor(light: light, dark: dark)
-  }
-  
-  static var boardSub: UIColor {
-    let light = UIColor("F9FAFC") // gray100
-    let dark = UIColor("57595E") // gray700
-    return UIColor(light: light, dark: dark)
-  }
-  
-  
-  
   // MARK: - Gray
   
   static var gray100: UIColor {
