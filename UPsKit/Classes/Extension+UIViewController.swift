@@ -12,7 +12,7 @@ public extension UIViewController {
   // MARK: - ScenCondinator
   
   var sceneViewController: UIViewController {
-      return self.children.last ?? self
+    return self.children.last ?? self
   }
   
   
@@ -31,32 +31,32 @@ public extension UIViewController {
     tempToastLabel.layer.cornerRadius = 4
     tempToastLabel.layer.masksToBounds = true
     self.view.addSubview(tempToastLabel)
-
+    
     let guide = self.view.safeAreaLayoutGuide
     tempToastLabel.translatesAutoresizingMaskIntoConstraints = false
     tempToastLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
     tempToastLabel.widthAnchor.constraint(lessThanOrEqualTo: guide.widthAnchor, multiplier: 1, constant: -48).isActive = true
     let topConstraint = tempToastLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 4)
     topConstraint.isActive = true
-
+    
     let duration: Double = 0.5
-    let delay: Double = 2
+    let delay: Double = 3.5
     DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.1) { [weak self] in
-        UIView.animate(withDuration: duration) {
-            topConstraint.constant += 12
-            tempToastLabel.alpha = 1
-            self?.view.layoutIfNeeded()
-        }
+      UIView.animate(withDuration: duration) {
+        topConstraint.constant += 12
+        tempToastLabel.alpha = 1.0
+        self?.view.layoutIfNeeded()
+      }
     }
     
     DispatchQueue.main.asyncAfter(wallDeadline: .now() + Double(duration + delay)) { [weak self] in
-        UIView.animate(withDuration: duration, animations: {
-            topConstraint.constant -= 12
-            tempToastLabel.alpha = 0
-            self?.view.layoutIfNeeded()
-        }) { _ in
-            tempToastLabel.removeFromSuperview()
-        }
+      UIView.animate(withDuration: duration, animations: {
+        topConstraint.constant -= 12
+        tempToastLabel.alpha = 0.0
+        self?.view.layoutIfNeeded()
+      }) { _ in
+        tempToastLabel.removeFromSuperview()
+      }
     }
   }
   
