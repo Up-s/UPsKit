@@ -9,7 +9,7 @@ import Foundation
 
 import RxSwift
 
-extension ObservableType {
+public extension ObservableType {
   
   func ignoreAll() -> Observable<Void> {
     return self.map { _ in }
