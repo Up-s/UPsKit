@@ -51,11 +51,11 @@ public class BaseNavigationView: UIView {
   
   // MARK: - Interface
   
-  public func addNavigationLeftStackView(_ addView: UIView) {
+  public func addLeftStackView(_ addView: UIView) {
     self.leftStackView.addArrangedSubview(addView)
   }
   
-  public func addNavigationRightStackView(_ addView: UIView) {
+  public func addRightStackView(_ addView: UIView) {
     if self.rightStackView.superview == nil {
       self.contentStackView.addArrangedSubview(self.rightStackView)
     }
