@@ -28,4 +28,9 @@ public extension UIView {
     self.layer.shadowOffset = .zero
     self.layer.shadowColor = UIColor.darkGray.cgColor
   }
+  
+  func setCornerRadius(_ value: CGFloat) {
+    self.layer.cornerRadius = value
+    self.layer.masksToBounds = true
+  }
 }
