@@ -107,7 +107,10 @@ public class SceneCoordinator {
   
   private var indicatorView: UIView?
   
-  func showIndicatorView() {
+  @discardableResult
+  public func showIndicatorView() -> Completable {
+    let subject = PublishSubject<Never>()
+    
     if let _ = self.indicatorView {
       self.hiddenIndicatorView()
     }
@@ -118,11 +121,20 @@ public class SceneCoordinator {
     vIndicator.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    
+    subject.onCompleted()
+    return subject.asCompletable()
   }
   
-  func hiddenIndicatorView() {
+  @discardableResult
+  public func hiddenIndicatorView() -> Completable {
+    let subject = PublishSubject<Never>()
+    
     self.indicatorView?.removeFromSuperview()
     self.indicatorView = nil
+    
+    subject.onCompleted()
+    return subject.asCompletable()
   }
   
   
