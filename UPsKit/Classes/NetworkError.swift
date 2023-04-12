@@ -9,6 +9,7 @@ import Foundation
 
 public enum NetworkError: Error {
   
+  case isEmailVerified
   case emptyData
   case firebaseError(Error)
   case networkError(Error)

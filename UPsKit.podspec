@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UPsKit'
-  s.version          = '3.11.7'
+  s.version          = '3.11.8'
   s.summary          = 'UPsKit'
 
 # This description is used to generate tags and improve search results.
@@ -44,9 +44,9 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   
-  s.dependency 'RxCocoa', '~> 6'
-  s.dependency 'RxSwift', '~> 6'
-  s.dependency 'SnapKit', '~> 5'
-  s.dependency 'Then', '~> 3'
+  s.dependency 'RxCocoa'
+  s.dependency 'RxSwift'
+  s.dependency 'SnapKit'
+  s.dependency 'Then'
   
 end

@@ -29,6 +29,9 @@ public extension ObservableType {
       case .none:
         message = error.localizedDescription
         
+      case .isEmailVerified:
+        message = "이메일 인증을 완료해 주세요"
+        
       case .emptyData:
         message = "Empty Data"
         
