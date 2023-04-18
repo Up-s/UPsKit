@@ -222,4 +222,29 @@ public class SceneCoordinator {
     
     return subject.asCompletable()
   }
+  
+  
+  
+  // MARK: - Actual
+  
+  @discardableResult
+  public func actualViewController(for viewController: UIViewController) -> UIViewController {
+    var controller = viewController
+    if let tabBarController = controller as? UITabBarController {
+      guard let selectedViewController = tabBarController.selectedViewController else {
+        return tabBarController
+      }
+      controller = selectedViewController
+      
+      return self.actualViewController(for: controller)
+    }
+    
+    if let navigationController = viewController as? UINavigationController {
+      controller = navigationController.viewControllers.first!
+      
+      return self.actualViewController(for: controller)
+    }
+    
+    return controller
+  }
 }
