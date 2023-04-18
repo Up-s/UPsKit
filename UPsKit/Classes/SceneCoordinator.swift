@@ -49,18 +49,18 @@ public class SceneCoordinator {
       
       
     case .push:
-      guard let nav = self.currentVC.navigationController else {
+      guard let navi = self.currentVC.navigationController else {
         subject.onError(TransitionError.navigationControllerMissing)
         break
       }
       
-      nav.rx.willShow
+      navi.rx.willShow
         .withUnretained(self)
         .subscribe(onNext: { (coordinator, evt) in
           coordinator.currentVC = evt.viewController.sceneViewController })
         .disposed(by: disposeBag)
       
-      nav.pushViewController(target, animated: animated)
+      navi.pushViewController(target, animated: animated)
       self.currentVC = target.sceneViewController
       
       subject.onCompleted()
@@ -111,8 +111,9 @@ public class SceneCoordinator {
   public func showIndicatorView() -> Completable {
     let subject = PublishSubject<Never>()
     
-    if let _ = self.indicatorView {
-      self.hiddenIndicatorView()
+    guard self.indicatorView == nil else {
+      subject.onCompleted()
+      return subject.asCompletable()
     }
     
     let vIndicator = IndicatorView()
@@ -157,16 +158,16 @@ public class SceneCoordinator {
   public func pop(animated: Bool = true) -> Completable {
     let subject = PublishSubject<Never>()
     
-    guard let nav = self.currentVC.navigationController else {
+    guard let navi = self.currentVC.navigationController else {
       subject.onError(TransitionError.navigationControllerMissing)
       return subject.asCompletable()
     }
-    guard nav.popViewController(animated: animated) != nil else {
+    guard navi.popViewController(animated: animated) != nil else {
       subject.onError(TransitionError.cannotPop)
       return subject.asCompletable()
     }
     
-    self.currentVC = nav.viewControllers.last!.sceneViewController
+    self.currentVC = navi.viewControllers.last!.sceneViewController
     
     return subject.asCompletable()
   }
@@ -206,13 +207,13 @@ public class SceneCoordinator {
         subject.onCompleted()
       }
 
-    } else if let nav = self.currentVC.navigationController {
-      guard nav.popViewController(animated: animated) != nil else {
+    } else if let navi = self.currentVC.navigationController {
+      guard navi.popViewController(animated: animated) != nil else {
         subject.onError(TransitionError.cannotPop)
         return subject.asCompletable()
       }
 
-      self.currentVC = nav.viewControllers.last!.sceneViewController
+      self.currentVC = navi.viewControllers.last!.sceneViewController
       subject.onCompleted()
 
     } else {
