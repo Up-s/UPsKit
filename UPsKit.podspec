@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UPsKit'
-  s.version          = '3.11.10'
+  s.version          = '3.12.1'
   s.summary          = 'UPsKit'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Up-s/UPsKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '15.0'
 
   s.source_files = 'UPsKit/Classes/**/*'
   
@@ -45,6 +45,7 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   
   s.dependency 'RxCocoa'
+  s.dependency 'RxGesture'
   s.dependency 'RxSwift'
   s.dependency 'SnapKit'
   s.dependency 'Then'
