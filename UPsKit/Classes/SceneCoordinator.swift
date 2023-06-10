@@ -39,33 +39,26 @@ public class SceneCoordinator {
     
     switch style {
     case .root:
-      self.currentVC = target.sceneViewController
       let navi = UINavigationController(rootViewController: target)
       navi.navigationBar.isHidden = true
       self.window.rootViewController = navi
-      
+      self.currentVC = target
       subject.onCompleted()
-      
-      
       
     case .push:
       guard let navi = self.currentVC.navigationController else {
         subject.onError(TransitionError.navigationControllerMissing)
         break
       }
-      
       navi.rx.willShow
         .withUnretained(self)
         .subscribe(onNext: { (coordinator, evt) in
-          coordinator.currentVC = evt.viewController.sceneViewController })
+          coordinator.currentVC = evt.viewController
+        })
         .disposed(by: disposeBag)
-      
       navi.pushViewController(target, animated: animated)
-      self.currentVC = target.sceneViewController
-      
+      self.currentVC = target
       subject.onCompleted()
-      
-      
       
     case .modal(let style):
       let navi = UINavigationController(rootViewController: target)
@@ -74,8 +67,7 @@ public class SceneCoordinator {
       self.currentVC.present(navi, animated: animated) {
         subject.onCompleted()
       }
-      
-      self.currentVC = target.sceneViewController
+      self.currentVC = target
     }
     
     return subject.asCompletable()
@@ -167,7 +159,7 @@ public class SceneCoordinator {
       return subject.asCompletable()
     }
     
-    self.currentVC = navi.viewControllers.last!.sceneViewController
+    self.currentVC = navi.viewControllers.last!
     
     return subject.asCompletable()
   }
