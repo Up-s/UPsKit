@@ -13,10 +13,9 @@ import RxSwift
 open class BaseViewModel: NSObject {
   
   public struct Base {
-    public let backDidTap = PublishRelay<Void>()
+    public let popDidTap = PublishRelay<Void>()
     public let dismissDidTap = PublishRelay<Void>()
     public let adaptiveDismiss = PublishRelay<UIPresentationController?>()
-    public let networkError = PublishRelay<Error>()
   }
   
   public let base = Base()
@@ -36,7 +35,7 @@ open class BaseViewModel: NSObject {
     
     super.init()
     
-    self.base.backDidTap
+    self.base.popDidTap
       .bind { [weak self] _ in
         self?.coordinator.pop()
       }
@@ -55,13 +54,6 @@ open class BaseViewModel: NSObject {
       }
       .bind { [weak self] in
         self?.coordinator.adaptiveDismiss($0)
-      }
-      .disposed(by: self.disposeBag)
-    
-    self.base.networkError
-      .bind { [weak self] error in
-        self?.coordinator.toast(error.localizedDescription)
-        self?.debugLog(#function, #line, error)
       }
       .disposed(by: self.disposeBag)
   }
