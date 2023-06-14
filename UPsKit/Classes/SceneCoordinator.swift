@@ -164,6 +164,25 @@ public class SceneCoordinator {
     return subject.asCompletable()
   }
   
+  @discardableResult
+  public func popAll(animated: Bool = true) -> Completable {
+    let subject = PublishSubject<Never>()
+    
+    guard let navi = self.currentVC.navigationController else {
+      subject.onError(TransitionError.navigationControllerMissing)
+      return subject.asCompletable()
+    }
+    
+    guard navi.popToRootViewController(animated: animated) != nil else {
+      subject.onError(TransitionError.cannotPop)
+      return subject.asCompletable()
+    }
+    
+    self.currentVC = navi.viewControllers.last!
+    
+    return subject.asCompletable()
+  }
+  
   
   
   // MARK: - Dismiss
