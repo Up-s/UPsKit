@@ -89,7 +89,7 @@ public extension Int {
 
 // 0.01 기준
 
-extension ObservableType where Element == Int {
+public extension ObservableType where Element == Int {
   
   func fullTimer() -> Observable<String> {
     return map { time in
