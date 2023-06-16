@@ -81,6 +81,21 @@ public extension Int {
       return String(format: "%d분", min)
     }
   }
+  
+  
+  
+  var timerFull: String {
+    let millisec = self % 100
+    let sec = (self / 100) % 60
+    let min = ((self / 100) / 60) % 60
+    return String(format: "%02d : %02d . %02d", min, sec, millisec)
+  }
+  
+  var timerLap: String {
+    let millisec = self % 100
+    let sec = (self / 100) % 60
+    return String(format: "%02d . %02d", sec, millisec)
+  }
 }
 
 
