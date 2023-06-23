@@ -2,7 +2,7 @@
 //  Extension+Array.swift
 //  UPsKit
 //
-//  Created by YouUp Lee on 2023/06/23.
+//  Created by YouUp Lee on 2023/06/24.
 //
 
 import Foundation
@@ -26,5 +26,3 @@ public extension Array where Element ==  Int {
       }
   }
 }
-
-
