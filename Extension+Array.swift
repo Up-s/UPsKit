@@ -7,10 +7,23 @@
 
 import Foundation
 
-extension Array where Element ==  Int {
+public extension Array where Element ==  Int {
   
   var average: Int {
     self.reduce(0) { $0 + $1 } / self.count
+  }
+  
+  var rank: [Int] {
+    let sortData = self.sorted { $0 < $1 }
+    return self
+      .compactMap { value in
+        sortData.enumerated()
+          .compactMap { i, v -> Int? in
+            guard v == value else { return nil }
+            return i + 1
+          }
+          .last
+      }
   }
 }
 
