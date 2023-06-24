@@ -62,3 +62,21 @@ public extension String {
     return pureNumber
   }
 }
+
+
+
+// MARK: - Optional
+
+public extension Optional where Wrapped == String {
+  
+  func isEmpty() -> Bool {
+    guard let text = self else { return true }
+    return text.isEmpty
+  }
+  
+  var emptyToNil: String? {
+    guard let self else { return nil }
+    let text = self.isEmpty ? nil : self
+    return text
+  }
+}

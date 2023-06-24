@@ -253,7 +253,6 @@
 		9E8BA4FB802EDCD492DAF618CA7BFCE8 /* SharedSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F216D9BBE2844732AA8B770C0EB1826 /* SharedSequence.swift */; };
 		9EB3CA16A473EC2535ADB3A1C33C5CC6 /* AsyncLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E05687D4749820D1D373E9A12840BA /* AsyncLock.swift */; };
 		9ED8004D1703AB218164D3E86AE58226 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B7F520F42FB09697E2E67D0E06E0F /* Sample.swift */; };
-		9F1CE6EA813F739C3D38211ABD3A3993 /* Extension+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABECE638766BF1D99BE814B2EC2B988A /* Extension+Optional.swift */; };
 		9F370B3928A333AD7E41680A29B1F051 /* RxCollectionViewReactiveArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4894D59413AD578757CB3C8E20A073A /* RxCollectionViewReactiveArrayDataSource.swift */; };
 		A0208B623442A26CB9157F193CBB4A7F /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466116DF9F3256964451BC463DA7D52 /* Platform.Linux.swift */; };
 		A03FDA8BC5741880B1EF11AFD248EF48 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3815388B09F387825913F7DB3722EA9 /* ConstraintOffsetTarget.swift */; };
@@ -795,7 +794,6 @@
 		AA3814A6FFD68578F7D047139BB2D303 /* ControlEvent+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlEvent+Driver.swift"; sourceTree = "<group>"; };
 		AAB93061F187632F20905132E435BE57 /* BehaviorRelay+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BehaviorRelay+Driver.swift"; path = "RxCocoa/Traits/Driver/BehaviorRelay+Driver.swift"; sourceTree = "<group>"; };
 		AB23599F9D1BB703B6D3ABCE92423A0D /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
-		ABECE638766BF1D99BE814B2EC2B988A /* Extension+Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extension+Optional.swift"; path = "UPsKit/Classes/Extension+Optional.swift"; sourceTree = "<group>"; };
 		AC9942E57F14BDB52B8FA3057364D7EF /* Pods-UPsKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPsKit_Example.modulemap"; sourceTree = "<group>"; };
 		ACAD16A34F14BBC406BC2E875A1D6EE6 /* RxCollectionViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxCollectionViewDataSourceType.swift; sourceTree = "<group>"; };
 		AD532ADB565DB703BBDFC2C4003B0E22 /* RxCollectionViewDataSourcePrefetchingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDataSourcePrefetchingProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDataSourcePrefetchingProxy.swift; sourceTree = "<group>"; };
@@ -1171,7 +1169,6 @@
 				705DF01937E45D5CA8D4CF393D915E96 /* Extension+NSMutableAttributedString.swift */,
 				8785655F5919DE6B300D4AA51BA53E98 /* Extension+NSObject.swift */,
 				7770CAE6175B9E2A4A135DDB3EF98754 /* Extension+ObservableType.swift */,
-				ABECE638766BF1D99BE814B2EC2B988A /* Extension+Optional.swift */,
 				FB6782C847EA1DC97FC0D2304D92252C /* Extension+String.swift */,
 				908B477514076C681CB6F07455B32DCF /* Extension+UIBarButtonItem.swift */,
 				CFCB8FB3E4F10505891D15AAACDE7969 /* Extension+UIButton.swift */,
@@ -2094,7 +2091,6 @@
 				E1B2193CEB41D36C95BDD9CA304FE3C0 /* Extension+NSObject.swift in Sources */,
 				BDECBCA92A45F34F005819F0 /* Extension+Array.swift in Sources */,
 				A9CBD6C06B41767179115B280ADB5F25 /* Extension+ObservableType.swift in Sources */,
-				9F1CE6EA813F739C3D38211ABD3A3993 /* Extension+Optional.swift in Sources */,
 				52FDF78B0A8C92477879CD530D01A4A7 /* Extension+String.swift in Sources */,
 				2585DE4E54A8599BB9B51428539CFBF0 /* Extension+UIBarButtonItem.swift in Sources */,
 				68B9A2D41B39F8B83B5BA0C0F9FE1077 /* Extension+UIButton.swift in Sources */,

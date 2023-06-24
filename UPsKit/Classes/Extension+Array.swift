@@ -7,7 +7,17 @@
 
 import Foundation
 
-public extension Array where Element ==  Int {
+public extension Array where Element == Int {
+  
+  var best: Int {
+    let sortData = self.sorted { $0 < $1 }
+    return sortData.first!
+  }
+  
+  var worst: Int {
+    let sortData = self.sorted { $0 < $1 }
+    return sortData.last!
+  }
   
   var average: Int {
     self.reduce(0) { $0 + $1 } / self.count
