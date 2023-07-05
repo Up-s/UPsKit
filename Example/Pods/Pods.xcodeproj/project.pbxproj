@@ -300,6 +300,7 @@
 		BC490C88923299964BEC7C743337FB5C /* SynchronizedOnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7068F953470D8E2CC4DC0A7D66310 /* SynchronizedOnType.swift */; };
 		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A77BC9346CE793C59CEA555FB3316B /* SnapKit-dummy.m */; };
 		BD7CEF8BFF434F59D7AC9F61C2D662FC /* CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF025A7BB6FEA3360A5BF6FC81FF80 /* CompactMap.swift */; };
+		BDD5DFC42A557B4F00B4C656 /* Extension+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD5DFC32A557B4F00B4C656 /* Extension+Dictionary.swift */; };
 		BDECBCA92A45F34F005819F0 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDECBCA82A45F34F005819F0 /* Extension+Array.swift */; };
 		BF9B98F59C6308ED244030B8FD1419F0 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252344D63EB0C6287B53AEC88CCF32CE /* DisposeBag.swift */; };
 		BFEF6A769D633108B709EFE65DE82BF1 /* GroupedObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A1E2BAD879505AE293CD1B28FCA1C /* GroupedObservable.swift */; };
@@ -824,6 +825,7 @@
 		BBEF24FE22F6451DFFBEFD5A23CA5FE1 /* Disposables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposables.swift; path = RxSwift/Disposables/Disposables.swift; sourceTree = "<group>"; };
 		BC432FD48A5932251F1CAFBC4BF74894 /* RxCocoa */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB3510F954D48B6F8E5355F8C62EF6F /* UPsShadowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UPsShadowView.swift; path = UPsKit/Classes/UPsShadowView.swift; sourceTree = "<group>"; };
+		BDD5DFC32A557B4F00B4C656 /* Extension+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+Dictionary.swift"; path = "UPsKit/Classes/Extension+Dictionary.swift"; sourceTree = "<group>"; };
 		BDECBCA82A45F34F005819F0 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+Array.swift"; path = "UPsKit/Classes/Extension+Array.swift"; sourceTree = "<group>"; };
 		BF1DAA46B6E8929F9692B8C459B73010 /* SharedSequence+Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Concurrency.swift"; path = "RxCocoa/Traits/SharedSequence/SharedSequence+Concurrency.swift"; sourceTree = "<group>"; };
 		BFA881EF578294F9583CB7E1643FBB2D /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
@@ -1164,6 +1166,7 @@
 				BDECBCA82A45F34F005819F0 /* Extension+Array.swift */,
 				045F8758E0D767FC7D929C59DF790CF2 /* Extension+Date.swift */,
 				EE48E91E941FBFB658160805821C37B3 /* Extension+DateComponents.swift */,
+				BDD5DFC32A557B4F00B4C656 /* Extension+Dictionary.swift */,
 				CC80580F11DA606686706D78A2927122 /* Extension+Disposables.swift */,
 				3DD399AE4B809021F2C42AF13692250C /* Extension+Int.swift */,
 				705DF01937E45D5CA8D4CF393D915E96 /* Extension+NSMutableAttributedString.swift */,
@@ -2113,6 +2116,7 @@
 				32F86A68A0557D310BEC25866B1334BC /* SceneProtocol.swift in Sources */,
 				EC09C1BE91EAD93FCA72732B218C9D6F /* SceneTransitionStyle.swift in Sources */,
 				40C2BB9579E82B14082FD99D158414CC /* Snippets.swift in Sources */,
+				BDD5DFC42A557B4F00B4C656 /* Extension+Dictionary.swift in Sources */,
 				4BDE21EA96AD466F1605B80B2A5EC7E7 /* UPsAlertAction.swift in Sources */,
 				7E66924D182C96E03877E5E82ABD6706 /* UPsBarChartView.swift in Sources */,
 				D0127580C3287EF4A692BE196591017A /* UPsCollectionView.swift in Sources */,
