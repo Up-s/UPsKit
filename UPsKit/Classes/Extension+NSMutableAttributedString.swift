@@ -9,10 +9,39 @@ import UIKit
 
 public extension NSMutableAttributedString {
   
-  class func make(text: String, keyword: String, keywordFont: UIFont, keywordColor: UIColor = .red) -> NSMutableAttributedString {
-    let attributedString = NSMutableAttributedString(string: text)
-    attributedString.addAttribute(NSAttributedString.Key.font, value: keywordFont, range: (text as NSString).range(of: keyword))
-    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: keywordColor, range: (text as NSString).range(of: keyword))
-    return attributedString
+  class func config(
+      text: String,
+      keyword: String,
+      font: UIFont? = nil,
+      lineOffset: CGFloat? = nil,
+      color: UIColor? = nil
+  ) -> NSMutableAttributedString {
+      let attributedString = NSMutableAttributedString(string: text)
+      
+      if let font = font {
+          attributedString.addAttribute(
+              NSAttributedString.Key.font,
+              value: font,
+              range: (text as NSString).range(of: keyword)
+          )
+      }
+      
+      if let lineOffset = lineOffset {
+          attributedString.addAttribute(
+              NSAttributedString.Key.baselineOffset,
+              value: lineOffset,
+              range: (text as NSString).range(of: keyword)
+          )
+      }
+      
+      if let color = color {
+          attributedString.addAttribute(
+              NSAttributedString.Key.foregroundColor,
+              value: color,
+              range: (text as NSString).range(of: keyword)
+          )
+      }
+      
+      return attributedString
   }
 }
