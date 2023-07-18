@@ -23,10 +23,10 @@ open class BaseViewController: UIViewController {
     
     
     self.endEditing
-        .bind { [weak self] in
-            self?.view.endEditing(true)
-        }
-        .disposed(by: self.disposeBag)
+      .bind { [weak self] in
+        self?.view.endEditing(true)
+      }
+      .disposed(by: self.disposeBag)
   }
   
   required public init?(coder: NSCoder) {
@@ -34,7 +34,7 @@ open class BaseViewController: UIViewController {
   }
   
   deinit {
-      print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")
+    print("🎉🎉🎉 deinit: \(self.className) 🎉🎉🎉")
   }
   
   
@@ -42,22 +42,22 @@ open class BaseViewController: UIViewController {
   // MARK: - Interface
   
   public func setKeyboardNotification() {
-      self.rx.viewDidAppear
-          .compactMap { [weak self] _ -> BaseView? in
-              return self?.view as? BaseView
-          }
-          .bind { rootView in
-              rootView.addKeyboardNotification()
-          }
-          .disposed(by: self.disposeBag)
-      
-      self.rx.viewDidDisappear
-          .compactMap { [weak self] _ -> BaseView? in
-              return self?.view as? BaseView
-          }
-          .bind { rootView in
-              rootView.removeKeyboardNotification()
-          }
-          .disposed(by: self.disposeBag)
+    self.rx.viewDidAppear
+      .compactMap { [weak self] _ -> BaseView? in
+        return self?.view as? BaseView
+      }
+      .bind { rootView in
+        rootView.addKeyboardNotification()
+      }
+      .disposed(by: self.disposeBag)
+    
+    self.rx.viewDidDisappear
+      .compactMap { [weak self] _ -> BaseView? in
+        return self?.view as? BaseView
+      }
+      .bind { rootView in
+        rootView.removeKeyboardNotification()
+      }
+      .disposed(by: self.disposeBag)
   }
 }
