@@ -93,6 +93,14 @@ public class SceneCoordinator {
     self.currentVC.alertTextField(title: title, message: message, keyboardType: keyboardType, placeholder: placeholder, actionTitle: actionTitle, cancel: cancel, handler: handler, completion: completion)
   }
   
+  public func alert(_ contents: UPsAlertContents) {
+    let alertView = UPsAlertBaseView(contents)
+    self.currentVC.view.addSubview(alertView)
+    alertView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+  }
+  
   
   
   // MARK: - Indicator
@@ -217,16 +225,16 @@ public class SceneCoordinator {
         self.currentVC = presentingVC.sceneViewController
         subject.onCompleted()
       }
-
+      
     } else if let navi = self.currentVC.navigationController {
       guard navi.popViewController(animated: animated) != nil else {
         subject.onError(TransitionError.cannotPop)
         return subject.asCompletable()
       }
-
+      
       self.currentVC = navi.viewControllers.last!.sceneViewController
       subject.onCompleted()
-
+      
     } else {
       subject.onError(TransitionError.unknown)
     }

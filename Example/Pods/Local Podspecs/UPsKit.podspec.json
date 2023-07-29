@@ -1,6 +1,6 @@
 {
   "name": "UPsKit",
-  "version": "3.11.10",
+  "version": "3.14.0",
   "summary": "UPsKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Up-s/UPsKit",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/Up-s/UPsKit.git",
-    "tag": "3.11.10"
+    "tag": "3.14.0"
   },
   "platforms": {
-    "ios": "13.0"
+    "ios": "15.0"
   },
   "source_files": "UPsKit/Classes/**/*",
   "swift_versions": "5.0",
