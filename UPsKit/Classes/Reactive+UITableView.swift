@@ -5,6 +5,8 @@
 //  Created by UPs on 2022/12/17.
 //
 
+import Foundation
+
 import RxSwift
 
 public extension Reactive where Base: UITableView {

@@ -10,16 +10,16 @@ import UIKit
 import RxSwift
 
 public extension Reactive where Base: UITextField {
-    
-    var becomeFirstResponder: Binder<Void> {
-        return Binder(self.base) { textField, _ in
-            textField.becomeFirstResponder()
-        }
+  
+  var becomeFirstResponder: Binder<Void> {
+    return Binder(self.base) { textField, _ in
+      textField.becomeFirstResponder()
     }
-    
-    var resignFirstResponder: Binder<Void> {
-        return Binder(self.base) { textField, _ in
-            textField.resignFirstResponder()
-        }
+  }
+  
+  var resignFirstResponder: Binder<Void> {
+    return Binder(self.base) { textField, _ in
+      textField.resignFirstResponder()
     }
+  }
 }

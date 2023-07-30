@@ -19,14 +19,12 @@ public extension Reactive where Base: UICollectionView {
   
   var performBatchUpdates: Observable<Void> {
     return Observable<Void>.create { observer in
-      
       self.base.performBatchUpdates {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
           observer.onNext(())
           observer.onCompleted()
         }
       }
-      
       return Disposables.create()
     }
   }

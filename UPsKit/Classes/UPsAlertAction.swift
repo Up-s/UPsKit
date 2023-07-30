@@ -22,7 +22,11 @@ public struct UPsAlertAction: UPsAlertActionProtocol {
   public let style: UIAlertAction.Style
   public let handler: ((UIAlertAction) -> Void)?
   
-  public init(title: String, style: UIAlertAction.Style = .default, handler: ((UIAlertAction) -> Void)? = nil) {
+  public init(
+    title: String,
+    style: UIAlertAction.Style = .default,
+    handler: ((UIAlertAction) -> Void)? = nil
+  ) {
     self.title = title
     self.style = style
     self.handler = handler
@@ -37,7 +41,11 @@ public struct UPsAlertCancelAction: UPsAlertActionProtocol {
   public let style: UIAlertAction.Style
   public let handler: ((UIAlertAction) -> Void)?
   
-  public init(title: String = "닫기", style: UIAlertAction.Style = .cancel, handler: ((UIAlertAction) -> Void)? = nil) {
+  public init(
+    title: String = "닫기",
+    style: UIAlertAction.Style = .cancel,
+    handler: ((UIAlertAction) -> Void)? = nil
+  ) {
     self.title = title
     self.style = style
     self.handler = handler

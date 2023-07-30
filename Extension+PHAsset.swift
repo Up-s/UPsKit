@@ -10,7 +10,7 @@ import Photos
 
 import RxSwift
 
-extension ObservableType where Element == PHAsset {
+public extension ObservableType where Element == PHAsset {
   
   func assetToImage(_ requestOptions: PhotoRequestOptionsProtocol) -> Observable<UIImage?> {
     return self.flatMap { asset -> Observable<UIImage?> in
