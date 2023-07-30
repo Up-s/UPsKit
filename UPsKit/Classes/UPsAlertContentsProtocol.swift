@@ -15,6 +15,8 @@ public protocol UPsAlertContentsProtocol {
   var action: [UPsAlertActionContents] { get }
 }
 
+
+
 public struct UPsAlertContents: UPsAlertContentsProtocol {
   
   public var title: String?

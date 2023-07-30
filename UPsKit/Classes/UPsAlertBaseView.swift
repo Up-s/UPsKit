@@ -13,9 +13,12 @@ public class UPsAlertBaseView: UIView {
   
   // MARK: - Property
   
-  private var effectView: UIVisualEffectView?
-  private let backgroundButton = UIButton()
+  private var visualEffectView: UIVisualEffectView?
   private let alertView: UPsAlertView
+  
+  private var topConstraint: NSLayoutConstraint?
+  private var beganPointY: CGFloat?
+  private var beganTopConstant: CGFloat?
   
   
   
@@ -33,7 +36,6 @@ public class UPsAlertBaseView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  
   private var isLayoutSubviews = true
   public override func layoutSubviews() {
     super.layoutSubviews()
@@ -41,9 +43,105 @@ public class UPsAlertBaseView: UIView {
     if self.isLayoutSubviews {
       self.isLayoutSubviews = false
       self.setBlurView()
-      self.setBackButton()
       self.setAlertView()
     }
+  }
+  
+  
+  
+  // MARK: - Touch
+  
+  public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    
+    guard let touch = touches.first else { return }
+    let point = touch.location(in: self.superview)
+    
+    switch self.alertView.frame.contains(point) {
+    case true:
+      self.beganPointY = point.y
+      self.beganTopConstant = self.topConstraint?.constant
+      
+    case false:
+      self.closeAlert()
+    }
+  }
+  
+  public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesMoved(touches, with: event)
+    
+    guard let touch = touches.first else { return }
+    let point = touch.location(in: self.superview)
+    guard self.alertView.frame.contains(point) else { return }
+    
+    let moveConstant = point.y - (self.beganPointY ?? 0.0) + (self.beganTopConstant ?? 0.0)
+    let maxPointY = -self.alertViewHeight
+    
+    switch moveConstant {
+    case maxPointY...0.0:
+      self.visualEffectView?.alpha = moveConstant / maxPointY
+      self.topConstraint?.constant = moveConstant
+
+    case 0.0...:
+      self.visualEffectView?.alpha = 0.0
+      self.topConstraint?.constant = 0.0
+      
+    case ...maxPointY:
+      self.visualEffectView?.alpha = 1.0
+      self.topConstraint?.constant = maxPointY
+      
+    default:
+      break
+    }
+  }
+  
+  public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
+    
+    self.updatePosition()
+  }
+  
+  public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesCancelled(touches, with: event)
+    
+    self.updatePosition()
+  }
+  
+  private func updatePosition() {
+    let endConstant = self.topConstraint?.constant ?? 0.0
+    let targetPointY = -self.alertViewHeight * 0.7
+    
+    let isDismiss: Bool
+    switch endConstant {
+    case targetPointY...:
+      isDismiss = true
+      
+    case ...targetPointY:
+      isDismiss = false
+      
+    default:
+      return
+    }
+    
+    UIView.animate(
+      withDuration: 0.2,
+      delay: 0.0,
+      options: .curveEaseInOut,
+      animations: { [weak self] in
+        guard let self = self else { return }
+        self.visualEffectView?.alpha = isDismiss ? 0.0 : 1.0
+        self.topConstraint?.constant = isDismiss ? 0.0 : -self.alertViewHeight
+        self.superview?.layoutIfNeeded()
+      },
+      completion: { [weak self] _ in
+        guard isDismiss else { return }
+        self?.removeFromSuperview()
+      }
+    )
+  }
+  
+  private var alertViewHeight: CGFloat {
+    self.alertView.bounds.height
   }
   
   
@@ -56,51 +154,50 @@ public class UPsAlertBaseView: UIView {
     visualEffectView.alpha = 0.0
     visualEffectView.frame = self.frame
     self.addSubview(visualEffectView)
-    self.effectView = visualEffectView
+    self.visualEffectView = visualEffectView
     
-    UIView.animate(withDuration: 0.5) { [weak self] in
-      visualEffectView.alpha = 1.0
-      self?.layoutIfNeeded()
-    }
-  }
-  
-  private func setBackButton() {
-    self.addSubview(self.backgroundButton)
-    self.backgroundButton.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
-    }
+    UIView.animate(
+      withDuration: 0.2,
+      delay: .zero,
+      options: .curveEaseInOut,
+      animations: { [weak self] in
+        visualEffectView.alpha = 1.0
+        self?.layoutIfNeeded()
+      }
+    )
   }
   
   private func setAlertView() {
     self.addSubview(self.alertView)
     self.alertView.snp.makeConstraints { make in
-      make.top.equalTo(self.snp.bottom)
       make.leading.trailing.equalToSuperview()
     }
+    self.topConstraint = self.alertView.topAnchor.constraint(equalTo: self.bottomAnchor)
+    self.topConstraint?.isActive = true
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      UIView.animate(withDuration: 0.2) { [weak self] in
-        guard let self else { return }
-        let height = self.alertView.bounds.height
-        self.alertView.snp.updateConstraints { make in
-          make.top.equalTo(self.snp.bottom).offset(-height)
+      UIView.animate(
+        withDuration: 0.2,
+        delay: .zero,
+        options: .curveEaseInOut,
+        animations: { [weak self] in
+          guard let self else { return }
+          self.topConstraint?.constant = -self.alertViewHeight
+          self.layoutIfNeeded()
         }
-        self.layoutIfNeeded()
-      }
+      )
     }
   }
   
-  @objc private func closeDidTap(_ sender: UIButton) {
+  private func closeAlert() {
     UIView.animate(
       withDuration: 0.2,
+      delay: .zero,
+      options: .curveEaseInOut,
       animations: { [weak self] in
         guard let self else { return }
-        self.effectView?.alpha = 0.0
-        
-        self.alertView.snp.updateConstraints { make in
-          make.top.equalTo(self.snp.bottom)
-        }
-        
+        self.visualEffectView?.alpha = 0.0
+        self.topConstraint?.constant = self.alertViewHeight
         self.layoutIfNeeded()
       },
       completion: { [weak self] _ in
@@ -109,19 +206,23 @@ public class UPsAlertBaseView: UIView {
     )
   }
   
+  @objc private func closeDidTap(_ sender: UIButton) {
+    self.closeAlert()
+  }
+  
   
   
   // MARK: - UI
   
   private func setAttribute() {
-    var buttons = [self.backgroundButton, self.alertView.closeButton]
-    buttons.append(contentsOf: self.alertView.actionButtons)
+    var buttons = self.alertView.actionButtons
+    buttons.append(self.alertView.closeButton)
     buttons.forEach {
       $0.addTarget(self, action: #selector(self.closeDidTap(_:)), for: .touchUpInside)
     }
   }
   
   private func setConstraint() {
-   
+    
   }
 }
