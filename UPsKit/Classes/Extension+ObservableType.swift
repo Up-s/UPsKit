@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Photos
 
 import RxSwift
 
@@ -48,6 +49,23 @@ public extension ObservableType {
       SceneCoordinator.shared.toast(message)
       
       return Observable.empty()
+    }
+  }
+  
+  func albumPermission() -> Observable<Bool> {
+    return self.flatMap { _ -> Observable<Bool> in
+      Observable<Bool>.create { observable -> Disposable in
+        PHPhotoLibrary.requestAuthorization { status in
+          switch status {
+          case .authorized:
+            observable.onNext(true)
+          default:
+            observable.onNext(false)
+          }
+          observable.onCompleted()
+        }
+        return Disposables.create()
+      }
     }
   }
 }
