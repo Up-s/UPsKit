@@ -93,7 +93,7 @@ public class SceneCoordinator {
     self.currentVC.alertTextField(title: title, message: message, keyboardType: keyboardType, placeholder: placeholder, actionTitle: actionTitle, cancel: cancel, handler: handler, completion: completion)
   }
   
-  public func alertUPs(title: String? = nil, message: String? = nil, close: String? = nil, actions: [UPsAlertActionContentsProtocol]) {
+  public func alertUPs(title: String? = nil, message: String? = nil, close: String? = nil, actions: [UPsAlertActionContentsProtocol] = []) {
     let alertContents = UPsAlertContents(title: title, meesage: message, close: close, action: actions)
     let alertView = UPsAlertBaseView(alertContents)
     self.currentVC.view.addSubview(alertView)
