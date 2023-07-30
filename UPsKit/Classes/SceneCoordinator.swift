@@ -93,8 +93,9 @@ public class SceneCoordinator {
     self.currentVC.alertTextField(title: title, message: message, keyboardType: keyboardType, placeholder: placeholder, actionTitle: actionTitle, cancel: cancel, handler: handler, completion: completion)
   }
   
-  public func alert(_ contents: UPsAlertContents) {
-    let alertView = UPsAlertBaseView(contents)
+  public func alertUPs(title: String, message: String?, actions: [UPsAlertActionContentsProtocol]) {
+    let alertContents = UPsAlertContents(title: title, meesage: message, action: actions)
+    let alertView = UPsAlertBaseView(alertContents)
     self.currentVC.view.addSubview(alertView)
     alertView.snp.makeConstraints { make in
       make.edges.equalToSuperview()

@@ -37,13 +37,13 @@ public class UPsAlertView: UIView {
   }
   public var actionButtons = [UIButton]()
   
-  private let contents: UPsAlertContents
+  private let contents: UPsAlertContentsProtocol
   
   
   
   // MARK: - Life Cycle
   
-  public init(_ contents: UPsAlertContents) {
+  public init(_ contents: UPsAlertContentsProtocol) {
     self.contents = contents
     super.init(frame: .zero)
     
@@ -89,7 +89,7 @@ public class UPsAlertView: UIView {
         .forEach(self.addSubview(_:))
     }
     
-    if !(self.contents.title == nil && self.contents.sub == nil) {
+    if !(self.contents.title == nil && self.contents.meesage == nil) {
       self.contentsStackView.addArrangedSubview(self.infoStackView)
       
       if self.contents.title != nil {
@@ -97,8 +97,8 @@ public class UPsAlertView: UIView {
         self.infoStackView.addArrangedSubview(self.titleLabel)
       }
       
-      if self.contents.sub != nil {
-        self.subLabel.text = self.contents.sub
+      if self.contents.meesage != nil {
+        self.subLabel.text = self.contents.meesage
         self.infoStackView.addArrangedSubview(self.subLabel)
       }
     }

@@ -24,7 +24,7 @@ public class UPsAlertBaseView: UIView {
   
   // MARK: - Life Cycle
   
-  public init(_ contents: UPsAlertContents) {
+  public init(_ contents: UPsAlertContentsProtocol) {
     self.alertView = UPsAlertView(contents)
     super.init(frame: .zero)
     

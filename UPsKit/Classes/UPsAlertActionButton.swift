@@ -13,13 +13,13 @@ public class UPsAlertActionButton: UIButton {
   
   // MARK: - Property
   
-  private let contents: UPsAlertActionContents
+  private let contents: UPsAlertActionContentsProtocol
   
   
   
   // MARK: - Life Cycle
   
-  public init(_ contents: UPsAlertActionContents) {
+  public init(_ contents: UPsAlertActionContentsProtocol) {
     self.contents = contents
     
     super.init(frame: .zero)

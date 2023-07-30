@@ -10,9 +10,9 @@ import Foundation
 public protocol UPsAlertContentsProtocol {
   
   var title: String? { get }
-  var sub: String? { get }
+  var meesage: String? { get }
   var close: String? { get }
-  var action: [UPsAlertActionContents] { get }
+  var action: [UPsAlertActionContentsProtocol] { get }
 }
 
 
@@ -20,18 +20,18 @@ public protocol UPsAlertContentsProtocol {
 public struct UPsAlertContents: UPsAlertContentsProtocol {
   
   public var title: String?
-  public var sub: String?
+  public var meesage: String?
   public var close: String?
-  public var action: [UPsAlertActionContents]
+  public var action: [UPsAlertActionContentsProtocol]
   
   public init(
     title: String? = nil,
-    sub: String? = nil,
+    meesage: String? = nil,
     close: String? = nil,
-    action: [UPsAlertActionContents]
+    action: [UPsAlertActionContentsProtocol]
   ) {
     self.title = title
-    self.sub = sub
+    self.meesage = meesage
     self.close = close
     self.action = action
   }
