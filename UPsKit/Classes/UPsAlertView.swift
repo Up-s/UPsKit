@@ -76,7 +76,7 @@ public class UPsAlertView: UIView {
     self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     self.layer.masksToBounds = true
     
-    self.backgroundColor = .gray200
+    self.backgroundColor = .gray300
     
     if let close = self.contents.close {
       self.closeButton.setTitle(close, for: .normal)
