@@ -10,7 +10,7 @@ import Foundation
 public protocol UPsAlertActionContentsProtocol {
   
   var title: String { get }
-  var testColor: UIColor { get }
+  var titleColor: UIColor { get }
   var handler: (() -> Void)? { get }
 }
 
@@ -19,12 +19,16 @@ public protocol UPsAlertActionContentsProtocol {
 public struct UPsAlertActionContents: UPsAlertActionContentsProtocol {
   
   public var title: String
-  public var testColor: UIColor
+  public var titleColor: UIColor
   public var handler: (() -> Void)?
   
-  public init(title: String, testColor: UIColor = .gray900, handler: (() -> Void)? = nil) {
+  public init(
+    title: String,
+    titleColor: UIColor = .gray900,
+    handler: (() -> Void)? = nil
+  ) {
     self.title = title
-    self.testColor = testColor
+    self.titleColor = titleColor
     self.handler = handler
   }
 }

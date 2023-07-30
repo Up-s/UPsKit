@@ -59,6 +59,14 @@ public class UPsAlertView: UIView {
   
   // MARK: - Interface
   
+  private var flexibleTargetCount: Int {
+    self.contents.close == nil ? 5 : 4
+  }
+  
+  private var flexibleActionHeight: CGFloat {
+    self.contents.close == nil ? 376.0 : 296.0
+  }
+  
   
   
   // MARK: - UI
@@ -70,12 +78,16 @@ public class UPsAlertView: UIView {
     
     self.backgroundColor = .gray200
     
-    self.closeButton.setTitle(self.contents.close, for: .normal)
-    
-    
-    
-    [self.contentsStackView, self.closeButton]
-      .forEach(self.addSubview(_:))
+    if let close = self.contents.close {
+      self.closeButton.setTitle(close, for: .normal)
+      
+      [self.contentsStackView, self.closeButton]
+        .forEach(self.addSubview(_:))
+      
+    } else {
+      [self.contentsStackView]
+        .forEach(self.addSubview(_:))
+    }
     
     if !(self.contents.title == nil && self.contents.sub == nil) {
       self.contentsStackView.addArrangedSubview(self.infoStackView)
@@ -91,7 +103,7 @@ public class UPsAlertView: UIView {
       }
     }
     
-    if self.contents.action.count > 4 {
+    if self.contents.action.count > self.flexibleTargetCount {
       self.contentsStackView.addArrangedSubview(self.actionScrollView)
       self.actionScrollView.addSubview(self.actionStackView)
       
@@ -113,9 +125,9 @@ public class UPsAlertView: UIView {
       make.leading.trailing.equalToSuperview()
     }
     
-    if self.contents.action.count > 4 {
+    if self.contents.action.count > self.flexibleTargetCount {
       self.actionScrollView.snp.makeConstraints { make in
-        make.height.equalTo(296.0)
+        make.height.equalTo(self.flexibleActionHeight)
       }
       
       self.actionStackView.snp.makeConstraints { make in
@@ -123,11 +135,18 @@ public class UPsAlertView: UIView {
       }
     }
     
-    self.closeButton.snp.makeConstraints { make in
-      make.top.equalTo(self.contentsStackView.snp.bottom).offset(16.0)
-      make.leading.trailing.equalToSuperview().inset(16.0)
-      make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-16.0)
-      make.height.equalTo(52.0)
+    if let _ = self.contents.close {
+      self.closeButton.snp.makeConstraints { make in
+        make.top.equalTo(self.contentsStackView.snp.bottom).offset(16.0)
+        make.leading.trailing.equalToSuperview().inset(16.0)
+        make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-16.0)
+        make.height.equalTo(52.0)
+      }
+      
+    } else {
+      self.contentsStackView.snp.makeConstraints { make in
+        make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-16.0)
+      }
     }
   }
 }
