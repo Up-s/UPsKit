@@ -157,7 +157,7 @@ public class UPsAlertBaseView: UIView {
     self.visualEffectView = visualEffectView
     
     UIView.animate(
-      withDuration: 0.2,
+      withDuration: 0.35,
       delay: .zero,
       options: .curveEaseInOut,
       animations: { [weak self] in
