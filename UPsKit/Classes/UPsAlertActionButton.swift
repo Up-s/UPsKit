@@ -27,7 +27,7 @@ public class UPsAlertActionButton: UIButton {
     self.addTarget(self, action: #selector(self.didTap(_:)), for: .touchUpInside)
     self.setTitle(contents.title, for: .normal)
     self.setTitleColor(contents.titleColor, for: .normal)
-    self.backgroundColor = .light
+    self.backgroundColor = contents.backgroundColor
     self.setCornerRadius(8.0)
     
     self.snp.makeConstraints { make in
