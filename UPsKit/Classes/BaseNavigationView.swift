@@ -118,7 +118,7 @@ public class BaseNavigationView: UIView {
   
   public struct Metric {
     static let height: CGFloat = 54.0
-    static let buttonWidth: CGFloat = 32.0
-    static let spacing: CGFloat = 14.0
+    static let buttonWidth: CGFloat = 40.0
+    static let spacing: CGFloat = 10.0
   }
 }
