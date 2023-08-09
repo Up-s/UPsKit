@@ -46,6 +46,8 @@ public extension ObservableType {
         message = "Parsing Error"
       }
       
+      print("\n--- [ catchNetworkError: \(message) ] ---")
+      
       SceneCoordinator.shared.toast(message)
       
       return Observable.empty()
