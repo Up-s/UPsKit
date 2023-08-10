@@ -321,6 +321,7 @@
 		BD2E458C2A767EDA007C67FC /* Extension+PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E458B2A767EDA007C67FC /* Extension+PHAsset.swift */; };
 		BD2E458E2A767F05007C67FC /* PhotoRequestOptionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E458D2A767F05007C67FC /* PhotoRequestOptionsProtocol.swift */; };
 		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21215335C4153DC12F4D921A44B0D45B /* SnapKit-dummy.m */; };
+		BD7F748F2A846190004D76D6 /* Reactive+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F748E2A846190004D76D6 /* Reactive+UIButton.swift */; };
 		BDEDF7CB498D21B85CEC81DEA3A82D5D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957836208BCE4A03A5240DD99EFA9C18 /* NetworkError.swift */; };
 		BE73553C9E76CA6888A179B867870C34 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A545E04FA57D287444088F30694F26C /* Extension+Date.swift */; };
 		BEAC0626AAB4FB2ED14F57744A233E63 /* RxRelay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 480DF322C09F849B31F1A3E6BDC3298E /* RxRelay-dummy.m */; };
@@ -902,6 +903,7 @@
 		BC83590499D65AD237868974A81DA28B /* PrimitiveSequence+Zip+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PrimitiveSequence+Zip+arity.swift"; path = "RxSwift/Traits/PrimitiveSequence/PrimitiveSequence+Zip+arity.swift"; sourceTree = "<group>"; };
 		BD2E458B2A767EDA007C67FC /* Extension+PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+PHAsset.swift"; path = "UPsKit/Classes/Extension+PHAsset.swift"; sourceTree = "<group>"; };
 		BD2E458D2A767F05007C67FC /* PhotoRequestOptionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoRequestOptionsProtocol.swift; path = UPsKit/Classes/PhotoRequestOptionsProtocol.swift; sourceTree = "<group>"; };
+		BD7F748E2A846190004D76D6 /* Reactive+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Reactive+UIButton.swift"; path = "UPsKit/Classes/Reactive+UIButton.swift"; sourceTree = "<group>"; };
 		BDB2FB14F7B91294D6D757081290462E /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = RxSwift/Event.swift; sourceTree = "<group>"; };
 		BE546F995C81146C95B4852F25E22AA0 /* Observable+Bind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Bind.swift"; path = "RxCocoa/Common/Observable+Bind.swift"; sourceTree = "<group>"; };
 		BE5D93AE72308168E7B4A66E3B24749E /* UPsKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UPsKit-Info.plist"; sourceTree = "<group>"; };
@@ -1290,6 +1292,7 @@
 				957836208BCE4A03A5240DD99EFA9C18 /* NetworkError.swift */,
 				BD2E458D2A767F05007C67FC /* PhotoRequestOptionsProtocol.swift */,
 				5724E52DD96856FF98E22C37EA7D3ADB /* Reactive+UICollectionView.swift */,
+				BD7F748E2A846190004D76D6 /* Reactive+UIButton.swift */,
 				DB228FCBEDF0482FE69FC59F55A6A91F /* Reactive+UITableView.swift */,
 				DE0C740996890EBB8B5A9B1AB4B94F20 /* Reactive+UITextField.swift */,
 				C906F5E12E2CF1A46F06F30FE8CB1B0A /* Reactive+UIViewController.swift */,
@@ -2331,6 +2334,7 @@
 				ADC01B25D6D399F0D7A8CF985BD9EDFC /* Extension+String.swift in Sources */,
 				C782B0F48669933BDFE2D226D5A114E4 /* Extension+UIBarButtonItem.swift in Sources */,
 				42898257D4B785D050A842183B740A4A /* Extension+UIButton.swift in Sources */,
+				BD7F748F2A846190004D76D6 /* Reactive+UIButton.swift in Sources */,
 				911747B3DABCDB1D460D135EF2B41178 /* Extension+UICollectionView.swift in Sources */,
 				06E2AB87ACA5F14F63CA71F355184E0D /* Extension+UIColor.swift in Sources */,
 				BD2E458E2A767F05007C67FC /* PhotoRequestOptionsProtocol.swift in Sources */,
