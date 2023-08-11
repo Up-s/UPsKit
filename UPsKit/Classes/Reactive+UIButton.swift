@@ -21,8 +21,8 @@ public extension Reactive where Base: UIButton {
         view.backgroundColor = .systemBlue
         
       case false:
-        view.setTitleColor(.gray900, for: .normal)
-        view.backgroundColor = .gray300
+        view.setTitleColor(.gray100, for: .normal)
+        view.backgroundColor = .gray600
       }
     }
   }
