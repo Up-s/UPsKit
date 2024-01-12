@@ -1,6 +1,6 @@
 {
   "name": "UPsKit",
-  "version": "3.15.2",
+  "version": "3.15.3",
   "summary": "UPsKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Up-s/UPsKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Up-s/UPsKit.git",
-    "tag": "3.15.2"
+    "tag": "3.15.3"
   },
   "platforms": {
     "ios": "15.0"
@@ -21,10 +21,12 @@
   "source_files": "UPsKit/Classes/**/*",
   "swift_versions": "5.0",
   "pod_target_xcconfig": {
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "x86_64 armv7 arm64",
+    "VALID_ARCHS": "x86_64 armv7 arm64"
   },
   "user_target_xcconfig": {
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "x86_64 armv7 arm64",
+    "VALID_ARCHS": "x86_64 armv7 arm64"
   },
   "dependencies": {
     "RxCocoa": [
