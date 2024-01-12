@@ -7,6 +7,8 @@
 
 import Foundation
 
+import RxSwift
+
 public extension String {
   
   var localized: String {
@@ -78,5 +80,19 @@ public extension Optional where Wrapped == String {
     guard let self else { return nil }
     let text = self.isEmpty ? nil : self
     return text
+  }
+}
+
+
+
+// MARK: - ObservableType
+
+public extension ObservableType where Element == String? {
+  
+  func emptyToNil() -> Observable<String?> {
+    return map { str in
+      guard let str else { return nil }
+      return str.isEmpty ? nil : str
+    }
   }
 }
